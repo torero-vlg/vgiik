@@ -1,0 +1,41 @@
+﻿@model Db.Entity.Subject
+
+@{
+    ViewBag.Title = "Добавить 3D объект";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddSubject", "Admin"))
+{
+    <legend>Добавить 3D объект</legend>
+    <div class="control-group warning">
+        <label class="control-label">Артикул</label>
+        <div>
+            @Html.TextBoxFor(m => m.Article, new Dictionary<string, object> { { "class", "input-xxlarge" } })
+        </div>
+
+        <label class="control-label">Название</label>
+        <div>
+            @Html.TextBoxFor(m => m.Name)
+        </div>
+
+        <label class="control-label">Цена</label>
+        <div>
+            @Html.TextBoxFor(m => m.Price)
+        </div>
+
+        <label class="control-label">Количество</label>
+        <div>
+            @Html.TextBoxFor(m => m.Count)
+        </div>
+
+        <label class="control-label">Содержание</label>
+        <div>
+            @Html.TextAreaFor(m => m.Description)
+        </div>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <button type="button" class="btn">Отмена</button>
+    </div>
+}
