@@ -1,0 +1,66 @@
+14.11.2014 19:57:47 (ERROR): An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ [InnerException]: System.Data.SQLite.SQLiteException (0x80004005): unable to open database file
+   в System.Data.SQLite.SQLite3.Open(String strFilename, SQLiteConnectionFlags connectionFlags, SQLiteOpenFlagsEnum openFlags, Int32 maxPoolSize, Boolean usePool)
+   в System.Data.SQLite.SQLiteConnection.Open()
+   в NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   в NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   в NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   в NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   в NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   в NHibernate.Cfg.Configuration.BuildSessionFactory()
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()   в System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   в System.Environment.get_StackTrace()
+   в Db.Tools.MonitorLog.WriteLog(String mes, typelog t, Boolean to_imp) в d:\_dev\Market3D\trunk\T034.Db\Tools\MonitorLog.cs:строка 27
+   в Db.NhDbFactory.CreateSqLiteSessionFactory(String connectionString) в d:\_dev\Market3D\trunk\T034.Db\NhDbFactory.cs:строка 78
+   в Db.NhDbFactory..ctor(String connectionString) в d:\_dev\Market3D\trunk\T034.Db\NhDbFactory.cs:строка 20
+   в T034.MvcApplication.Application_Start() в d:\_dev\vgiik\trunk\T034\Global.asax.cs:строка 38
+   в System.RuntimeMethodHandle._InvokeMethodFast(IRuntimeMethodInfo method, Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeType typeOwner)
+   в System.RuntimeMethodHandle.InvokeMethodFast(IRuntimeMethodInfo method, Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeType typeOwner)
+   в System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   в System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   в System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   в System.Web.HttpApplication.InvokeMethodWithAssert(MethodInfo method, Int32 paramCount, Object eventSource, EventArgs eventArgs)
+   в System.Web.HttpApplication.ProcessSpecialRequest(HttpContext context, MethodInfo method, Int32 paramCount, Object eventSource, EventArgs eventArgs, HttpSessionState session)
+   в System.Web.HttpApplicationFactory.FireApplicationOnStart(HttpContext context)
+   в System.Web.HttpApplicationFactory.EnsureAppStartCalled(HttpContext context)
+   в System.Web.HttpApplicationFactory.GetApplicationInstance(HttpContext context)
+   в System.Web.HttpRuntime.ProcessRequestInternal(HttpWorkerRequest wr)
+   в System.Web.HttpRuntime.ProcessRequestNoDemand(HttpWorkerRequest wr)
+   в System.Web.HttpRuntime.ProcessRequest(HttpWorkerRequest wr)
+   в Microsoft.VisualStudio.WebHost.Request.Process()
+   в Microsoft.VisualStudio.WebHost.Host.ProcessRequest(Connection conn)
+. 
+14.11.2014 19:59:30 (ERROR): An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.
+
+ [InnerException]: System.Data.SQLite.SQLiteException (0x80004005): unable to open database file
+   в System.Data.SQLite.SQLite3.Open(String strFilename, SQLiteConnectionFlags connectionFlags, SQLiteOpenFlagsEnum openFlags, Int32 maxPoolSize, Boolean usePool)
+   в System.Data.SQLite.SQLiteConnection.Open()
+   в NHibernate.Connection.DriverConnectionProvider.GetConnection()
+   в NHibernate.Tool.hbm2ddl.SuppliedConnectionProviderConnectionHelper.Prepare()
+   в NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.GetReservedWords(Dialect dialect, IConnectionHelper connectionHelper)
+   в NHibernate.Tool.hbm2ddl.SchemaMetadataUpdater.Update(ISessionFactory sessionFactory)
+   в NHibernate.Impl.SessionFactoryImpl..ctor(Configuration cfg, IMapping mapping, Settings settings, EventListeners listeners)
+   в NHibernate.Cfg.Configuration.BuildSessionFactory()
+   в FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()   в System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   в System.Environment.get_StackTrace()
+   в Db.Tools.MonitorLog.WriteLog(String mes, typelog t, Boolean to_imp) в d:\_dev\Market3D\trunk\T034.Db\Tools\MonitorLog.cs:строка 27
+   в Db.NhDbFactory.CreateSqLiteSessionFactory(String connectionString) в d:\_dev\Market3D\trunk\T034.Db\NhDbFactory.cs:строка 78
+   в Db.NhDbFactory..ctor(String connectionString) в d:\_dev\Market3D\trunk\T034.Db\NhDbFactory.cs:строка 20
+   в T034.MvcApplication.Application_Start() в d:\_dev\vgiik\trunk\T034\Global.asax.cs:строка 38
+   в System.RuntimeMethodHandle._InvokeMethodFast(IRuntimeMethodInfo method, Object target, Object[] arguments, SignatureStruct& sig, MethodAttributes methodAttributes, RuntimeType typeOwner)
+   в System.RuntimeMethodHandle.InvokeMethodFast(IRuntimeMethodInfo method, Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeType typeOwner)
+   в System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   в System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   в System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   в System.Web.HttpApplication.InvokeMethodWithAssert(MethodInfo method, Int32 paramCount, Object eventSource, EventArgs eventArgs)
+   в System.Web.HttpApplication.ProcessSpecialRequest(HttpContext context, MethodInfo method, Int32 paramCount, Object eventSource, EventArgs eventArgs, HttpSessionState session)
+   в System.Web.HttpApplicationFactory.FireApplicationOnStart(HttpContext context)
+   в System.Web.HttpApplicationFactory.EnsureAppStartCalled(HttpContext context)
+   в System.Web.HttpApplicationFactory.GetApplicationInstance(HttpContext context)
+   в System.Web.HttpRuntime.ProcessRequestInternal(HttpWorkerRequest wr)
+   в System.Web.HttpRuntime.ProcessRequestNoDemand(HttpWorkerRequest wr)
+   в System.Web.HttpRuntime.ProcessRequest(HttpWorkerRequest wr)
+   в Microsoft.VisualStudio.WebHost.Request.Process()
+   в Microsoft.VisualStudio.WebHost.Host.ProcessRequest(Connection conn)
+. 

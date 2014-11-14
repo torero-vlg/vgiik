@@ -1,0 +1,40 @@
+﻿@model List<Db.Entity.Material>
+
+@{
+    ViewBag.Title = "Пластик";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Пластик</h2>
+@Html.ActionLink("Добавить", "AddMaterial")
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Код</th>
+            <th>Артукул</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Цвет</th>
+            <th>Масса</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@Html.ActionLink(item.Id.ToString(), "Material", new { id = item.Id }) </td>
+        <td>@item.Article</td>
+        <td>@item.Name</td>
+        <td>@item.Price</td>
+        <td>@item.Color</td>
+        <td>@item.Weight</td>
+    </tr>
+    }
+    </tbody>
+</table>
+<script language="javascript">
+    $(document).ready(function(){
+        $('#table_id').DataTable();
+    });
+</script>
+
