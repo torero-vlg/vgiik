@@ -305,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -326,17 +327,14 @@
     <None Include="Scripts\DataTables-1.10.2\extensions\Responsive\Readme.md" />
     <None Include="Scripts\jquery-1.9.0.min.map" />
     <Content Include="Views\Shared\AuthPartialView.cshtml" />
-    <Content Include="Views\Admin\SubjectList.cshtml" />
-    <Content Include="Views\Admin\AddSubject.cshtml" />
-    <Content Include="Views\Admin\Subject.cshtml" />
     <Content Include="Views\Shared\FileUploadPartialView.cshtml" />
     <Content Include="Views\Shared\AdminMenu.cshtml" />
-    <Content Include="Views\Admin\PrinterList.cshtml" />
-    <Content Include="Views\Admin\MaterialList.cshtml" />
-    <Content Include="Views\Admin\AddPrinter.cshtml" />
-    <Content Include="Views\Admin\AddMaterial.cshtml" />
-    <Content Include="Views\Admin\Material.cshtml" />
-    <Content Include="Views\Admin\Printer.cshtml" />
+    <Content Include="Views\Home\Archive.cshtml" />
+    <Content Include="Views\Shared\MainMenu.cshtml" />
+    <Content Include="Views\Home\Video.cshtml" />
+    <Content Include="Views\Home\Photo.cshtml" />
+    <Content Include="Views\Home\Museum.cshtml" />
+    <Content Include="Views\Home\Presentation.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

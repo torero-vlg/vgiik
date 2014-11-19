@@ -4,6 +4,7 @@ body
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
+    background: url("http://tininfamily.ru/index_files/back.png") repeat scroll 0 0 #fff;
 }
 
 header,
