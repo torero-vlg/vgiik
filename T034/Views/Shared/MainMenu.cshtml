@@ -1,0 +1,31 @@
+﻿    <div class="container">
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" onclick="document.location='@Url.Action("Presentation", "Home")'">Презентация</button>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Виртуальный музей
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Раздел 1", "Museum", "Home", new {room = 1}, null)</li>
+                    <li>@Html.ActionLink("Раздел 2", "Museum", "Home", new {room = 2}, null)</li>
+                    <li>@Html.ActionLink("Раздел 3", "Museum", "Home", new {room = 3}, null)</li>
+                    <li>@Html.ActionLink("Раздел 4", "Museum", "Home", new {room = 4}, null)</li>
+                    <li>@Html.ActionLink("Раздел 5", "Museum", "Home", new {room = 5}, null)</li>
+                    <li>@Html.ActionLink("Раздел 6", "Museum", "Home", new {room = 6}, null)</li>
+                    <li>@Html.ActionLink("Раздел 7", "Museum", "Home", new {room = 7}, null)</li>
+                </ul>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Творческие будни
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Фотографии", "Photo", "Home")</li>
+                    <li>@Html.ActionLink("Видео", "Video", "Home")</li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-default" onclick="document.location='@Url.Action("Archive", "Home")'">Архив</button>
+        </div>
+        </div>
+
+    
