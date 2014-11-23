@@ -35,9 +35,9 @@ namespace T034
         {
             AreaRegistration.RegisterAllAreas();
 
-            DbFactory = new NhDbFactory(ConnectionString);
+            //DbFactory = new NhDbFactory(ConnectionString);
 
-            Db = DbFactory.CreateBaseDb();
+            //Db = DbFactory.CreateBaseDb();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
