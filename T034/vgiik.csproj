@@ -154,6 +154,22 @@
     <Content Include="Content\images\people\kruchek\1.JPG" />
     <Content Include="Content\images\people\kruchek\2.JPG" />
     <Content Include="Content\images\people\kruchek\3.JPG" />
+    <Content Include="Content\images\presentation\10-1.jpg" />
+    <Content Include="Content\images\presentation\10-2.jpg" />
+    <Content Include="Content\images\presentation\11-1.jpg" />
+    <Content Include="Content\images\presentation\11-2.jpg" />
+    <Content Include="Content\images\presentation\13-1.jpg" />
+    <Content Include="Content\images\presentation\14-1.jpg" />
+    <Content Include="Content\images\presentation\14-2.jpg" />
+    <Content Include="Content\images\presentation\15-1.jpg" />
+    <Content Include="Content\images\presentation\16-1.jpg" />
+    <Content Include="Content\images\presentation\16-2.jpg" />
+    <Content Include="Content\images\presentation\16-3.jpg" />
+    <Content Include="Content\images\presentation\16-4.jpg" />
+    <Content Include="Content\images\presentation\16-5.jpg" />
+    <Content Include="Content\images\presentation\16-6.jpg" />
+    <Content Include="Content\images\presentation\18-1.jpg" />
+    <Content Include="Content\images\presentation\18-2.jpg" />
     <Content Include="Content\images\presentation\2-1.jpg" />
     <Content Include="Content\images\presentation\2-2.jpg" />
     <Content Include="Content\images\presentation\2-3.jpg" />
@@ -168,6 +184,16 @@
     <Content Include="Content\images\presentation\4-4.jpg" />
     <Content Include="Content\images\presentation\6-1.jpg" />
     <Content Include="Content\images\presentation\6-2.jpg" />
+    <Content Include="Content\images\presentation\9-1.jpg" />
+    <Content Include="Content\images\presentation\9-10.jpg" />
+    <Content Include="Content\images\presentation\9-2.jpg" />
+    <Content Include="Content\images\presentation\9-3.jpg" />
+    <Content Include="Content\images\presentation\9-4.jpg" />
+    <Content Include="Content\images\presentation\9-5.jpg" />
+    <Content Include="Content\images\presentation\9-6.jpg" />
+    <Content Include="Content\images\presentation\9-7.jpg" />
+    <Content Include="Content\images\presentation\9-8.jpg" />
+    <Content Include="Content\images\presentation\9-9.jpg" />
     <Content Include="Content\images\yandex_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
