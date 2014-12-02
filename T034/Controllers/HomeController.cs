@@ -29,12 +29,14 @@ namespace T034.Controllers
 
         public ActionResult Photo()
         {
+            //http://blueimp.github.io/Bootstrap-Image-Gallery/
             return View();
         }
 
         public ActionResult Museum(int room)
         {
-            return View();
+            var viewName = "Rooms/Room" + room;
+            return View(viewName);
         }
 
         public ActionResult Presentation()

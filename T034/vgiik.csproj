@@ -157,6 +157,20 @@
     <Content Include="Content\images\people\kruchek\1.JPG" />
     <Content Include="Content\images\people\kruchek\2.JPG" />
     <Content Include="Content\images\people\kruchek\3.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0018.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0021.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0022.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0023.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0024.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0029.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0031.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0032.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0034.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0036.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0037.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0038.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0041.JPG" />
+    <Content Include="Content\images\photo\staropoltavka\_DSC0042.JPG" />
     <Content Include="Content\images\presentation\10-1.jpg" />
     <Content Include="Content\images\presentation\10-2.jpg" />
     <Content Include="Content\images\presentation\11-1.jpg" />
@@ -421,8 +435,14 @@
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Home\Video.cshtml" />
     <Content Include="Views\Home\Photo.cshtml" />
-    <Content Include="Views\Home\Museum.cshtml" />
     <Content Include="Views\Home\Presentation.cshtml" />
+    <Content Include="Views\Home\Rooms\Room1.cshtml" />
+    <Content Include="Views\Home\Rooms\Room7.cshtml" />
+    <Content Include="Views\Home\Rooms\Room2.cshtml" />
+    <Content Include="Views\Home\Rooms\Room3.cshtml" />
+    <Content Include="Views\Home\Rooms\Room4.cshtml" />
+    <Content Include="Views\Home\Rooms\Room5.cshtml" />
+    <Content Include="Views\Home\Rooms\Room6.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
