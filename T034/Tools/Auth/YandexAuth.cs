@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using Db.Tools;
 using T034.Models;
 
 namespace T034.Tools.Auth
@@ -50,7 +49,7 @@ namespace T034.Tools.Auth
             }
             catch (Exception ex)
             {
-                MonitorLog.WriteLog(ex.InnerException + ex.Message, MonitorLog.typelog.Error, true);
+                //MonitorLog.WriteLog(ex.InnerException + ex.Message, MonitorLog.typelog.Error, true);
                 model.IsAutharization = false;
             }
 
