@@ -84,3 +84,15 @@ textarea
 {
     display: none;
 }
+
+.btn-presentation 
+{
+    background-image: url("/Content/pic/m2.png") !important;
+    font-weight: bold;
+    
+}
+
+.btn-museum 
+{
+    background-image: url("/Content/pic/m4.png") !important;
+}
