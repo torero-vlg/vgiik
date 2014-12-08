@@ -94,7 +94,6 @@
     <Compile Include="Tools\SerializeTools.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\back.png" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -260,23 +259,18 @@
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload.css" />
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
+    <Content Include="Content\pic\back.png" />
     <Content Include="Content\pic\banner.png" />
-    <Content Include="Content\pic\bm2.png" />
-    <Content Include="Content\pic\botb.png" />
-    <Content Include="Content\pic\c.png" />
-    <Content Include="Content\pic\m1.png" />
-    <Content Include="Content\pic\m2.png" />
-    <Content Include="Content\pic\m3.png" />
-    <Content Include="Content\pic\m4.png" />
-    <Content Include="Content\pic\m5.png" />
-    <Content Include="Content\pic\m6.png" />
-    <Content Include="Content\pic\m7.png" />
-    <Content Include="Content\pic\m8.png" />
-    <Content Include="Content\pic\m9.png" />
-    <Content Include="Content\pic\wpm1.png" />
-    <Content Include="Content\pic\wpm2.png" />
-    <Content Include="Content\pic\ypm1.png" />
-    <Content Include="Content\pic\ypm2.png" />
+    <Content Include="Content\pic\banner_b.png" />
+    <Content Include="Content\pic\bbanner.png" />
+    <Content Include="Content\pic\menu1.png" />
+    <Content Include="Content\pic\menu2.png" />
+    <Content Include="Content\pic\menu3.png" />
+    <Content Include="Content\pic\menu4.png" />
+    <Content Include="Content\pic\pmb.png" />
+    <Content Include="Content\pic\VGIIIK.jpg" />
+    <Content Include="Content\pic\wb.png" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -338,7 +332,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
