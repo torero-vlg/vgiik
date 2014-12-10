@@ -98,6 +98,19 @@ A.a:hover
 }
 
 
+.dropdown-menu>li>a
+{
+	background: url("pic/btn.png") repeat scroll 0 0;
+	color: #e9de10 !important;
+}
+
+.dropdown-menu
+{
+	text-decoration: none;
+	background-color:#882002 !important;
+}
+
+
 header,
 footer,
 nav,
