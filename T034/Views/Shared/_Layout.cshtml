@@ -17,14 +17,18 @@
 
     <body>
         <div class="container">
+            <div><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></div>
+            <!--Begin MainMenu-->
             @Html.Partial("MainMenu")
-            
-            <div class="text">
-		        @RenderBody()
-
-	             <div class="bbanner" id="right"><a href="" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014</a>
-	             </div>
-	        </div>
+            <!--End MainMenu-->
+            <div class="main">
+                <div><img src="@Url.Content("~/Content/pic/pmb.png")" alt="" height="26px" width="900px"></div>
+                <!--Begin Body-->
+                @RenderBody()
+                <!--End Body-->
+                <div class="bbanner" id="right"><a href="" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014</a>
+                </div>
+            </div>
         </div>
     </body>
 </html>
