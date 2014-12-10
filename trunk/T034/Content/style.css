@@ -8,32 +8,51 @@ body
 }
 
 
-.text
+.main
 {
-    font-size: 12px;
+    font-size: 13px;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #000000;
     background-color: #ffffff;
     text-align: justify;
     background: url("pic/wb.png") repeat scroll 0 0 #fff;
     width: 900px;
-    heigh: 300px;
     padding: 0 0 0 0;
 }
 
-.myheader
+.text
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #000000;
+    text-align: justify;
+    background: url("pic/wb.png") repeat scroll 0 0 #fff;
+    padding: 0 20px 0 20px;
+}
+
+h3
 {
     font-size: 15px;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #701c05;
+    color: #701c05 !important;
     background-color: #ffffff;
-    text-align: justify;
-    text-indent: 60px;
+    text-align: center;
     font-variant: small-caps;
     font-style: italic;
     font-weight: bold;
     background: url("pic/wb.png") repeat scroll 0 0 #fff;
-    width: 900px;
+    padding: 15px;
+}
+
+h4
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    background: url("pic/wb.png") repeat scroll 0 0 #fff;
 }
 
 
