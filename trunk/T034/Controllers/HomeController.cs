@@ -1,5 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web.Mvc;
 using T034.Tools.Auth;
+using T034.ViewModel;
 
 namespace T034.Controllers
 {
@@ -30,7 +34,29 @@ namespace T034.Controllers
         public ActionResult Photo()
         {
             //http://blueimp.github.io/Bootstrap-Image-Gallery/
-            return View();
+            //получить адрес сайта
+            //string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+
+            var model = new List<CarouselViewModel>
+                {
+                    GetCarouselViewModel("/Content/images/photo/dpi/", "Кафедра ДПИ"),
+                    GetCarouselViewModel("/Content/images/photo/staropoltavka/", "Профориентация в Старополтавке")
+                };
+
+            return View(model);
+        }
+
+        private CarouselViewModel GetCarouselViewModel(string folder, string header)
+        {
+            var directory = new DirectoryInfo(Server.MapPath(folder));
+            var files = directory.GetFiles().Select(f => f.Name);
+            var carousel = new CarouselViewModel
+                {
+                    Header = header,
+                    Files = files,
+                    Folder = folder
+                };
+            return carousel;
         }
 
         public ActionResult Museum(int room)

@@ -34,14 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Db, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
     <Reference Include="System.Data.SQLite, Version=1.0.93.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.93.0\lib\net40\System.Data.SQLite.dll</HintPath>
@@ -92,6 +90,7 @@
     <Compile Include="Tools\FileUpload\ViewDataUploadFilesResult.cs" />
     <Compile Include="Tools\HttpTools.cs" />
     <Compile Include="Tools\SerializeTools.cs" />
+    <Compile Include="ViewModel\CarouselViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -158,6 +157,13 @@
     <Content Include="Content\images\people\kruchek\1.JPG" />
     <Content Include="Content\images\people\kruchek\2.JPG" />
     <Content Include="Content\images\people\kruchek\3.JPG" />
+    <Content Include="Content\images\photo\dpi\01.jpg" />
+    <Content Include="Content\images\photo\dpi\10.jpg" />
+    <Content Include="Content\images\photo\dpi\11.jpg" />
+    <Content Include="Content\images\photo\dpi\111.jpg" />
+    <Content Include="Content\images\photo\dpi\1111.jpg" />
+    <Content Include="Content\images\photo\dpi\1122.jpg" />
+    <Content Include="Content\images\photo\dpi\novikov_fs.jpg" />
     <Content Include="Content\images\photo\staropoltavka\_DSC0018.JPG" />
     <Content Include="Content\images\photo\staropoltavka\_DSC0021.JPG" />
     <Content Include="Content\images\photo\staropoltavka\_DSC0022.JPG" />
@@ -417,7 +423,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModel\" />
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
@@ -454,6 +459,7 @@
     <Content Include="Views\Home\Rooms\Room4.cshtml" />
     <Content Include="Views\Home\Rooms\Room5.cshtml" />
     <Content Include="Views\Home\Rooms\Room6.cshtml" />
+    <Content Include="Views\Shared\Carousel.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

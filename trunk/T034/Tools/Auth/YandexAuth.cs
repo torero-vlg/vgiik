@@ -47,7 +47,7 @@ namespace T034.Tools.Auth
                     model.IsAutharization = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //MonitorLog.WriteLog(ex.InnerException + ex.Message, MonitorLog.typelog.Error, true);
                 model.IsAutharization = false;
