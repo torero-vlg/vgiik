@@ -16,7 +16,7 @@
 	   <exec program="${svnLocation}" commandline="update ${main.dir}"/>
 	</target>
 		
-	<target name="cleanupPublish"  depends="updateSvn">
+	<target name="cleanupPublish">
 		<delete dir="${publish.dir}" />
 	</target>
 
@@ -28,13 +28,11 @@
 			<arg line="/verbosity:quiet"/>
 			<arg line="/nologo"/>
 		</exec>
-		
-		<copy todir="${publish.dir}\vgiik">
-			<fileset basedir="${out.dir}\_PublishedWebsites\vgiik"/>
-		</copy>
 	</target>
 	
 	<target name="build" depends="buildSolution">
-		
+		<copy todir="${publish.dir}\vgiik">
+			<fileset basedir="${out.dir}\_PublishedWebsites\vgiik"/>
+		</copy>
 	</target>
 </project>
