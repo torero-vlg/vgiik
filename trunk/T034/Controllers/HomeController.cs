@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using T034.Tools;
 using T034.Tools.Auth;
 using T034.ViewModel;
 
@@ -39,25 +40,14 @@ namespace T034.Controllers
 
             var model = new List<CarouselViewModel>
                 {
-                    GetCarouselViewModel("/Content/images/photo/dpi/", "Кафедра ДПИ"),
-                    GetCarouselViewModel("/Content/images/photo/staropoltavka/", "Профориентация в Старополтавке")
+                    new CarouselViewModel("/Content/images/photo/dpi/", Server.MapPath("/Content/images/photo/dpi/"), "Кафедра ДПИ"),
+                    new CarouselViewModel("/Content/images/photo/staropoltavka/", Server.MapPath("/Content/images/photo/staropoltavka/"), "Профориентация в Старополтавке")
                 };
 
             return View(model);
         }
 
-        private CarouselViewModel GetCarouselViewModel(string folder, string header)
-        {
-            var directory = new DirectoryInfo(Server.MapPath(folder));
-            var files = directory.GetFiles().Select(f => f.Name);
-            var carousel = new CarouselViewModel
-                {
-                    Header = header,
-                    Files = files,
-                    Folder = folder
-                };
-            return carousel;
-        }
+
 
         public ActionResult Museum(int room)
         {
