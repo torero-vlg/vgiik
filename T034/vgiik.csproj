@@ -91,6 +91,7 @@
     <Compile Include="Tools\HttpTools.cs" />
     <Compile Include="Tools\SerializeTools.cs" />
     <Compile Include="ViewModel\CarouselViewModel.cs" />
+    <Compile Include="ViewModel\DepartmentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -469,6 +470,7 @@
     <Content Include="Views\Home\Rooms\Room5.cshtml" />
     <Content Include="Views\Home\Rooms\Room6.cshtml" />
     <Content Include="Views\Shared\Carousel.cshtml" />
+    <Content Include="Views\Shared\DepartmentPartialView.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
