@@ -1,0 +1,25 @@
+﻿@model T034.ViewModel.DepartmentViewModel
+
+<div class="text-center">@Model.Name</div>
+<div class="row">
+	<div class="col-xs-6 col-md-2">
+	</div>
+	<div class="col-xs-6 col-md-8">
+	    <a href="@Model.MainPhoto" class="thumbnail">
+	        <img src="@Model.MainPhoto" alt="">
+	    </a>
+        @foreach (var item in Model.Staff)
+        {
+            <p class="text"><i>@item</i></p>
+        }
+	</div>
+	<div class="col-xs-6 col-md-2">
+	</div>
+</div>
+<div class="row">
+    <div class="col-xs-6 col-md-12">
+        <p class="text">
+            @Html.Encode(@Model.Text)
+        </p>
+    </div>
+</div>
