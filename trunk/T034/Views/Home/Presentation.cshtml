@@ -383,95 +383,115 @@
         </div>
     </div>
 
-    <div class="text-center">КАФЕДРА ФИЛОСОФИИ, ИСТОРИИ, ТЕОРИИ ИСКУССТВ И КУЛЬТУРЫ</div>
-    <div class="row">
-        <div class="col-xs-6 col-md-3">
-            СЕКЦИЯ ОБЩЕСТВЕННЫХ НАУК 
-            <a href="/Content/images/presentation/17-1.jpg" class="thumbnail">
-                <img src="/Content/images/presentation/17-1.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            СЕКЦИЯ ТЕОРИИ ИСКУССТВ И КУЛЬТУРЫ
-            <a href="/Content/images/presentation/17-2.jpg" class="thumbnail">
-                <img src="/Content/images/presentation/17-2.jpg" alt="">
-            </a>
-        </div>
-    </div>
+	@{
+        Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
+            {
+                Name = "Факультет художественного творчества",
+                MainPhoto = "/Content/images/presentation/18-2.jpg",
+                Staff = new List<string> { "Декан факультета - член Союза театральных деятелей РФ, доцент Максим Валентинович Баькин.", 
+											"Заместитель декана по учебно-методической и научной работе - член Союза театральных деятелей РФ, старший преподаватель Валентина Николаевна Крылова.",
+											"Заместитель декана по концертно-творческой и воспитательной работе - преподаватель Светлана Николаевна Башкатова.",
+											"Специалист по учебно-методической работе - преподаватель Людмила Олеговна Гречишкина.",
+											"Старший лаборант - преподаватель Юлия Сергеевна Догадина."},
+                Text = "<p class=\"text\">Факультет художественного творчества - один из самых молодых в вузе, создан в 2010 году. Учебная и творческая деятельность факультета органично объединяет традиционные и новейшие технологии. В состат факультета входят 5 кафедр: кафедра хореографии, кафедра рефиссуры и актёрского мастерства, кафедра традиционной культуры, кафедра декоративно-прикладного искусства, кафедра истории, теории искусств и культуры.</p>"
+            });
+    }
+	@{
+        Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
+            {
+                Name = "Кафедра общеобразовательных дисциплин",
+                MainPhoto = "/Content/images/presentation/17-1.jpg",
+                Staff = new List<string> { "Заведующая кафедрой - профессор, кандидат исторических наук Зоя Павловна Тинина." },
+                Text = "<p class=\"text\">В состав кафедры общеобразовательных дисциплин входят четыре секции: психологии и педагогики (зав. секцией - кандидат педагогических наук, доцент И. В. Притыченко), общественных наук (зав. секцией - кандидат философских наук, доцент С. М. Черникова), иностранных языков (зав. секцией - доцент Т. Э. Сотникова), физической культуры (зав. секцией - мастер спорта по боксу, доцент В. С. Аров.</p>"
+            });
+    }
+	
+	@{
+        Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
+            {
+                Name = "Кафедра истории и теории искусств и культуры",
+                MainPhoto = "/Content/images/presentation/17-2.jpg",
+                Staff = new List<string> { "Заведующий кафедрой - кандидат искусствоведения, член Союза театральных деятелей РФ, профессор Вячеслав Хакимович Разаков" },
+                Text = "<p class=\"text\">Кафедра истории и теории искусств и культуры существует с 2002 года. Среди её ведущих преподавателей кандидат философских наук, доцент Н. Б. Шипулина, кандидат искусствоведения, доцент Г. И. Жданкина, возглавляющая студенческий киноклуб \"Альтернатива\", приобщающий момлодёжь к авторскому кинематографу.</p>"
+            });
+    }
 
-    <div class="text-center">ФАКУЛЬТЕТ ХУДОЖЕСТВЕННОГО ТВОРЧЕСТВА</div>
-    <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <a href="/Content/images/presentation/18-1.jpg" class="thumbnail">
-                <img src="/Content/images/presentation/18-1.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="/Content/images/presentation/18-2.jpg" class="thumbnail">
-                <img src="/Content/images/presentation/18-2.jpg" alt="">
-            </a>
-        </div>
-    </div>
+	@{
+        Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
+            {
+                Name = "Кафедра декоративно-прикладного искусства",
+                MainPhoto = "/Content/images/presentation/19-1.jpg",
+                Staff = new List<string> { "Заведующий кафедрой - член Союза художников РФ, Союза театральных деятелей РФ, Российского авторского общества, лауреат Международной бьеннале современного искусства \"Диалог. Цвет и линия\", доцент Федор Станиславович Новиков" },
+                Text = "<p class=\"text\">Кафедра декоративно-прикладного искусства основана в 1993 году. У истоков руководства кафедрой стоял профессор, член союза художников РФ Р. В. Паранюшкин. В разные годы на кафедре работали известные волгоградские художники Е. В. Орлова, Г. Н. Хандова, Л. И. Зотова, В. А. Рухлин.</p>"
+            });
+    }
 
-    <div class="text-center">КАФЕДРА ДЕКОРАТИВНО-ПРИКЛАДНОГО ИСКУССТВА</div>
     <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <a href="/Content/images/presentation/19-1.jpg" class="thumbnail">
-                <img src="/Content/images/presentation/19-1.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-2"></div>
+		<div class="col-xs-6 col-md-8">
             <a href="/Content/images/presentation/19-2.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/19-2.jpg" alt="">
             </a>
         </div>
+		<div class="col-xs-6 col-md-2"></div>
+	</div>
+	<div class="row">
         <div class="col-xs-6 col-md-3">
-            Чаплыгин Пётр Иванович – профессор кафедры ДПИ ГОБУК ВПО «Волгоградский государственный институт искусств и культуры», народный художник России – 2013 г.
             <a href="/Content/images/people/chaplygin/1.JPG" class="thumbnail">
                 <img src="/Content/images/people/chaplygin/1.JPG" alt="">
             </a>
+			Чаплыгин Пётр Иванович – профессор кафедры ДПИ ГОБУК ВПО «Волгоградский государственный институт искусств и культуры», народный художник России – 2013 г.
         </div>
         <div class="col-xs-6 col-md-3">
-            Чаплыгин Пётр Иванович в мастерской за работой – 2013 г.
             <a href="/Content/images/people/chaplygin/2.JPG" class="thumbnail">
                 <img src="/Content/images/people/chaplygin/2.JPG" alt="">
             </a>
+			Чаплыгин Пётр Иванович в мастерской за работой – 2013 г.
         </div>
-            <div class="col-xs-6 col-md-3">
+		<div class="col-xs-6 col-md-3">
             <a href="/Content/images/presentation/19-4.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/19-4.jpg" alt="">
             </a>
         </div>
-            <div class="col-xs-6 col-md-3">
+		<div class="col-xs-6 col-md-3">
             <a href="/Content/images/presentation/19-5.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/19-5.jpg" alt="">
             </a>
         </div>
     </div>
 
-    <div class="text-center">КАФЕДРА АКТЁРСКОГО МАСТЕРСТВАЗАВ. КАФЕДРОЙ В.В. ЛОСКУТОВ</div>
+	@{
+        Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
+            {
+                Name = "Кафедра режиссуры и актёрского мастерства",
+                MainPhoto = "/Content/images/presentation/31.jpg",
+                Staff = new List<string> { "Заведующий кафедрой - Заслуженный работник культуры РФ, профессор Галина Сергеевна Андронова" },
+                Text = "<p class=\"text\">Кафедра режиссуры и актёрского мастерства была создана в 1992 году. В нынешнем составе кафедры маститые деятели театрального искусства современности: Народный артист РФ, художественный руководитель Нового экспериментального театра г. Волгограда, профессор О. И. Джангишерашвили, Заслуженные артисты РФ - художественный руководитель Театра юного зрителя А. А. Авходеев, главный режиссер Волгоградского музыкального театра А. А. Кутявин, репетитор Волгоградского музыкального театра М. И. Кутявина, В. И. Морозов, художественный руководитель Волжского драматического театра В. Г. Гришечкин, лауреат Государственной премии Волгоградской области, ведущий специалист ГУК Волгоградского областного центра народного творчества П. П. Волков.</p>"
+            });
+    }
+	
     <div class="row">
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-2">
             <a href="/Content/images/presentation/20-1.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/20-1.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-2">
             <a href="/Content/images/presentation/20-2.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/20-2.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-2">
             <a href="/Content/images/presentation/20-3.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/20-3.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-2">
             <a href="/Content/images/presentation/20-4.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/20-4.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-2">
             <a href="/Content/images/presentation/20-5.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/20-5.jpg" alt="">
             </a>
@@ -637,11 +657,15 @@
             });
     }
 	<div class="row">
-		<div class="col-xs-6 col-md-12">
+		<div class="col-xs-6 col-md-2">
+		</div>
+		<div class="col-xs-6 col-md-8">
             <a href="/Content/images/presentation/21-2.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/21-2.jpg" alt="">
             </a>
         </div>
+		<div class="col-xs-6 col-md-2">
+		</div>
     </div>
     @{
         Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
@@ -673,35 +697,40 @@
             });
     }
 
-    <div class="text-center">ТВОРЧЕСКИЕ БУДНИ ГОБУК ВПО ВГИИК</div>
+    <h4 class="text-center">Творческие будни ГОБУК ВПО ВГИИК</h4>
     <div class="row">
-        <div class="col-xs-6 col-md-3">
-            ПРОРЕКТОР ПО ХУДОЖЕСТВЕННОЙ РАБОТЕ , ПРОФЕССОР Андрей Иванович Горбунов
+		<div class="col-xs-6 col-md-4">
             <a href="/Content/images/people/gorbunov/1.jpg" class="thumbnail">
                 <img src="/Content/images/people/gorbunov/1.jpg" alt="">
             </a>
+			Проректор по художественной работе, профессор Андрей Иванович Горбунов
         </div>
-        <div class="col-xs-6 col-md-3">
-            <a href="/Content/images/presentation/34-2.jpg" class="thumbnail">
+		<div class="col-xs-6 col-md-4">
+			<a href="/Content/images/presentation/34-2.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/34-2.jpg" alt="">
             </a>
-        </div>
-        <div class="col-xs-6 col-md-3">
+		</div>
+		<div class="col-xs-6 col-md-4"></div>
+	</div>
+	<div class="row">
+        <div class="col-xs-6 col-md-6">
             <a href="/Content/images/presentation/34-3.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/34-3.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-6">
             <a href="/Content/images/presentation/34-4.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/34-4.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+	</div>
+	<div class="row">
+        <div class="col-xs-6 col-md-6">
             <a href="/Content/images/presentation/34-5.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/34-5.jpg" alt="">
             </a>
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-6 col-md-6">
             <a href="/Content/images/presentation/34-6.jpg" class="thumbnail">
                 <img src="/Content/images/presentation/34-6.jpg" alt="">
             </a>
