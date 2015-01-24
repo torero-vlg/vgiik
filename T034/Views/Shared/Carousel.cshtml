@@ -2,7 +2,7 @@
 
 <h3>@Model.Header</h3>
 
-<div id="@Model.CarouselId" class="carousel slide" data-ride="carousel">
+<div id="@Model.CarouselId" class="carousel slide" data-ride="carousel" data-interval="@Model.Interval">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         @for (var i = 0; i < Model.Files.Count(); i++ )
