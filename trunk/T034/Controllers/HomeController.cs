@@ -41,7 +41,8 @@ namespace T034.Controllers
             var model = new List<CarouselViewModel>
                 {
                     new CarouselViewModel("/Content/images/photo/dpi/", Server.MapPath("/Content/images/photo/dpi/"), "Кафедра ДПИ"),
-                    new CarouselViewModel("/Content/images/photo/staropoltavka/", Server.MapPath("/Content/images/photo/staropoltavka/"), "Профориентация в Старополтавке")
+                    new CarouselViewModel("/Content/images/photo/staropoltavka/", Server.MapPath("/Content/images/photo/staropoltavka/"), "Профориентация в Старополтавке"),
+                    new CarouselViewModel("/Content/images/photo/24012015/", Server.MapPath("/Content/images/photo/24012015/"), "")
                 };
 
             return View(model);

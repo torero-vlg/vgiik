@@ -1,0 +1,12 @@
+﻿@using T034.ViewModel
+@model PersonViewModel
+
+@{
+    ViewBag.Title = Model.FullName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@Model.FullName</h3>
+@{
+    Html.RenderPartial("Carousel", Model.Docs);
+}
