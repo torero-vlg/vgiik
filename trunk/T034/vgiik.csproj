@@ -96,7 +96,6 @@
     <Compile Include="ViewModel\PersonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Bootstrap-Image-Gallery-3.1.1\bootstrap-image-gallery.min.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -158,85 +157,9 @@
     <Content Include="Content\images\people\kpk\1.JPG" />
     <Content Include="Content\images\people\kpk\2.JPG" />
     <Content Include="Content\images\people\kpk\3.JPG" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны001.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны010.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны011.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны012.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны002.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны003.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны004.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны005.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны006.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны007.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны008.jpg" />
-    <Content Include="Content\images\people\kpk\recollections\воспоминания Кондрашовой Клавдии Петровны009.jpg" />
     <Content Include="Content\images\people\kruchek\1.JPG" />
     <Content Include="Content\images\people\kruchek\2.JPG" />
     <Content Include="Content\images\people\kruchek\3.JPG" />
-    <Content Include="Content\images\people\perehodnik\listok.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.1.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.10.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.11.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.12.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.13.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.14.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.15.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.16.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.17.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.18.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.19.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.2.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.20.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.21.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.22.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.23.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.24.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.25.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.26.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.27.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.28.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.29.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.3.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.30.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.31.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.32.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.33.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.34.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.35.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.36.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.37.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.38.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.39.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.4.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.40.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.41.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.42.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.43.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.44.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.5.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.6.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.7.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.8.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Б.Г.9.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Бориса Григорьевича.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Бориса Григорьевича1.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Бориса Григорьевича2.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Бориса Григорьевича4 %282%29.jpg" />
-    <Content Include="Content\images\people\perehodnik\Архив Переходник Бориса Григорьевича4.jpg" />
-    <Content Include="Content\images\people\perehodnik\документы Переходник Б.Г..jpg" />
-    <Content Include="Content\images\people\perehodnik\документы Переходник Б.Г.1.jpg" />
-    <Content Include="Content\images\people\perehodnik\документы Переходник Б.Г.2.jpg" />
-    <Content Include="Content\images\photo\archive\1.jpg" />
-    <Content Include="Content\images\photo\archive\10.jpg" />
-    <Content Include="Content\images\photo\archive\2.jpg" />
-    <Content Include="Content\images\photo\archive\3.jpg" />
-    <Content Include="Content\images\photo\archive\4.jpg" />
-    <Content Include="Content\images\photo\archive\5.jpg" />
-    <Content Include="Content\images\photo\archive\6.jpg" />
-    <Content Include="Content\images\photo\archive\7.jpg" />
-    <Content Include="Content\images\photo\archive\8.jpg" />
-    <Content Include="Content\images\photo\archive\9.jpg" />
     <Content Include="Content\images\photo\dpi\01.jpg" />
     <Content Include="Content\images\photo\dpi\10.jpg" />
     <Content Include="Content\images\photo\dpi\11.jpg" />
@@ -430,7 +353,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\Bootstrap-Image-Gallery-3.1.1\bootstrap-image-gallery.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables-1.10.2\extensions\AutoFill\js\dataTables.autoFill.js" />
@@ -516,6 +438,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\images\people\kpk\recollections\" />
+    <Folder Include="Content\images\people\perehodnik\" />
+    <Folder Include="Content\images\photo\archive\" />
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
