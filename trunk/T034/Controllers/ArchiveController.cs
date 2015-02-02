@@ -30,9 +30,12 @@ namespace T034.Controllers
                         { 
                             FullName =
                                 "Кондрашова Клавдия Петровна - ветеран Великой Отечественной войны, преподаватель, и.о. директора, заведующая Сталинградской-Волгоградской школы, училища культуры",
-                            Docs = new CarouselViewModel("/Content/images/people/kpk/recollections/",
+                            Docs = new List<CarouselViewModel> {new CarouselViewModel("/Content/images/people/kpk/recollections/",
                                                        Server.MapPath("/Content/images/people/kpk/recollections/"),
-                                                       "Воспоминания Клавдии Петровны", "")
+                                                       "Воспоминания Клавдии Петровны", ""),
+                                                new CarouselViewModel("/Content/images/people/kpk/docs/",
+                                                       Server.MapPath("/Content/images/people/kpk/docs/"),
+                                                       "Документы Клавдии Петровны", "")}
                         };
                 break;
                 case 2:
@@ -40,9 +43,9 @@ namespace T034.Controllers
                         {
                             FullName =
                                 "Переходник Борис Григорьевич - участник Великой Отечественной войны, преподаватель, зав.отделением Сталинградской-Волгоградской школы, училища культуры, заслуженный работник культуры РСФСР",
-                            Docs = new CarouselViewModel("/Content/images/people/perehodnik/",
+                            Docs = new List<CarouselViewModel> {new CarouselViewModel("/Content/images/people/perehodnik/",
                                                          Server.MapPath("/Content/images/people/perehodnik/"),
-                                                         "Документы Бориса Григорьевича", "")
+                                                         "Документы Бориса Григорьевича", "")}
                         };
                 break;
                 case 3:
@@ -50,9 +53,9 @@ namespace T034.Controllers
                         {
                             FullName =
                                 "Веденеев Геннадий Александрович - художественный руководитель, доцент кафедры режиссуры",
-                            Docs = new CarouselViewModel("/Content/images/people/vedeneev/",
+                            Docs = new List<CarouselViewModel> {new CarouselViewModel("/Content/images/people/vedeneev/",
                                                          Server.MapPath("/Content/images/people/vedeneev/"),
-                                                         "Документы Веденеева Геннадия Александровича", "")
+                                                         "Документы Веденеева Геннадия Александровича", "")}
                         };
                 break;
             }
