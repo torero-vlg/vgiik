@@ -8,5 +8,8 @@
 
 <h3>@Model.FullName</h3>
 @{
-    Html.RenderPartial("Carousel", Model.Docs);
+    foreach (var carousel in Model.Docs)
+    {
+        Html.RenderPartial("Carousel", carousel);
+    }
 }
