@@ -1,6 +1,8 @@
 ﻿using System.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Db;
+using Db.DataAccess;
 
 namespace T034
 {
@@ -9,8 +11,8 @@ namespace T034
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        //public static AbstractDbFactory DbFactory;
-        //public static IBaseDb Db;
+        public static AbstractDbFactory DbFactory;
+        public static IBaseDb Db;
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
@@ -33,9 +35,9 @@ namespace T034
         {
             AreaRegistration.RegisterAllAreas();
 
-            //DbFactory = new NhDbFactory(ConnectionString);
+            DbFactory = new NhDbFactory(ConnectionString);
 
-            //Db = DbFactory.CreateBaseDb();
+            Db = DbFactory.CreateBaseDb();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);

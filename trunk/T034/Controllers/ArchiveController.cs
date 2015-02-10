@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Db.DataAccess;
+using Db.Entity.Vgiik;
 using T034.ViewModel;
 
 namespace T034.Controllers
 {
     public class ArchiveController : Controller
     {
+        private readonly IBaseDb _db;
+
+        public ArchiveController()
+        {
+            _db = MvcApplication.DbFactory.CreateBaseDb();
+        }
+
         public ActionResult Person(int personId)
         {
             var model = GetPerson(personId);
@@ -21,43 +30,19 @@ namespace T034.Controllers
 
         private PersonViewModel GetPerson(int personId)
         {
-            PersonViewModel model = null;
+            var person = _db.Get<Person>(personId);
 
-            switch (personId)
+            PersonViewModel model = null;
+            if (person != null)
             {
-                case 1:
-                    model = new PersonViewModel
-                        { 
-                            FullName =
-                                "Кондрашова Клавдия Петровна - ветеран Великой Отечественной войны, преподаватель, и.о. директора, заведующая Сталинградской-Волгоградской школы, училища культуры",
-                            Docs = new List<CarouselViewModel> {new CarouselViewModel("/Content/images/people/kpk/recollections/",
-                                                       Server.MapPath("/Content/images/people/kpk/recollections/"),
-                                                       "Воспоминания Клавдии Петровны", ""),
-                                                new CarouselViewModel("/Content/images/people/kpk/docs/",
-                                                       Server.MapPath("/Content/images/people/kpk/docs/"),
-                                                       "Документы Клавдии Петровны", "")}
-                        };
-                break;
-                case 2:
-                    model = new PersonViewModel
-                        {
-                            FullName =
-                                "Переходник Борис Григорьевич - участник Великой Отечественной войны, преподаватель, зав.отделением Сталинградской-Волгоградской школы, училища культуры, заслуженный работник культуры РСФСР",
-                            Docs = new List<CarouselViewModel> {new CarouselViewModel("/Content/images/people/perehodnik/",
-                                                         Server.MapPath("/Content/images/people/perehodnik/"),
-                                                         "Документы Бориса Григорьевича", "")}
-                        };
-                break;
-                case 3:
-                    model = new PersonViewModel
-                        {
-                            FullName =
-                                "Веденеев Геннадий Александрович - художественный руководитель, доцент кафедры режиссуры",
-                            Docs = new List<CarouselViewModel> {new CarouselViewModel("/Content/images/people/vedeneev/",
-                                                         Server.MapPath("/Content/images/people/vedeneev/"),
-                                                         "Документы Веденеева Геннадия Александровича", "")}
-                        };
-                break;
+                model = new PersonViewModel
+                    {
+                        FullName =
+                            string.Format("{0} - {1}", person.FullName, person.Title),
+                        Docs = new List<CarouselViewModel>()
+                    };
+                model.Docs.AddRange(
+                    person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
             }
 
             return model;

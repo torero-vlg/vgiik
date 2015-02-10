@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Db.Entity.Vgiik.Person>
+
+@{
     ViewBag.Title = "Архив ВГИИК";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -15,9 +17,10 @@
     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
             <div class="list-group">
-                @Html.ActionLink("Кондрашова Клавдия Петровна", "Person", "Archive", new {personId = 1}, new {@class = "list-group-item"})
-                @Html.ActionLink("Переходник Борис Григорьевич", "Person", "Archive", new { personId = 2 }, new { @class = "list-group-item" })
-                @Html.ActionLink("Веденеев Геннадий Александрович", "Person", "Archive", new { personId = 3 }, new { @class = "list-group-item" })
+                @foreach (var person in Model)
+                {
+                    @Html.ActionLink(person.FullName, "Person", "Archive", new { personId = person.Id }, new { @class = "list-group-item" })    
+                }
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using Db.DataAccess;
+using Db.Entity.Vgiik;
 using T034.Tools;
 using T034.Tools.Auth;
 using T034.ViewModel;
@@ -10,6 +12,13 @@ namespace T034.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBaseDb _db;
+
+        public HomeController()
+        {
+            _db = MvcApplication.DbFactory.CreateBaseDb();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -24,7 +33,9 @@ namespace T034.Controllers
 
         public ActionResult Archive()
         {
-            return View();
+            var model = _db.Select<Person>();
+
+            return View(model);
         }
 
         public ActionResult Video()
