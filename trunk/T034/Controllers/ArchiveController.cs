@@ -39,7 +39,8 @@ namespace T034.Controllers
                     {
                         FullName =
                             string.Format("{0} - {1}", person.FullName, person.Title),
-                        Docs = new List<CarouselViewModel>()
+                        Docs = new List<CarouselViewModel>(),
+                        PersonId = person.Id
                     };
                 model.Docs.AddRange(
                     person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
