@@ -11,23 +11,8 @@ namespace T034.ViewModel
         public int PersonId { get; set; }
         public List<CarouselViewModel> Docs { get; set; }
 
-        public IEnumerable<string> Files 
-        {
-            get
-            {
-                IEnumerable<string> files = new List<string>();
-
-                try
-                {
-                    var directory = new DirectoryInfo(FilesFolder);
-                    files = directory.GetFiles().Select(f => f.Name);
-                }
-                catch (Exception ex)
-                {
-                }
-                return files;
-            } 
-        }
+        public IEnumerable<string> Files { get; set; }
+    
 
         public string FilesFolder
         {
