@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Db.DataAccess;
+using Db.Entity;
 using Db.Entity.Vgiik;
 using T034.ViewModel;
 
@@ -43,8 +44,12 @@ namespace T034.Controllers
                         Docs = new List<CarouselViewModel>(),
                         PersonId = person.Id
                     };
-                model.Docs.AddRange(
-                    person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
+                foreach (var album in person.Albums)
+                {
+                    var nodes = _db.Where<Node>(n => n.Folder == album.Path).Select(n => new NodeViewModel{Description = n.Description, Path = n.Path});
+                    model.Docs.Add(new CarouselViewModel(nodes, album.Name, ""));
+                }
+
                 IEnumerable<string> files = new List<string>();
 
                 try

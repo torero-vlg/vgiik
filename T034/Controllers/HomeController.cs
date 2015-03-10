@@ -49,11 +49,23 @@ namespace T034.Controllers
             //получить адрес сайта
             //string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
 
+            var directory = new DirectoryInfo(Server.MapPath("/Content/images/photo/dpi/"));
+            var files = directory.GetFiles().Select(f => f.Name);
+            var dpi = files.Select(file => new NodeViewModel {Path = "/Content/images/photo/dpi/" + file, Description = ""});
+
+            directory = new DirectoryInfo(Server.MapPath("/Content/images/photo/staropoltavka/"));
+            files = directory.GetFiles().Select(f => f.Name);
+            var staropoltavka = files.Select(file => new NodeViewModel { Path = "/Content/images/photo/staropoltavka/" + file, Description = "" });
+
+            directory = new DirectoryInfo(Server.MapPath("/Content/images/photo/24012015/"));
+            files = directory.GetFiles().Select(f => f.Name);
+            var nodes = files.Select(file => new NodeViewModel { Path = "/Content/images/photo/24012015/" + file, Description = "" });
+
             var model = new List<CarouselViewModel>
                 {
-                    new CarouselViewModel("/Content/images/photo/dpi/", Server.MapPath("/Content/images/photo/dpi/"), "Кафедра ДПИ"),
-                    new CarouselViewModel("/Content/images/photo/staropoltavka/", Server.MapPath("/Content/images/photo/staropoltavka/"), "Профориентация в Старополтавке"),
-                    new CarouselViewModel("/Content/images/photo/24012015/", Server.MapPath("/Content/images/photo/24012015/"), "")
+                    new CarouselViewModel(dpi, "Кафедра ДПИ"),
+                    new CarouselViewModel(staropoltavka, "Профориентация в Старополтавке"),
+                    new CarouselViewModel(nodes, "")
                 };
 
             return View(model);
