@@ -8,6 +8,10 @@
 
 <div class="text">
     @{
-        Html.RenderPartial("Carousel", new CarouselViewModel("/Content/images/sport/skd/", Server.MapPath("/Content/images/sport/skd/"), "Студенты факультета социально-культурной деятельности"));
+        var directory = new DirectoryInfo(Server.MapPath("/Content/images/sport/skd/"));
+        var files = directory.GetFiles().Select(f => f.Name);
+        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/skd/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты факультета социально-культурной деятельности"));
     }
 </div>

@@ -58,6 +58,8 @@
     <Compile Include="DataAccess\NhBaseDb.cs" />
     <Compile Include="DataAccess\NhBaseMessageDb.cs" />
     <Compile Include="DataAccess\IBaseMessageDb.cs" />
+    <Compile Include="Entity\Directory\NodeType.cs" />
+    <Compile Include="Entity\Node.cs" />
     <Compile Include="Entity\Administration\User.cs" />
     <Compile Include="Entity\Directory\DirectoryEntity.cs" />
     <Compile Include="Entity\Entity.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Entity\Vgiik\Person.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
+    <Compile Include="Mapping\NodeMap.cs" />
     <Compile Include="Mapping\Vgiik\PersonMap.cs" />
     <Compile Include="Mapping\Vgiik\AlbumMap.cs" />
     <Compile Include="NhDbFactory.cs" />
