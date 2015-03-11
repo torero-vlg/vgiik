@@ -31,6 +31,20 @@ body
     padding: 0 20px 0 20px;
 }
 
+.presentation
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/stend.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 480px;
+    padding: 20px 230px 100px 220px;
+}
+
+
 h3
 {
     font-size: 15px;
