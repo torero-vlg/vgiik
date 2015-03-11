@@ -10,6 +10,10 @@
 	<property name="build.configuration" value="Release"/>
 	<property name="tools" value="${main.dir}\Tools"/>
 	<property name="svnLocation" value="C:\Program Files\TortoiseSVN\bin\svn.exe"/>
+	<property name="Db.ProjectFile" value="${main.dir}\T034.Db\Db.csproj"/>
+	<property name="Db.DllFile" value="${main.dir}\T034.Db\bin\Release\Db.dll"/>
+	<property name="Deploy" value="${main.dir}\Deploy"/>
+	<property name="MigratorPath" value="${main.dir}\Deploy\migrator.exe"/>
 	
 	<target name="updateSvn" description="Update">
 	   <echo message="Обновляем исходники из репозитория" />
@@ -34,5 +38,32 @@
 		<copy todir="${publish.dir}\vgiik">
 			<fileset basedir="${out.dir}\_PublishedWebsites\vgiik"/>
 		</copy>
+	</target>
+		
+	<target name="updateDb" depends="">
+		<echo message="MSBuild Clean" />
+		<exec program="${MSBuildPath}">
+        	<arg line="${Db.ProjectFile}"/>
+			<arg line="/t:Clean"/>
+			<arg line="/verbosity:quiet"/>
+			<arg line="/nologo"/>
+		</exec>
+		
+		<echo message="MSBuild Build" />
+		<exec program="${MSBuildPath}">
+        	<arg line="${Db.ProjectFile}"/>
+			<arg line="/t:Build"/>
+			<arg line="/p:Configuration=${build.configuration}"/>
+			<arg line="/verbosity:quiet"/>
+			<arg line="/nologo"/>
+		</exec>
+		
+		<echo message="Копируем Db.dll для migrator.exe" />
+		<copy 
+			file="${Db.DllFile}" 
+			todir="${Deploy}"	/>
+		
+		<echo message="Запуск migrator.exe" />
+		<exec program="${MigratorPath}" commandline="-task update -dll ${Deploy}\Db.dll -db ${Deploy}\t034.sqlite" />
 	</target>
 </project>
