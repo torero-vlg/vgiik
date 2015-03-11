@@ -46,7 +46,7 @@ namespace T034.Controllers
                     };
                 foreach (var album in person.Albums)
                 {
-                    var nodes = _db.Where<Node>(n => n.Folder == album.Path).Select(n => new NodeViewModel{Description = n.Description, Path = n.Path});
+                    var nodes = album.Nodes.Select(n => new NodeViewModel{Description = n.Description, Path = n.Path});
                     model.Docs.Add(new CarouselViewModel(nodes, album.Name, ""));
                 }
 

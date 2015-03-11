@@ -13,6 +13,13 @@ namespace Db.Mapping.Vgiik
             Map(p => p.Path);
             References(p => p.Person).Column("PersonId")
                 .Not.LazyLoad();
+
+            HasManyToMany(p => p.Nodes)
+                .Table("AlbumNode")
+                .ParentKeyColumn("AlbumId")
+                .ChildKeyColumn("NodeId")
+                .Not.LazyLoad()
+                .Cascade.SaveUpdate();
         }
     }
 }

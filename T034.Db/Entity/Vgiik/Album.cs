@@ -1,4 +1,6 @@
-﻿namespace Db.Entity.Vgiik
+﻿using System.Collections.Generic;
+
+namespace Db.Entity.Vgiik
 {
     public class Album : Entity
     {
@@ -16,5 +18,7 @@
         /// Человек, которому принадлежит альбом
         /// </summary>
         public virtual Person Person { get; set; }
+
+        public virtual IList<Node> Nodes { get; set; }
     }
 }
