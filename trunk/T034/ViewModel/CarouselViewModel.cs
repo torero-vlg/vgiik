@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Db.Entity;
 
 namespace T034.ViewModel
 {
