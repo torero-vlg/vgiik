@@ -6,18 +6,5 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>@Model.FullName</h3>
 
-
-@for (var i = 0; i < Model.Files.Count(); i++)
-{
-    <p><a href="@Url.Content("~" + Model.FilesFolder + Model.Files.ToList()[i])" alt="...">@Model.Files.ToList()[i]</a></p>
-}
-
-
-@{
-    foreach (var carousel in Model.Docs)
-    {
-        Html.RenderPartial("Carousel", carousel);
-    }
-}
+@Html.Partial("Archive/Person", Model)
