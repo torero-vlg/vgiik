@@ -502,6 +502,7 @@
     <Content Include="Views\Archive\Person.cshtml" />
     <Content Include="Views\404.cshtml" />
     <Content Include="Views\Home\Rooms\Room0.cshtml" />
+    <Content Include="Views\Shared\Archive\Person.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

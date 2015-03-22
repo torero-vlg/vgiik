@@ -27,6 +27,11 @@ namespace T034.Controllers
             {
                 return View("../404.cshtml");
             }
+
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                return PartialView("Archive/Person", model);
+            }
             return View(model);
         }
 
