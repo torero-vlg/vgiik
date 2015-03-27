@@ -8,7 +8,7 @@
         <div class="col-xs-6 col-md-2 text-center">
         </div>
         <div class="col-xs-6 col-md-2 text-center">
-            <a href="#" data-toggle="modal" data-target="#myModal" class="thumbnail">
+            <a href="#" data-toggle="modal" data-target="#myModal" class="thumbnail" data-personid="16">
                 <img src="/Content/images/people/kruchek/4_1.jpg" alt="">
             </a>
             Крючек В.К.
@@ -99,11 +99,12 @@
 <script>
     $('#myModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
-        var recipient = button.data('whatever'); // Extract info from data-* attributes
+        var personid = button.data('personid'); // Extract info from data-* attributes
 
         
         $.ajax({
-          url: "@Url.Action("Person", "Archive", new { personId = 3 })",
+          url:"/Archive/Person?personId=" + personid,
+//              "@Url.Action("Person", "Archive", new { personId = 3 })",
           cache: false
         })
         .done(function (html) {
