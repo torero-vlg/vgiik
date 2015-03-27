@@ -49,11 +49,13 @@ namespace T034.Controllers
                         Docs = new List<CarouselViewModel>(),
                         PersonId = person.Id
                     };
-                foreach (var album in person.Albums)
-                {
-                    var nodes = album.Nodes.Select(n => new NodeViewModel{Description = n.Description, Path = n.Path});
-                    model.Docs.Add(new CarouselViewModel(nodes, album.Name, ""));
-                }
+                //foreach (var album in person.Albums)
+                //{
+                //    var nodes = album.Nodes.Select(n => new NodeViewModel { Description = n.Description, Path = n.Path });
+                //    model.Docs.Add(new CarouselViewModel(nodes, album.Name, ""));
+                //}
+                model.Docs.AddRange(
+                    person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
 
                 IEnumerable<string> files = new List<string>();
 
