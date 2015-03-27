@@ -33,7 +33,7 @@ namespace T034.Controllers
 
         public ActionResult Archive()
         {
-            var model = _db.Select<Person>();
+            var model = _db.Select<Person>().OrderBy(p => p.FullName);
 
             return View(model);
         }
