@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using Db.DataAccess;
 using Db.Entity;
 using Db.Entity.Vgiik;
@@ -74,6 +75,23 @@ namespace T034.Controllers
 
 
             return model;
+        }
+
+        public ActionResult Department(int departmentid)
+        {
+            Mapper.CreateMap<Department, DepartmentViewModel>();
+
+            var item = _db.Get<Department>(departmentid);
+
+            var model = new DepartmentViewModel();
+
+            Mapper.Map(item, model);
+
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                return PartialView("DepartmentPartialView", model);
+            }
+            return View(model);
         }
     }
 }

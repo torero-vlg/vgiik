@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.1.1.0.118\lib\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
@@ -108,6 +111,7 @@
     <Compile Include="Tools\FileUpload\ViewDataUploadFilesResult.cs" />
     <Compile Include="Tools\HttpTools.cs" />
     <Compile Include="Tools\SerializeTools.cs" />
+    <Compile Include="ViewModel\ArchiveViewModel.cs" />
     <Compile Include="ViewModel\CarouselViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\NodeViewModel.cs" />
@@ -502,6 +506,10 @@
     <Content Include="Views\404.cshtml" />
     <Content Include="Views\Home\Rooms\Room0.cshtml" />
     <Content Include="Views\Shared\Archive\Person.cshtml" />
+    <Content Include="Views\Shared\Archive\PersonList.cshtml" />
+    <Content Include="Views\Shared\Archive\PhotoList.cshtml" />
+    <Content Include="Views\Shared\Archive\DepartmentList.cshtml" />
+    <Content Include="Views\Archive\Department.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">
