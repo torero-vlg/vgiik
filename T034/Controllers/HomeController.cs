@@ -33,8 +33,15 @@ namespace T034.Controllers
 
         public ActionResult Archive()
         {
-            var model = _db.Select<Person>().OrderBy(p => p.FullName);
+            var model = new ArchiveViewModel
+                {
+                    Persons = _db.Select<Person>().OrderBy(p => p.FullName).ToList(),
+                    Departments = _db.Select<Department>()
+                        .Select(d => new DepartmentViewModel{Id = d.Id, Name = d.Name})
+                        .ToList()
+                };
 
+            
             return View(model);
         }
 

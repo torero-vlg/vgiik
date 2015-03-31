@@ -4,6 +4,8 @@ namespace T034.ViewModel
 {
     public class DepartmentViewModel
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public List<string> Staff { get; set; }
