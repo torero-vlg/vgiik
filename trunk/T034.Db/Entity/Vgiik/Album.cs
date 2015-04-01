@@ -19,6 +19,11 @@ namespace Db.Entity.Vgiik
         /// </summary>
         public virtual Person Person { get; set; }
 
+        /// <summary>
+        /// Отдел, которому принадлежит альбом
+        /// </summary>
+        public virtual Department Department { get; set; }
+
         public virtual IList<Node> Nodes { get; set; }
     }
 }

@@ -79,13 +79,20 @@ namespace T034.Controllers
 
         public ActionResult Department(int departmentid)
         {
-            Mapper.CreateMap<Department, DepartmentViewModel>();
+            Mapper.CreateMap<Department, DepartmentViewModel>()
+                .ForMember(x => x.Albums, t => t.Ignore());
+
 
             var item = _db.Get<Department>(departmentid);
 
             var model = new DepartmentViewModel();
 
             Mapper.Map(item, model);
+
+
+            model.Albums = new List<CarouselViewModel>();
+            model.Albums.AddRange(
+                item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
 
             if (HttpContext.Request.IsAjaxRequest())
             {

@@ -12,7 +12,9 @@ namespace Db.Mapping.Vgiik
             Map(p => p.Name);
             Map(p => p.Text);
             Map(p => p.MainPhoto);
-            HasMany(x => x.Albums).KeyColumn("PersonId").Not.LazyLoad();
+            Map(p => p.MainPhotoDescription);
+
+            HasMany(x => x.Albums).KeyColumn("DepartmentId").Not.LazyLoad();
 
             HasManyToMany(p => p.Staff)
                 .Table("PersonDepartment")
