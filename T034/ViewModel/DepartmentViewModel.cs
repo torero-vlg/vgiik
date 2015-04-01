@@ -4,6 +4,11 @@ namespace T034.ViewModel
 {
     public class DepartmentViewModel
     {
+        public DepartmentViewModel()
+        {
+            Albums = new List<CarouselViewModel>();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
