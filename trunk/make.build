@@ -38,6 +38,13 @@
 		<copy todir="${publish.dir}\vgiik">
 			<fileset basedir="${out.dir}\_PublishedWebsites\vgiik"/>
 		</copy>
+		<delete>
+			<fileset>
+				<include name="${publish.dir}\vgiik\bin\*.pdb" />
+				<include name="${publish.dir}\vgiik\bin\*.xml" />
+				<include name="${publish.dir}\vgiik\bin\*.png" />
+			</fileset>
+		</delete>
 	</target>
 		
 	<target name="updateDb" depends="">

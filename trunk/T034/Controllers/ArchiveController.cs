@@ -90,7 +90,6 @@ namespace T034.Controllers
             Mapper.Map(item, model);
 
 
-            model.Albums = new List<CarouselViewModel>();
             model.Albums.AddRange(
                 item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
 
