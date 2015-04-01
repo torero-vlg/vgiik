@@ -12,6 +12,8 @@ namespace Db.Entity.Vgiik
 
         public virtual string MainPhoto { get; set; }
 
+        public virtual string MainPhotoDescription { get; set; }
+
         /// <summary>
         /// Список альбомов
         /// </summary>

@@ -13,6 +13,8 @@ namespace Db.Mapping.Vgiik
             Map(p => p.Path);
             References(p => p.Person).Column("PersonId")
                 .Not.LazyLoad();
+            References(p => p.Department).Column("DepartmentId")
+                .Not.LazyLoad();
 
             HasManyToMany(p => p.Nodes)
                 .Table("AlbumNode")

@@ -13,5 +13,8 @@ namespace T034.ViewModel
         public string Text { get; set; }
 
         public string MainPhoto { get; set; }
+        public string MainPhotoDescription { get; set; }
+
+        public List<CarouselViewModel> Albums { get; set; }
     }
 }
