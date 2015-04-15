@@ -112,9 +112,10 @@
     <Compile Include="Tools\HttpTools.cs" />
     <Compile Include="Tools\SerializeTools.cs" />
     <Compile Include="ViewModel\ArchiveViewModel.cs" />
-    <Compile Include="ViewModel\CarouselViewModel.cs" />
+    <Compile Include="ViewModel\Common\CarouselViewModel.cs" />
+    <Compile Include="ViewModel\Common\VideoViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
-    <Compile Include="ViewModel\NodeViewModel.cs" />
+    <Compile Include="ViewModel\Common\NodeViewModel.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
