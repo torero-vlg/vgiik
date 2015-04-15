@@ -15,3 +15,12 @@
         Html.RenderPartial("Carousel", carousel);
     }
 }
+<br>
+<div class="text text-center">
+@{
+    foreach (var video in Model.Videos)
+    {
+       <iframe width="@video.Width" height="@video.Height" src="@video.Source" frameborder="0" allowfullscreen></iframe>
+    }
+}
+</div>

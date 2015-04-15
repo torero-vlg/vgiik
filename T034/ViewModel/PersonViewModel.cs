@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
+using T034.ViewModel.Common;
 
 namespace T034.ViewModel
 {
@@ -12,6 +10,7 @@ namespace T034.ViewModel
         public List<CarouselViewModel> Docs { get; set; }
 
         public IEnumerable<string> Files { get; set; }
+        public IEnumerable<VideoViewModel> Videos { get; set; }
     
 
         public string FilesFolder

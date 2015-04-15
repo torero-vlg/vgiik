@@ -9,6 +9,7 @@ using Db.DataAccess;
 using Db.Entity;
 using Db.Entity.Vgiik;
 using T034.ViewModel;
+using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
@@ -72,7 +73,8 @@ namespace T034.Controllers
                 model.Files = files;
             }
 
-
+            if(personId == 24)
+                model.Videos = new List<VideoViewModel> { new VideoViewModel { Width = "420", Height = "315", Source = "https://www.youtube.com/embed/c_obyoeuPGo" } };
 
             return model;
         }
