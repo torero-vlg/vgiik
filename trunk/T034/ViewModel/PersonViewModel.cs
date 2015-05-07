@@ -5,6 +5,11 @@ namespace T034.ViewModel
 {
     public class PersonViewModel
     {
+        public PersonViewModel()
+        {
+            Videos = new List<VideoViewModel>();
+        }
+
         public string FullName { get; set; }
         public int PersonId { get; set; }
         public List<CarouselViewModel> Docs { get; set; }
