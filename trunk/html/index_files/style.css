@@ -57,6 +57,19 @@ body
     padding: 30px 66px 100px 66px;
 }
 
+.books
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/books.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 900px;
+    padding: 30px 66px 100px 66px;
+}
+
 .perekid
 {
     font-size: 13px;
