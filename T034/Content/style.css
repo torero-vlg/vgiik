@@ -203,3 +203,68 @@ textarea
 {
     display: none;
 }
+
+.shirma
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/shstend.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 700px;
+    padding: 30px 66px 100px 66px;
+}
+
+.books
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/books.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 900px;
+    padding: 30px 66px 100px 66px;
+}
+
+.perekid
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/psystem.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 578px;
+    padding: 40px 30px 40px 80px;
+}
+
+.bstand
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/bstand.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 1130px;
+    padding: 60px 135px 240px 140px;
+}
+
+.vitrina
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/vitrina.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 1000px;
+    padding: 0 0 0 0;
+}
