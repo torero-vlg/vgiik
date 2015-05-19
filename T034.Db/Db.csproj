@@ -68,12 +68,14 @@
     <Compile Include="Entity\Vgiik\Album.cs" />
     <Compile Include="Entity\Vgiik\Department.cs" />
     <Compile Include="Entity\Vgiik\Person.cs" />
+    <Compile Include="Entity\Vgiik\Publication.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
     <Compile Include="Mapping\NodeMap.cs" />
     <Compile Include="Mapping\Vgiik\DepartmentMap.cs" />
     <Compile Include="Mapping\Vgiik\PersonMap.cs" />
     <Compile Include="Mapping\Vgiik\AlbumMap.cs" />
+    <Compile Include="Mapping\Vgiik\PublicationMap.cs" />
     <Compile Include="NhDbFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\MonitorLog.cs" />

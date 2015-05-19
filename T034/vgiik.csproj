@@ -99,6 +99,7 @@
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MuseumController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -117,6 +118,7 @@
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\Common\NodeViewModel.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
+    <Compile Include="ViewModel\PublicationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -866,6 +868,8 @@
     <Content Include="Views\Shared\Archive\PhotoList.cshtml" />
     <Content Include="Views\Shared\Archive\DepartmentList.cshtml" />
     <Content Include="Views\Archive\Department.cshtml" />
+    <Content Include="Views\Shared\Museum\Publication.cshtml" />
+    <Content Include="Views\Museum\Publication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">
