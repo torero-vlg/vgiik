@@ -95,6 +95,19 @@ namespace T034.Controllers
             model.Albums.AddRange(
                 item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
 
+			IEnumerable<string> files = new List<string>();
+
+			try
+			{
+				var directory = new DirectoryInfo(Server.MapPath(model.FilesFolder));
+				files = directory.GetFiles().Select(f => f.Name);
+			}
+			catch (Exception ex)
+			{
+			}
+
+			model.Files = files;
+				
             if (HttpContext.Request.IsAjaxRequest())
             {
                 return PartialView("DepartmentPartialView", model);
