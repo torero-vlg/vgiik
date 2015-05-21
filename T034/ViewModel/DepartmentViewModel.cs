@@ -21,5 +21,11 @@ namespace T034.ViewModel
         public string MainPhotoDescription { get; set; }
 
         public List<CarouselViewModel> Albums { get; set; }
+		
+		public IEnumerable<string> Files { get; set; }
+		public string FilesFolder
+        {
+            get { return string.Format("/Content/images/department/{0}/files/", Id); }
+        }
     }
 }
