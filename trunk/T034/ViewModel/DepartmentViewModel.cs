@@ -7,6 +7,7 @@ namespace T034.ViewModel
         public DepartmentViewModel()
         {
             Albums = new List<CarouselViewModel>();
+            Files = new List<string>();
         }
 
         public int Id { get; set; }
