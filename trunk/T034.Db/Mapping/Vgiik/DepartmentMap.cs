@@ -22,6 +22,13 @@ namespace Db.Mapping.Vgiik
                 .ChildKeyColumn("PersonId")
                 .Not.LazyLoad()
                 .Cascade.SaveUpdate();
+
+            HasManyToMany(p => p.Nodes)
+                .Table("DepartmentNode")
+                .ParentKeyColumn("DepartmentId")
+                .ChildKeyColumn("NodeId")
+                .Not.LazyLoad()
+                .Cascade.SaveUpdate();
         }
     }
 }

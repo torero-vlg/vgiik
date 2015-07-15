@@ -98,8 +98,10 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MuseumController.cs" />
+    <Compile Include="Controllers\NodeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -401,6 +403,13 @@
     <Content Include="Views\Archive\Department.cshtml" />
     <Content Include="Views\Shared\Museum\Publication.cshtml" />
     <Content Include="Views\Museum\Publication.cshtml" />
+    <Content Include="Views\Node\AddOrEdit.cshtml" />
+    <Content Include="Views\Node\List.cshtml" />
+    <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Department\AddOrEdit.cshtml" />
+    <Content Include="Views\Shared\ErrorMessage.cshtml" />
+    <Content Include="Views\Shared\ServerError.cshtml" />
+    <Content Include="Views\Shared\SuccessMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

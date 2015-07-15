@@ -7,8 +7,8 @@ namespace Db.Entity.Directory
 {
     public enum NodeType
     {
-        Uri = 1,
-        Picture = 2,
-        Document = 3
+        Picture = 1,
+        Document = 2,
+        Video = 3
     }
 }

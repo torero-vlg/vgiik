@@ -1,0 +1,26 @@
+﻿@model T034.ViewModel.DepartmentViewModel
+
+@{
+    ViewBag.Title = "Редактирование подразделения";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddOrEdit", "Department"))
+{
+    <div class="control-group warning">
+        <label class="control-label">@Html.LabelFor(m => m.Name)</label>
+        <div>
+            @Html.TextBoxFor(m => m.Name, new Dictionary<string, object> { { "class", "input-xxlarge" } })
+            @Html.HiddenFor(m => m.Id)
+        </div>
+        
+        <label class="control-label">@Html.LabelFor(m => m.Nodes)</label>
+        <div>
+            @Html.TextBoxFor(m => m.Nodes, new Dictionary<string, object> { { "class", "input-xxlarge" } })
+        </div>
+
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    </div>
+}

@@ -7,6 +7,7 @@ using Db.Entity.Vgiik;
 using T034.Tools;
 using T034.Tools.Auth;
 using T034.ViewModel;
+using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
@@ -82,12 +83,12 @@ namespace T034.Controllers
             
             var model = new List<CarouselViewModel>
                 {
-                    new CarouselViewModel(dpi, "Кафедра ДПИ"),
-                    new CarouselViewModel(staropoltavka, "Профориентация в Старополтавке"),
-                    new CarouselViewModel(nodes, ""),
-                    new CarouselViewModel(summer2012, "Лето - 2012"),
-                    new CarouselViewModel(autumn2012, "Осень - 2012"),
-                    new CarouselViewModel(motorship2013, "Теплоход - 2013")
+                    new CarouselViewModel(dpi, "Кафедра ДПИ", ""),
+                    new CarouselViewModel(staropoltavka, "Профориентация в Старополтавке", ""),
+                    new CarouselViewModel(nodes, "", ""),
+                    new CarouselViewModel(summer2012, "Лето - 2012", ""),
+                    new CarouselViewModel(autumn2012, "Осень - 2012", ""),
+                    new CarouselViewModel(motorship2013, "Теплоход - 2013", "")
                 };
 
             return View(model);

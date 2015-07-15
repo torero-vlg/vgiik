@@ -18,5 +18,10 @@ namespace Db.Entity.Vgiik
         /// Список альбомов
         /// </summary>
         public virtual IList<Album> Albums { get; set; }
+
+        /// <summary>
+        /// Список публикаций
+        /// </summary>
+        public virtual ICollection<Node> Nodes { get; set; }
     }
 }
