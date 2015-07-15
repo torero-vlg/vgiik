@@ -28,5 +28,7 @@ namespace T034.ViewModel
         {
             get { return string.Format("/Content/images/department/{0}/files/", Id); }
         }
+
+        public string Nodes { get; set; }
     }
 }
