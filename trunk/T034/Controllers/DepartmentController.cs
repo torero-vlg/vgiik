@@ -24,7 +24,7 @@ namespace T034.Controllers
                 .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => src.Nodes == null || !src.Nodes.Any() ? "" : src.Nodes.Select(n => n.Id.ToString()).Aggregate((i, j) => i.ToString() + "," + j.ToString())))
                 .ForMember(dest => dest.Albums, opt => opt.Ignore());
             Mapper.CreateMap<DepartmentViewModel, Department>()
-                .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => new List<Node>(src.Nodes.Split(new [] { ','}).Select(n => new Node{Id = Convert.ToInt32(n)}))));
+                .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => new List<Node>(src.Nodes.Split(new string[] { "," }, StringSplitOptions.None).Select(n => new Node { Id = Convert.ToInt32(n) }))));
         }
 
         public ActionResult List()
@@ -66,8 +66,8 @@ namespace T034.Controllers
             {
                 item = _db.Get<Department>(model.Id);
             }
-
-            var newItem = Mapper.Map(model, item);
+            var newItem = new Department();
+            newItem = Mapper.Map(model, newItem);
 
             item.Nodes = newItem.Nodes;
 

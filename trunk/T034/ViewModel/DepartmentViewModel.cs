@@ -8,6 +8,7 @@ namespace T034.ViewModel
         {
             Albums = new List<CarouselViewModel>();
             Files = new List<string>();
+            Videos = new List<string>();
         }
 
         public int Id { get; set; }
@@ -30,5 +31,7 @@ namespace T034.ViewModel
         }
 
         public string Nodes { get; set; }
+
+        public IEnumerable<string> Videos { get; set; }
     }
 }
