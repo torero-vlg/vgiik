@@ -7,6 +7,7 @@ using AutoMapper;
 using Db.DataAccess;
 using Db.Entity;
 using Db.Entity.Directory;
+using Microsoft.Security.Application;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 
@@ -23,7 +24,8 @@ namespace T034.Controllers
             Mapper.CreateMap<Node, NodeViewModel>()
                 .ForMember(dest => dest.NodeTypeId, opt => opt.MapFrom(src => (int)src.NodeType));
             Mapper.CreateMap<NodeViewModel, Node>()
-                .ForMember(dest => dest.NodeType, opt => opt.MapFrom(src => (NodeType)src.NodeTypeId));
+                .ForMember(dest => dest.NodeType, opt => opt.MapFrom(src => (NodeType)src.NodeTypeId))
+                .ForMember(dest => dest.Path, opt => opt.MapFrom(src => Sanitizer.GetSafeHtmlFragment(src.Path)));
         }
 
         [HttpGet]

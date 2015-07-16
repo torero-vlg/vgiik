@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using Db.DataAccess;
 using Db.Entity;
+using Db.Entity.Directory;
 using Db.Entity.Vgiik;
 using T034.ViewModel;
 using T034.ViewModel.Common;
@@ -20,6 +21,12 @@ namespace T034.Controllers
         public ArchiveController()
         {
             _db = MvcApplication.DbFactory.CreateBaseDb();
+
+            Mapper.CreateMap<Department, DepartmentViewModel>()
+                .ForMember(x => x.Albums, t => t.Ignore())
+                .ForMember(dest => dest.Videos, opt=> opt.MapFrom(src => src.Nodes
+                    .Where(n => n.NodeType == NodeType.Video)
+                    .Select(n => n.Path)));
         }
 
         public ActionResult Person(int personId)
@@ -81,8 +88,7 @@ namespace T034.Controllers
 
         public ActionResult Department(int departmentid)
         {
-            Mapper.CreateMap<Department, DepartmentViewModel>()
-                .ForMember(x => x.Albums, t => t.Ignore());
+
 
 
             var item = _db.Get<Department>(departmentid);

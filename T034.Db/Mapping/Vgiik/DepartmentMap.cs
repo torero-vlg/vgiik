@@ -27,8 +27,8 @@ namespace Db.Mapping.Vgiik
                 .Table("DepartmentNode")
                 .ParentKeyColumn("DepartmentId")
                 .ChildKeyColumn("NodeId")
-                .Not.LazyLoad()
-                .Cascade.SaveUpdate();
+                .Not.LazyLoad();
+                //.Cascade.SaveUpdate();
         }
     }
 }
