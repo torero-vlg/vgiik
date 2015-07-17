@@ -11,6 +11,7 @@ namespace T034.ViewModel.Common
         /// <summary>
         /// Путь к файлу, url и тд
         /// </summary>
+        [AllowHtml]
         public string Path { get; set; }
 
         /// <summary>

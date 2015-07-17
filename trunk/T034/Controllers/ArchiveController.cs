@@ -21,12 +21,6 @@ namespace T034.Controllers
         public ArchiveController()
         {
             _db = MvcApplication.DbFactory.CreateBaseDb();
-
-            Mapper.CreateMap<Department, DepartmentViewModel>()
-                .ForMember(x => x.Albums, t => t.Ignore())
-                .ForMember(dest => dest.Videos, opt=> opt.MapFrom(src => src.Nodes
-                    .Where(n => n.NodeType == NodeType.Video)
-                    .Select(n => n.Path)));
         }
 
         public ActionResult Person(int personId)

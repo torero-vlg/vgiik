@@ -19,12 +19,7 @@ namespace T034.Controllers
             _db = MvcApplication.DbFactory.CreateBaseDb();
 
 
-            //нужен мап для DepartmentViewModel.Nodes - NodeId через заяпятую (пока так)
-            Mapper.CreateMap<Department, DepartmentViewModel>()
-                .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => src.Nodes == null || !src.Nodes.Any() ? "" : src.Nodes.Select(n => n.Id.ToString()).Aggregate((i, j) => i.ToString() + "," + j.ToString())))
-                .ForMember(dest => dest.Albums, opt => opt.Ignore());
-            Mapper.CreateMap<DepartmentViewModel, Department>()
-                .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => new List<Node>(src.Nodes.Split(new string[] { "," }, StringSplitOptions.None).Select(n => new Node { Id = Convert.ToInt32(n) }))));
+            
         }
 
         public ActionResult List()
