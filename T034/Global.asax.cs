@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Db;
 using Db.DataAccess;
+using T034.ViewModel.AutoMapper;
 
 namespace T034
 {
@@ -41,6 +42,8 @@ namespace T034
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            AutoMapperWebConfiguration.Configure();
         }
 
         private static string ConnectionString { get { return ConfigurationManager.ConnectionStrings["DatabaseFile"].ConnectionString; } }

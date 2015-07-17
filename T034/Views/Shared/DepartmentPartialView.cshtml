@@ -51,6 +51,6 @@
 <div class="text text-center">
     @for (var i = 0; i < Model.Videos.Count(); i++)
     {
-        @Model.Videos.ToList()[i]
+        @Html.Raw(@Model.Videos.ToList()[i])
     }
 </div>
