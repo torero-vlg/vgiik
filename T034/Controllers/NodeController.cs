@@ -29,7 +29,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new NodeViewModel();
@@ -49,7 +49,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        //[AuthorizeUser]
+        [Authorize]
         public ActionResult AddOrEdit(NodeViewModel model)
         {
             var item = new Node();

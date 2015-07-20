@@ -41,7 +41,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new DepartmentViewModel();
@@ -54,7 +54,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        //[AuthorizeUser]
+        [Authorize]
         public ActionResult AddOrEdit(DepartmentViewModel model)
         {
             var item = new Department();
