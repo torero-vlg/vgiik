@@ -7,18 +7,30 @@
 
 @using (Html.BeginForm("AddOrEdit", "Department"))
 {
-    <div class="control-group warning">
-        <label class="control-label">@Html.LabelFor(m => m.Name)</label>
-        <div>
-            @Html.TextBoxFor(m => m.Name, new Dictionary<string, object> { { "class", "input-xxlarge" } })
-            @Html.HiddenFor(m => m.Id)
-        </div>
-        
-        <label class="control-label">@Html.LabelFor(m => m.Nodes)</label>
-        <div>
-            @Html.TextBoxFor(m => m.Nodes, new Dictionary<string, object> { { "class", "input-xxlarge" } })
-        </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.HiddenFor(m => m.Id)
+    </div>
 
+    <div class="form-group">
+        @Html.LabelFor(m => m.MainPhoto)
+        @Html.TextBoxFor(m => m.MainPhoto, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MainPhotoDescription)
+        @Html.TextBoxFor(m => m.MainPhotoDescription, new { @class = "form-control" })
+    </div>
+        
+    <div class="form-group">
+        @Html.LabelFor(m => m.Text)
+        @Html.TextBoxFor(m => m.Text, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nodes)
+        @Html.TextBoxFor(m => m.Nodes, new { @class = "form-control" })
     </div>
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Сохранить изменения</button>

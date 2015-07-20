@@ -18,7 +18,7 @@ namespace T034.ViewModel.AutoMapper
                 .ForMember(dest => dest.Videos, opt => opt.MapFrom(src => src.Nodes.Where(n => n.NodeType == NodeType.Video).Select(n => n.Path)));
 
             Mapper.CreateMap<DepartmentViewModel, Department>()
-                .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => new List<Node>(src.Nodes.Split(new string[] { "," }, StringSplitOptions.None).Select(n => new Node { Id = Convert.ToInt32(n) }))));
+                .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => string.IsNullOrEmpty(src.Nodes) ? null : new List<Node>(src.Nodes.Split(new string[] { "," }, StringSplitOptions.None).Select(n => new Node { Id = Convert.ToInt32(n) }))));
         }
     }
 }
