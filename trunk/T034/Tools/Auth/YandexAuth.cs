@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using System.Web.Security;
 using T034.Models;
 
 namespace T034.Tools.Auth
@@ -30,6 +31,8 @@ namespace T034.Tools.Auth
                 Value = model.access_token,
                 Expires = DateTime.Now.AddDays(30)
             };
+
+            FormsAuthentication.SetAuthCookie(model.access_token, true);
 
             return userCookie;
         }
