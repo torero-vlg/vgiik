@@ -43,6 +43,9 @@ namespace T034.ViewModel
 
         [DisplayName("Публикации")]
         public string Nodes { get; set; }
+        
+        [DisplayName("Альбомы")]
+        public string AlbumsIds { get; set; }
 
         public IEnumerable<string> Videos { get; set; }
     }
