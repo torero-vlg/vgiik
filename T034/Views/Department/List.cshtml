@@ -8,7 +8,7 @@
 @{
     foreach (var news in Model)
     {
-        <p>@Html.Display(news.Name)</p>
+        <p>@news.Name</p>
         <p>@Html.ActionLink("Редактировать", "AddOrEdit", new { id = news.Id })</p>
     }
 }

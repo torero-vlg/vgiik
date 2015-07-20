@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
@@ -61,15 +62,55 @@ namespace T034.Controllers
             {
                 item = _db.Get<Department>(model.Id);
             }
-            var newItem = new Department();
-            newItem = Mapper.Map(model, newItem);
-
-            item.Nodes = newItem.Nodes;
+            item = Mapper.Map(model, item);
 
             var result = _db.SaveOrUpdate(item);
 
             return RedirectToAction("List");
         }
 
+        public ActionResult Index(int departmentid)
+        {
+            var model = GetDepartment(departmentid);
+
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                return PartialView("DepartmentPartialView", model);
+            }
+            return View(model);
+        }
+
+        public ActionResult Preview(int departmentid)
+        {
+            var model = GetDepartment(departmentid);
+            return PartialView("Department/DepartmentPreview", model);
+        }
+
+        private DepartmentViewModel GetDepartment(int departmentid)
+        {
+            var item = _db.Get<Department>(departmentid);
+
+            var model = new DepartmentViewModel();
+
+            Mapper.Map(item, model);
+
+
+            model.Albums.AddRange(
+                item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
+
+            IEnumerable<string> files = new List<string>();
+
+            try
+            {
+                var directory = new DirectoryInfo(Server.MapPath(model.FilesFolder));
+                files = directory.GetFiles().Select(f => f.Name);
+            }
+            catch (Exception ex)
+            {
+            }
+
+            model.Files = files;
+            return model;
+        }
     }
 }
