@@ -94,10 +94,6 @@ namespace T034.Controllers
 
             Mapper.Map(item, model);
 
-
-            model.Albums.AddRange(
-                item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
-
             IEnumerable<string> files = new List<string>();
 
             try

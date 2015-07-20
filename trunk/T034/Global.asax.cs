@@ -43,7 +43,7 @@ namespace T034
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            AutoMapperWebConfiguration.Configure();
+            AutoMapperWebConfiguration.Configure(Server);
         }
 
         private static string ConnectionString { get { return ConfigurationManager.ConnectionStrings["DatabaseFile"].ConnectionString; } }
