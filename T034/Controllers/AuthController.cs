@@ -6,11 +6,11 @@ namespace T034.Controllers
 {
     public class AuthController : Controller
     {
-        public ActionResult LoginWithYandex()
+        public ActionResult LoginWithYandex(string code)
         {
-            var model = YandexAuth.GetToken(Request);
+//            var userCookie = YandexAuth.GetAuthorizationCookie(Request);
+            var userCookie = YandexAuth.GetAuthorizationCookie(code);
 
-            var userCookie = YandexAuth.TokenCookie(model);
             Response.Cookies.Set(userCookie);
 
             return RedirectToActionPermanent("Index", "Home");

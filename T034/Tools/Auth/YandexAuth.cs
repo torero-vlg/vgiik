@@ -12,20 +12,15 @@ namespace T034.Tools.Auth
 
         public const string InfoUrl = "https://login.yandex.ru/info";
 
-        public static TokenModel GetToken(HttpRequestBase request)
+        public static HttpCookie GetAuthorizationCookie(string code)
         {
-            var code = request.QueryString["code"];
+            //var code = request.QueryString["code"];
 
             var stream = HttpTools.PostStream("https://oauth.yandex.ru/token",
                 string.Format("grant_type=authorization_code&code={0}&client_id={1}&client_secret={2}", code, ClientId, Password));
 
             var model = SerializeTools.Deserialize<TokenModel>(stream);
 
-            return model;
-        }
-
-        public static HttpCookie TokenCookie(TokenModel model)
-        {
             var userCookie = new HttpCookie("yandex_token")
             {
                 Value = model.access_token,

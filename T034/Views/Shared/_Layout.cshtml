@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using T034.Models
+@using T034.Tools.Auth
+<!DOCTYPE html>
 <html>
 <head>
     <title>@ViewBag.Title</title>
@@ -18,6 +20,12 @@
 </head>
 
     <body>
+        
+        @{
+            var userModel = YandexAuth.GetUser(Request);
+        }
+        @Html.Partial("AuthPartialView", userModel)
+        
         <div class="container">
             <div><a href="http://архиввгиик.рф"><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></a></div>
             <!--Begin MainMenu-->
