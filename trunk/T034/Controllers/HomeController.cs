@@ -25,13 +25,6 @@ namespace T034.Controllers
             return View();
         }
 
-        public ActionResult Auth()
-        {
-            var model = YandexAuth.GetUser(Request);
-
-            return PartialView("AuthPartialView", model);
-        }
-
         public ActionResult Archive()
         {
             var model = new ArchiveViewModel
