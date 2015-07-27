@@ -8,7 +8,7 @@ namespace Db.DataAccess
 {
     public class NhBaseDb : IBaseDb
     {
-        protected readonly ISessionFactory Factory;
+        protected ISessionFactory Factory;
 
         public NhBaseDb(ISessionFactory sessionFactory)
         {

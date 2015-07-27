@@ -2,28 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
-using AutoMapper;
-using Db.DataAccess;
-using Db.Entity;
-using Db.Entity.Directory;
 using Db.Entity.Vgiik;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
-    public class ArchiveController : Controller
+    public class ArchiveController : BaseController
     {
-        private readonly IBaseDb _db;
-
-        public ArchiveController()
-        {
-            _db = MvcApplication.DbFactory.CreateBaseDb();
-        }
-
         public ActionResult Person(int personId)
         {
             var model = GetPerson(personId);
@@ -41,7 +28,7 @@ namespace T034.Controllers
 
         private PersonViewModel GetPerson(int personId)
         {
-            var person = _db.Get<Person>(personId);
+            var person = Db.Get<Person>(personId);
 
             PersonViewModel model = null;
             if (person != null)

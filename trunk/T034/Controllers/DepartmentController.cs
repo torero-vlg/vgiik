@@ -11,23 +11,13 @@ using T034.ViewModel;
 
 namespace T034.Controllers
 {
-    public class DepartmentController : Controller
+    public class DepartmentController : BaseController
     {
-        private readonly IBaseDb _db;
-
-        public DepartmentController()
-        {
-            _db = MvcApplication.DbFactory.CreateBaseDb();
-
-
-            
-        }
-
         public ActionResult List()
         {
             try
             {
-                var items = _db.Select<Department>();
+                var items = Db.Select<Department>();
 
                 var model = new List<DepartmentViewModel>();
                 model = Mapper.Map(items, model);
@@ -47,24 +37,24 @@ namespace T034.Controllers
             var model = new DepartmentViewModel();
             if (id.HasValue)
             {
-                var item = _db.Get<Department>(id.Value);
+                var item = Db.Get<Department>(id.Value);
                 model = Mapper.Map(item, model);
             }
 
             return View(model);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator")]
         public ActionResult AddOrEdit(DepartmentViewModel model)
         {
             var item = new Department();
             if (model.Id > 0)
             {
-                item = _db.Get<Department>(model.Id);
+                item = Db.Get<Department>(model.Id);
             }
             item = Mapper.Map(model, item);
 
-            var result = _db.SaveOrUpdate(item);
+            var result = Db.SaveOrUpdate(item);
 
             return RedirectToAction("List");
         }
@@ -88,7 +78,7 @@ namespace T034.Controllers
 
         private DepartmentViewModel GetDepartment(int departmentid)
         {
-            var item = _db.Get<Department>(departmentid);
+            var item = Db.Get<Department>(departmentid);
 
             var model = new DepartmentViewModel();
 

@@ -1,3 +1,10 @@
+using System.Configuration;
+using Db;
+using Db.DataAccess;
+using NHibernate;
+using T034.Repository;
+using T034.Tools.Auth;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(T034.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(T034.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +68,12 @@ namespace T034.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+            kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();
+
+            kernel.Bind<IBaseDb>().ToMethod(c => new NhDbFactory(ConnectionString).CreateBaseDb());
+            kernel.Bind<IRepository>().To<Repository.Repository>().InRequestScope();
+        }
+
+        private static string ConnectionString { get { return ConfigurationManager.ConnectionStrings["DatabaseFile"].ConnectionString; } }
     }
 }
