@@ -2,24 +2,14 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using Db.DataAccess;
 using Db.Entity.Vgiik;
-using T034.Tools;
-using T034.Tools.Auth;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly IBaseDb _db;
-
-        public HomeController()
-        {
-            _db = MvcApplication.DbFactory.CreateBaseDb();
-        }
-
         public ActionResult Index()
         {
             return View();
@@ -29,8 +19,8 @@ namespace T034.Controllers
         {
             var model = new ArchiveViewModel
                 {
-                    Persons = _db.Select<Person>().OrderBy(p => p.FullName).ToList(),
-                    Departments = _db.Select<Department>()
+                    Persons = Db.Select<Person>().OrderBy(p => p.FullName).ToList(),
+                    Departments = Db.Select<Department>()
                         .Select(d => new DepartmentViewModel{Id = d.Id, Name = d.Name})
                         .ToList()
                 };

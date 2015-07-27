@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using T034.Tools.Auth;
 
 namespace T034.Controllers
@@ -11,6 +12,7 @@ namespace T034.Controllers
 //            var userCookie = YandexAuth.GetAuthorizationCookie(Request);
             var userCookie = YandexAuth.GetAuthorizationCookie(code);
 
+            FormsAuthentication.SetAuthCookie(userCookie.Value, true);
             Response.Cookies.Set(userCookie);
 
             return RedirectToActionPermanent("Index", "Home");

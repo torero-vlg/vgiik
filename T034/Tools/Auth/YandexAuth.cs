@@ -27,7 +27,6 @@ namespace T034.Tools.Auth
                 Expires = DateTime.Now.AddDays(30)
             };
 
-            FormsAuthentication.SetAuthCookie(model.access_token, true);
 
             return userCookie;
         }

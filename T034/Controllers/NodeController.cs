@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
-using Db.DataAccess;
 using Db.Entity;
 using Db.Entity.Directory;
-using Microsoft.Security.Application;
-using T034.ViewModel;
 using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
-    public class NodeController : Controller
+    public class NodeController : BaseController
     {
-        private readonly IBaseDb _db;
-
         public NodeController()
         {
-            _db = MvcApplication.DbFactory.CreateBaseDb();
 
             Mapper.CreateMap<Node, NodeViewModel>()
                 .ForMember(dest => dest.NodeTypeId, opt => opt.MapFrom(src => (int)src.NodeType));
@@ -35,7 +27,7 @@ namespace T034.Controllers
             var model = new NodeViewModel();
             if (id.HasValue)
             {
-                var item = _db.Get<Node>(id.Value);
+                var item = Db.Get<Node>(id.Value);
                 model = Mapper.Map(item, model);
             }
 
@@ -57,7 +49,7 @@ namespace T034.Controllers
 
             item = Mapper.Map(model, item);
 
-            var result = _db.SaveOrUpdate(item);
+            var result = Db.SaveOrUpdate(item);
 
             return RedirectToAction("List");
         }
@@ -66,7 +58,7 @@ namespace T034.Controllers
         {
             try
             {
-                var items = _db.Select<Node>();
+                var items = Db.Select<Node>();
 
                 var model = new List<NodeViewModel>();
                 model = Mapper.Map(items, model);
