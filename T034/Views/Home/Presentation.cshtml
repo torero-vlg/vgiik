@@ -484,16 +484,7 @@
     </div>
     
     @{
-        Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
-        {
-            Name = "Факультет искусств",
-            MainPhoto = "/Content/images/presentation/21-1.jpg",
-            Staff = new List<string> { "Декан факультета - кандидат искусствоведения, доцент кафедры истории и теории музыки Оксана Игоревна Луконина (3-я слева).", 
-											"Заместитель декана факультета искусств - доцент кафедры хорового и вокального искусства Марина Ивановна Котова (2-я слева).", 
-											"Специалист по учебно-методической работе - Татьяна Львовна Грибанова (1-я справа).", 
-											"Специалист по учебно-методической работе - Татьяна Сергеевна Слуцкая (1-я слева)." },
-            Text = "На факультете искусств, созданном в 1992 г., сосредоточены основные исполнительские силы института, творческие коллективы. Приоритетными направлениями научных исследований являются \"Музыковедение\", \"Музыкальное искусство\". Количество студентов, обучающихся на факультете 281. Факультет искусств объединяет 5 кафедр: кафедру оркестровых инструментов, кафедру хорового и вокального искусства, кафедру теории и истории музыки."
-        });
+        Html.RenderAction("Preview", "Department", new { departmentid = 10 });
     }
 
     @{
@@ -565,17 +556,7 @@
     @{
         Html.RenderAction("Preview", "Department", new { departmentid = 7 });
     }
-    <div class="row">
-		<div class="col-xs-6 col-md-2">
-        </div>
-        <div class="col-xs-6 col-md-8">
-            <a href="/Content/images/presentation/26-1.jpg" class="thumbnail">
-                <img src="/Content/images/presentation/26-1.jpg" alt="">
-            </a>
-        </div>
-		<div class="col-xs-6 col-md-2">
-        </div>
-    </div>			
+			
 	@{
         Html.RenderPartial("DepartmentPartialView", new DepartmentViewModel
         {
