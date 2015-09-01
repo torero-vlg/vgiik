@@ -70,7 +70,7 @@
 			file="${Db.DllFile}" 
 			todir="${Deploy}"	/>
 		
-		<echo message="Запуск migrator.exe" />
+		<echo message="Запуск  migrator.exe" />
 		<exec program="${MigratorPath}" commandline="-task update -dll ${Deploy}\Db.dll -db ${Deploy}\t034.sqlite" />
 	</target>
 	
