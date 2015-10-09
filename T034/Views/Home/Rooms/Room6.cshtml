@@ -1,6 +1,16 @@
-﻿@{
+﻿@using T034.ViewModel
+@{
     ViewBag.Title = "Мастера и ученики";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Мастера и ученики (художественное творчество)</h2>
+@{
+    var path = string.Format("/Content/images/museum/room6/students/");
+    Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), "Мастера и ученики"));
+    path = string.Format("/Content/images/museum/room6/borisenko/");
+    Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), "Ученики Борисенко Б.И."));
+    path = string.Format("/Content/images/museum/room6/mirinova/");
+    Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), "Ученики Мироновой Т.П."));
+    path = string.Format("/Content/images/museum/room6/nikitenko/");
+    Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), "Ученики Никитенко О.Г."));
+}
