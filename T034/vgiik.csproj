@@ -438,6 +438,7 @@
     <None Include="fonts\glyphicons-halflings-regular.svg" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\PublishProfiles\Package.pubxml" />
     <None Include="Scripts\DataTables-1.10.2\extensions\Responsive\Readme.md" />
     <None Include="Scripts\jquery-1.9.0.min.map" />
     <Content Include="Views\Shared\AuthPartialView.cshtml" />

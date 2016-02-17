@@ -7,9 +7,39 @@
 
 <div class="text">
     @{
-        var directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2009/"));
+        var directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/works/"));
         var files = directory.GetFiles().Select(f => f.Name);
-        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2009/" + file, Description = "" });
+        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/works/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Фестиваль ДПИ"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2005/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2005/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2005"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2008/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2008/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2008"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2009/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2009/" + file, Description = "" });
         
         Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2009"));
     }
@@ -42,5 +72,15 @@
         dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2012/" + file, Description = "" });
         
         Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2012"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2013/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2013/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2013"));
     }
 </div>
