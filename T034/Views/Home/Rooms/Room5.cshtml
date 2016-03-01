@@ -5,82 +5,114 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h3>
+
+    @Html.ActionLink("Выпускники", "Museum", new { room = 8})
+
+</h3>
+
 <div class="text">
     @{
         var directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/works/"));
-        var files = directory.GetFiles().Select(f => f.Name);
-        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/works/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Фестиваль ДПИ"));
+        IEnumerable<string> files;
+        IEnumerable<NodeViewModel> dpi;
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/works/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Фестиваль ДПИ"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2005/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2005/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2005"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2005/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2005"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2008/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2008/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2008"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2008/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2008"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2009/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2009/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2009"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2009/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2009"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2010/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2010/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2010"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2010/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2010"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2011/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2011/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2011"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2011/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2011"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2012/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2012/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2012"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2012/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2012"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2013/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2013/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2013"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2013/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2013"));
+        }
     }
 </div>

@@ -477,6 +477,7 @@
     <Content Include="Views\Shared\Department\DepartmentPreview.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Home\Rooms\Room8.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">
