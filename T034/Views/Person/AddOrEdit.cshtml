@@ -1,0 +1,30 @@
+﻿@model T034.ViewModel.PersonViewModel
+@{
+    ViewBag.Title = "Редактирование человека";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddOrEdit", "Person"))
+{
+    <legend>Редактирование</legend>
+    <div class="control-group warning">
+        <label class="control-label">ФИО</label>
+        <div>
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+            @Html.HiddenFor(m => m.PersonId)
+        </div>
+
+        <label class="control-label">Титул</label>
+        <div>
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <button type="button" class="btn">Отмена</button>
+        @if (Model.PersonId > 0)
+        {
+            <div>@Html.ActionLink("Удалить", "Delete", new { id = Model.PersonId })</div>
+        }
+    </div>
+}

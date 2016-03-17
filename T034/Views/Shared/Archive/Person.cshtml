@@ -1,6 +1,6 @@
 ﻿@model T034.ViewModel.PersonViewModel
 
-<h3>@Model.FullName</h3>
+<h3>@string.Format("{0} - {1}", Model.FullName, Model.Title)</h3>
 
 
 @for (var i = 0; i < Model.Files.Count(); i++)

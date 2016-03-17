@@ -20,11 +20,15 @@
 </head>
 
     <body>
-        
+
         @{
+            Html.RenderAction("ManagementMenu", "Navigation");
+        }
+
+    @*@{
             var userModel = YandexAuth.GetUser(Request);
         }
-        @Html.Partial("AuthPartialView", userModel)
+        @Html.Partial("AuthPartialView", userModel)*@
         
         <div class="container">
             <div><a href="http://архиввгиик.рф"><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></a></div>

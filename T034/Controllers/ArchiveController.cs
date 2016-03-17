@@ -35,8 +35,8 @@ namespace T034.Controllers
             {
                 model = new PersonViewModel
                     {
-                        FullName =
-                            string.Format("{0} - {1}", person.FullName, person.Title),
+                        FullName = person.FullName,
+                        Title = person.Title,
                         Docs = new List<CarouselViewModel>(),
                         PersonId = person.Id
                     };

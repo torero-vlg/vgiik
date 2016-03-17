@@ -147,13 +147,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="ViewModel\AutoMapper\PersonProfile.cs" />
+    <Compile Include="ViewModel\AutoMapper\MenuItemProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MuseumController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\NodeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -164,6 +168,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Tools\Attribute\RoleAttribute.cs" />
     <Compile Include="Tools\Auth\AuthHttpModule.cs" />
     <Compile Include="Tools\Auth\CustomAuthentication.cs" />
     <Compile Include="Tools\Auth\IAuthentication.cs" />
@@ -182,6 +187,7 @@
     <Compile Include="ViewModel\Common\VideoViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\Common\NodeViewModel.cs" />
+    <Compile Include="ViewModel\MenuItemViewModel.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
     <Compile Include="ViewModel\PublicationViewModel.cs" />
   </ItemGroup>
@@ -478,6 +484,10 @@
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
     <Content Include="Views\Home\Rooms\Room8.cshtml" />
+    <Content Include="Views\Shared\ManagementMenu.cshtml" />
+    <Content Include="Views\Person\AddOrEdit.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

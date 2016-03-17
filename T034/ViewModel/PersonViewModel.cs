@@ -11,6 +11,7 @@ namespace T034.ViewModel
         }
 
         public string FullName { get; set; }
+        public string Title { get; set; }
         public int PersonId { get; set; }
         public List<CarouselViewModel> Docs { get; set; }
 
