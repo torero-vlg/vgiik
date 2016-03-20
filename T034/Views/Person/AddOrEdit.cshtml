@@ -20,11 +20,11 @@
         </div>
 
         <label class="control-label">Альбомы</label>
-
+        @Html.ActionLink("Добавить", "AddOrEdit", "Album", new { personId = Model.PersonId}, null)
         <ul class="list-group">
             @foreach (var album in Model.Docs)
             {
-                <li class="list-group-item">@album.Header</li>
+                <li class="list-group-item">@album.Header></li>
             }
         </ul>
     </div>

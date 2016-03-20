@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using AutoMapper;
 using Db.Entity.Vgiik;
 
@@ -14,6 +15,10 @@ namespace T034.ViewModel.AutoMapper
 
             Mapper.CreateMap<PersonViewModel, Person>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PersonId));
+
+            Mapper.CreateMap<Person, SelectListItem>()
+             .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Id.ToString()))
+             .ForMember(dest => dest.Text, opt => opt.MapFrom(src => src.FullName));
         }
     }
 }

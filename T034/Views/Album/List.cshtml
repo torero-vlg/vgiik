@@ -1,0 +1,37 @@
+﻿@model IEnumerable<T034.ViewModel.AlbumViewModel>
+
+@{
+    ViewBag.Title = "Альбомы";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Добавить", "AddOrEdit", "Album")
+
+<h2>Альбомы</h2>
+
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Код</th>
+            <th>Название</th>
+            <th>Принадлежность</th>
+            <th>Операции</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>@item.Department@item.Person</td>
+        <td>
+            @Html.ActionLink("Подробнее", "Index", new { id = item.Id })
+            @Html.ActionLink("Редактировать", "AddOrEdit", new { id = item.Id })
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+        </td>
+      </tr>
+    }
+    </tbody>
+</table>
+

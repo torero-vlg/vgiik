@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using AutoMapper;
 using Db.Entity;
 using Db.Entity.Directory;
@@ -29,6 +30,10 @@ namespace T034.ViewModel.AutoMapper
             Mapper.CreateMap<DepartmentViewModel, Department>()
                 .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => StringToCollection<Node>(src.Nodes)))
                 .ForMember(dest => dest.Albums, opt => opt.MapFrom(src => StringToCollection<Album>(src.AlbumsIds)));
+
+            Mapper.CreateMap<Department, SelectListItem>()
+                 .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Id.ToString()))
+                 .ForMember(dest => dest.Text, opt => opt.MapFrom(src => src.Name));
         }
 
         private static List<T> StringToCollection<T>(string ids) where T : Entity, new()
