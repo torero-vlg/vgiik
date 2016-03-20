@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using Db.Entity.Vgiik;
@@ -37,6 +39,8 @@ namespace T034.Controllers
             {
                 var item = Db.Get<Person>(id.Value);
                 model = Mapper.Map(item, model);
+                model.Docs.AddRange(
+                    item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
             }
 
             return View(model);
@@ -53,6 +57,10 @@ namespace T034.Controllers
             item = Mapper.Map(model, item);
 
             var result = Db.SaveOrUpdate(item);
+
+            var path = Path.Combine(Server.MapPath($"~/{"Content/images/people"}/{result}"));
+            var directoryInfo = new DirectoryInfo(path);
+            directoryInfo.Create();
 
             return RedirectToAction("List");
         }
@@ -74,6 +82,12 @@ namespace T034.Controllers
 
         public ActionResult Delete(int id)
         {
+            var path = Path.Combine(Server.MapPath($"~/{"Content/images/people"}/{id}"));
+            var directoryInfo = new DirectoryInfo(path);
+            directoryInfo.Delete(true);
+
+            var result = Db.Delete(new Person { Id = id});
+
             return RedirectToAction("List");
         }
     }

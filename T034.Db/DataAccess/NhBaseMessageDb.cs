@@ -18,7 +18,7 @@ namespace Db.DataAccess
         public T GetMessage<T>(int msgId)
         {
             T result;
-            using (var session = Factory.OpenSession())
+            using (var session = SessionFactory.OpenSession())
             {
                 try
                 {
@@ -43,7 +43,7 @@ namespace Db.DataAccess
         public int GetNextMessageId<T>(int messageId) where T : Entity.Entity
         {
             List<int> result;
-            using (var session = Factory.OpenSession())
+            using (var session = SessionFactory.OpenSession())
             {
                 try
                 {
@@ -74,7 +74,7 @@ namespace Db.DataAccess
         public int GetPrevMessageId<T>(int messageId) where T : Entity.Entity
         {
             List<int> result;
-            using (var session = Factory.OpenSession())
+            using (var session = SessionFactory.OpenSession())
             {
                 try
                 {

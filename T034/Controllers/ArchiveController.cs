@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
 using Db.Entity.Vgiik;
 using T034.ViewModel;
 using T034.ViewModel.Common;
@@ -30,21 +31,11 @@ namespace T034.Controllers
         {
             var person = Db.Get<Person>(personId);
 
-            PersonViewModel model = null;
+            PersonViewModel model = new PersonViewModel();
             if (person != null)
             {
-                model = new PersonViewModel
-                    {
-                        FullName = person.FullName,
-                        Title = person.Title,
-                        Docs = new List<CarouselViewModel>(),
-                        PersonId = person.Id
-                    };
-                //foreach (var album in person.Albums)
-                //{
-                //    var nodes = album.Nodes.Select(n => new NodeViewModel { Description = n.Description, Path = n.Path });
-                //    model.Docs.Add(new CarouselViewModel(nodes, album.Name, ""));
-                //}
+                model = Mapper.Map(person, model);
+
                 model.Docs.AddRange(
                     person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
 

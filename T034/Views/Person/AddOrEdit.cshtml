@@ -16,8 +16,17 @@
 
         <label class="control-label">Титул</label>
         <div>
-            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.Title, new {@class = "form-control"})
         </div>
+
+        <label class="control-label">Альбомы</label>
+
+        <ul class="list-group">
+            @foreach (var album in Model.Docs)
+            {
+                <li class="list-group-item">@album.Header</li>
+            }
+        </ul>
     </div>
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Сохранить изменения</button>

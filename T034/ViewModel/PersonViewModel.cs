@@ -8,6 +8,7 @@ namespace T034.ViewModel
         public PersonViewModel()
         {
             Videos = new List<VideoViewModel>();
+            Docs = new List<CarouselViewModel>();
         }
 
         public string FullName { get; set; }
