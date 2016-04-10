@@ -9,12 +9,14 @@ namespace T034.ViewModel
         {
             Videos = new List<VideoViewModel>();
             Docs = new List<CarouselViewModel>();
+            Albums = new List<AlbumViewModel>();
         }
 
         public string FullName { get; set; }
         public string Title { get; set; }
         public int PersonId { get; set; }
         public List<CarouselViewModel> Docs { get; set; }
+        public List<AlbumViewModel> Albums { get; set; }
 
         public IEnumerable<string> Files { get; set; }
         public IEnumerable<VideoViewModel> Videos { get; set; }

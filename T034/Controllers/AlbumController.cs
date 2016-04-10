@@ -49,6 +49,9 @@ namespace T034.Controllers
             {
                 var item = Db.Get<Album>(id.Value);
                 model = Mapper.Map(item, model);
+
+                var directory = new DirectoryInfo(Server.MapPath(item.Path));
+                model.Files = directory.GetFiles().Select(f => f.Name);
             }
             else
             {
@@ -126,6 +129,22 @@ namespace T034.Controllers
             directoryInfo.Delete(true);
 
             return RedirectToAction("List");
+        }
+
+        [Role("Moderator")]
+        public ActionResult DeleteFile(string filePath, int albumId)
+        {
+            try
+            {
+                var file = new FileInfo(Server.MapPath(filePath));
+                file.Delete();
+
+                return RedirectToAction("AddOrEdit", new { id = albumId });
+            }
+            catch (Exception ex)
+            {
+                return View("ServerError", (object)string.Format("Ошибка при удалении файла."));
+            }
         }
     }
 }

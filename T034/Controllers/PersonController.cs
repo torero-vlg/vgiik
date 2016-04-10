@@ -41,6 +41,8 @@ namespace T034.Controllers
                 model = Mapper.Map(item, model);
                 model.Docs.AddRange(
                     item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
+                model.Albums.AddRange(
+                    item.Albums.Select(a => new AlbumViewModel { Id = a.Id, Path = a.Path, Name = a.Name}));
             }
 
             return View(model);

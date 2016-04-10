@@ -11,9 +11,11 @@ namespace T034.ViewModel.AutoMapper
         {
             Mapper.CreateMap<Person, PersonViewModel>()
                 .ForMember(dest => dest.PersonId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Albums, opt => opt.Ignore())
                 .ForMember(dest => dest.Docs, opt => opt.MapFrom(src => new List<CarouselViewModel>()));
 
             Mapper.CreateMap<PersonViewModel, Person>()
+                .ForMember(dest => dest.Albums, opt => opt.Ignore())
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PersonId));
 
             Mapper.CreateMap<Person, SelectListItem>()

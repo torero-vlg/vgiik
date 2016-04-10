@@ -15,5 +15,6 @@ namespace T034.ViewModel
         public string Department { get; set; }
         public ICollection<SelectListItem> Persons { get; set; }
         public ICollection<SelectListItem> Departments { get; set; }
+        public IEnumerable<string> Files { get; set; }
     }
 }
