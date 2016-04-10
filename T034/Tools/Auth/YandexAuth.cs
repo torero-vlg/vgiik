@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
-using System.Web.Security;
+using Db.DataAccess;
+using Db.Entity.Administration;
 using T034.Models;
 
 namespace T034.Tools.Auth
@@ -17,12 +19,18 @@ namespace T034.Tools.Auth
 
         public const string InfoUrl = "https://login.yandex.ru/info";
 
-        public static HttpCookie GetAuthorizationCookie(string code)
+        public static string GetAuthorizationCookie(HttpCookieCollection cookies, string code, IBaseDb db)
         {
             //var code = request.QueryString["code"];
 
+            //var clientId = db.SingleOrDefault<Setting>(s => s.Code == "YandexClientId").Value;
+            //var password = db.SingleOrDefault<Setting>(s => s.Code == "YandexPassword").Value;
+
+            var clientId = ClientId;
+            var password = Password;
+
             var stream = HttpTools.PostStream("https://oauth.yandex.ru/token",
-                string.Format("grant_type=authorization_code&code={0}&client_id={1}&client_secret={2}", code, ClientId, Password));
+                string.Format("grant_type=authorization_code&code={0}&client_id={1}&client_secret={2}", code, clientId, password));
 
             var model = SerializeTools.Deserialize<TokenModel>(stream);
 
@@ -33,7 +41,18 @@ namespace T034.Tools.Auth
             };
 
 
-            return userCookie;
+            stream = HttpTools.PostStream(InfoUrl, string.Format("oauth_token={0}", userCookie.Value));
+            var email = SerializeTools.Deserialize<UserModel>(stream).default_email;
+
+            var user = db.SingleOrDefault<User>(u => u.Email == email);
+
+            cookies.Set(userCookie);
+
+            var rolesCookie = new HttpCookie("roles") { Value = string.Join(",", user.UserRoles.Select(r => r.Code)), Expires = DateTime.Now.AddDays(30) };
+            cookies.Set(rolesCookie);
+
+            return model.access_token;
+
         }
 
         public static UserModel GetUser(HttpRequestBase request)
