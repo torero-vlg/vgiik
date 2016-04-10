@@ -1,8 +1,13 @@
-﻿using System.Configuration;
+﻿using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Db;
 using Db.DataAccess;
+using T034.Models;
+using T034.Tools.Attribute;
 using T034.ViewModel.AutoMapper;
 
 namespace T034
@@ -12,9 +17,11 @@ namespace T034
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static IEnumerable<ActionRole> ActionRoles { get; private set; }
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new PermissionFilterAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -37,6 +44,25 @@ namespace T034
             RegisterRoutes(RouteTable.Routes);
 
             AutoMapperWebConfiguration.Configure(Server);
+
+            ActionRoles = GetActionRoles();
+        }
+        private IEnumerable<ActionRole> GetActionRoles()
+        {
+            var _assembly = Assembly.GetExecutingAssembly();
+
+            IEnumerable<MethodInfo> methods = _assembly.GetTypes().
+                            SelectMany(t => t.GetMethods())
+                            .Where(m => m.GetCustomAttributes(typeof(RoleAttribute), true).Length > 0);
+
+            var result = methods.Select(m => new ActionRole()
+            {
+                Action = m.Name.ToLower(),
+                Role = ((RoleAttribute)m.GetCustomAttributes(typeof(RoleAttribute), true).FirstOrDefault()).Role,
+                Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "").ToLower()
+            }).ToList();
+
+            return result;
         }
     }
 }

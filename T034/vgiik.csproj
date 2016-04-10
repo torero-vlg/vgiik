@@ -149,6 +149,9 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Models\ActionRole.cs" />
+    <Compile Include="Tools\Attribute\PermissionFilterAtribute.cs" />
     <Compile Include="ViewModel\AutoMapper\AlbumProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\PersonProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\MenuItemProfile.cs" />
