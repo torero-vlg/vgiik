@@ -132,18 +132,18 @@ namespace T034.Controllers
         }
 
         [Role("Moderator")]
-        public ActionResult DeleteFile(string filePath, int albumId)
+        public JsonResult DeleteFile(string filePath)
         {
             try
             {
                 var file = new FileInfo(Server.MapPath(filePath));
                 file.Delete();
 
-                return RedirectToAction("AddOrEdit", new { id = albumId });
+                return Json(new { });
             }
             catch (Exception ex)
             {
-                return View("ServerError", (object)string.Format("Ошибка при удалении файла."));
+                return Json(new {Message = $"Ошибка при удалении файла: {ex.Message}" });
             }
         }
     }
