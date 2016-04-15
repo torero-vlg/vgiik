@@ -345,14 +345,23 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\account\logon.js" />
+    <Content Include="Scripts\app\album\addOrEdit.js" />
+    <Content Include="Scripts\app\album\index.js" />
+    <Content Include="Scripts\app\album\list.js" />
     <Content Include="Scripts\app\archive\person.js" />
+    <Content Include="Scripts\app\department\addOrEdit.js" />
     <Content Include="Scripts\app\department\index.js" />
+    <Content Include="Scripts\app\department\list.js" />
     <Content Include="Scripts\app\home\archive.js" />
     <Content Include="Scripts\app\home\video.js" />
     <Content Include="Scripts\app\home\photo.js" />
     <Content Include="Scripts\app\home\museum.js" />
     <Content Include="Scripts\app\home\presentation.js" />
     <Content Include="Scripts\app\home\index.js" />
+    <Content Include="Scripts\app\person\addOrEdit.js" />
+    <Content Include="Scripts\app\person\index.js" />
+    <Content Include="Scripts\app\person\list.js" />
+    <Content Include="Scripts\app\t034\t034.dataTables.js" />
     <Content Include="Scripts\lib\bootstrap.js" />
     <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="Scripts\lib\DataTables-1.10.2\extensions\AutoFill\js\dataTables.autoFill.js" />
@@ -454,9 +463,7 @@
     <Folder Include="Content\images\photo\archive\" />
     <Folder Include="Content\images\presentation\" />
     <Folder Include="Content\images\sport\" />
-    <Folder Include="Scripts\app\album\" />
     <Folder Include="Scripts\app\museum\" />
-    <Folder Include="Scripts\app\person\" />
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
