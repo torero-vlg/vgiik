@@ -42,8 +42,10 @@
             {
                 var filePath = "~" + Model.Path + item;
                 <div class="list-group-item">
-                    <a href="@Url.Content(filePath)"><img src="@Url.Content(filePath)" style="height: 100px" alt="..."></a>
-                    <span class="pull-right"><a href="@Url.Action("DeleteFile", "Album", new { filePath = filePath, albumId = Model.Id }, null)"><i class="fa fa-trash-o"></i></a></span>
+                    <a href="@Url.Content(filePath)"><img src="@Url.Content(filePath)" style="height: 600px" alt="..."></a>
+                    <span class="pull-right">
+                        <a href="@Url.Action("DeleteFile", "Album", new {filePath = filePath, albumId = Model.Id}, null)"><i class="fa fa-trash-o"></i></a>
+                    </span>
                 </div>
             }
         }
