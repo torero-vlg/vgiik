@@ -344,6 +344,13 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\archive\person.js" />
+    <Content Include="Scripts\app\home\archive.js" />
+    <Content Include="Scripts\app\home\video.js" />
+    <Content Include="Scripts\app\home\photo.js" />
+    <Content Include="Scripts\app\home\museum.js" />
+    <Content Include="Scripts\app\home\presentation.js" />
+    <Content Include="Scripts\app\home\index.js" />
     <Content Include="Scripts\lib\bootstrap.js" />
     <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="Scripts\lib\DataTables-1.10.2\extensions\AutoFill\js\dataTables.autoFill.js" />
@@ -447,9 +454,7 @@
     <Folder Include="Content\images\sport\" />
     <Folder Include="Scripts\app\account\" />
     <Folder Include="Scripts\app\album\" />
-    <Folder Include="Scripts\app\archive\" />
     <Folder Include="Scripts\app\department\" />
-    <Folder Include="Scripts\app\home\" />
     <Folder Include="Scripts\app\museum\" />
     <Folder Include="Scripts\app\person\" />
     <Folder Include="Views\Admin\" />
