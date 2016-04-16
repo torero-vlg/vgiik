@@ -3,20 +3,20 @@
     return {
         Initialize: function () {
          
-            var trash = $(".fa-trash-o").click(function () {
+             $(".fa-trash-o").click(function () {
+
+                var filePath = $(this).parent().data('filepath');
 
                 $.ajax({
                     url: "/Album/DeleteFile",
-                    data: { filePath: $(this).closest("img").attr('src') }
+                    data: { filePath: filePath }
                 })
-              .success(function (data) {
-                  $(this).closest(".list-group-item").slideUp();
-              });
+                .success(function (data) {
+                    $("[data-filepath='" + data.FilePath + "']").closest(".list-group-item").slideUp();
+                });
 
+                return false;
             });;
-
-            //@Url.Action("DeleteFile", "Album", new {filePath = filePath, albumId = Model.Id}, null)
-
         }
     }
 });

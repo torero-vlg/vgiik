@@ -139,11 +139,11 @@ namespace T034.Controllers
                 var file = new FileInfo(Server.MapPath(filePath));
                 file.Delete();
 
-                return Json(new { });
+                return Json(new { Message = $"Файл удалён", FilePath = filePath }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                return Json(new {Message = $"Ошибка при удалении файла: {ex.Message}" });
+                return Json(new { Message = $"Ошибка при удалении файла: {ex.Message}", FilePath = filePath }, JsonRequestBehavior.AllowGet);
             }
         }
     }
