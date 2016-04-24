@@ -10,20 +10,26 @@
 <div class="text">
     @{
         var directory = new DirectoryInfo(Server.MapPath("/Content/images/sport/skd/"));
-        var files = directory.GetFiles().Select(f => f.Name);
-        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/skd/" + file, Description = "" });
-        
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты факультета социально-культурной деятельности"));
+        if (directory.Exists)
+        {
+            var files = directory.GetFiles().Select(f => f.Name);
+            var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/skd/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты факультета социально-культурной деятельности"));
+        }
     }
 </div>
 
 <div class="text">
     @{
         directory = new DirectoryInfo(Server.MapPath("/Content/images/sport/gto2015/"));
-        files = directory.GetFiles().Select(f => f.Name);
-        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/gto2015/" + file, Description = "" });
+        if (directory.Exists)
+        {
+            var files = directory.GetFiles().Select(f => f.Name);
+            var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/gto2015/" + file, Description = "" });
 
-        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты ВГИИК сдают ГТО 2 ИЮНЯ 2015"));
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты ВГИИК сдают ГТО 2 ИЮНЯ 2015"));
+        }
     }
 </div>
 <br>

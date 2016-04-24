@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
-using AutoMapper;
-using Db.Entity;
 using Db.Entity.Administration;
 using T034.Tools.Auth;
-using T034.ViewModel;
 
 namespace T034.Controllers
 {
