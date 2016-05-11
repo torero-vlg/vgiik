@@ -1,4 +1,5 @@
-﻿@{
+﻿@using T034.ViewModel
+@{
     ViewBag.Title = "Выпускники";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -65,4 +66,11 @@
         Тег audio не поддерживается вашим браузером.
         <a href="/Content/images/museum/room5/sokolov/Алексей Соколов - Снег (2011).mp3">Скачайте музыку</a>.
     </audio>
+</div>
+
+<div class="text text-center">
+	@{
+		var path = string.Format("/Content/images/museum/room5/graduate/");
+		Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), ""));
+	}
 </div>
