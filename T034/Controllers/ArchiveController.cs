@@ -54,7 +54,21 @@ namespace T034.Controllers
             }
 
             if(personId == 24)
-                model.Videos = new List<VideoViewModel> { new VideoViewModel { Width = "420", Height = "315", Source = "https://www.youtube.com/embed/c_obyoeuPGo" } };
+                model.Videos = new List<VideoViewModel> 
+					{ 
+						new VideoViewModel 
+						{ 
+							Width = "420", 
+							Height = "315", 
+							Source = "https://www.youtube.com/embed/c_obyoeuPGo" 
+						},
+						new VideoViewModel 
+						{ 
+							Width = "420", 
+							Height = "315", 
+							Source = "https://www.youtube.com/embed/CqI7FuD_ytc" 
+						} 
+					};
 
             return model;
         }
