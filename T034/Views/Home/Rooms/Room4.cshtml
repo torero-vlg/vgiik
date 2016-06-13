@@ -36,4 +36,20 @@
 <div class="text text-center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/adxofnJoGM0" frameborder="0" allowfullscreen></iframe>
 </div>
+<br>
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/sport/maresiev2016/"));
+        if (directory.Exists)
+        {
+            var files = directory.GetFiles().Select(f => f.Name);
+            var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/maresiev2016/" + file, Description = "" });
 
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Соревнования, посвящённые 100 летию со дня рождения А.П. Маресьева 18.04.2016"));
+        }
+    }
+</div>
+<br>
+<div class="text text-center">
+	<iframe width="420" height="315" src="https://www.youtube.com/embed/67c7gIqOxG0" frameborder="0" allowfullscreen></iframe>
+</div>
