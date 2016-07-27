@@ -17,6 +17,8 @@ namespace T034
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static string SiteName => ConfigurationManager.AppSettings["SiteName"];
+
         public static IEnumerable<ActionRole> ActionRoles { get; private set; }
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {

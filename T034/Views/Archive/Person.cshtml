@@ -1,8 +1,9 @@
-﻿@using T034.ViewModel
+﻿@using T034
+@using T034.ViewModel
 @model PersonViewModel
 
 @{
-    ViewBag.Title = Model.FullName;
+    ViewBag.Title = MvcApplication.SiteName + " - " + Model.FullName;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
