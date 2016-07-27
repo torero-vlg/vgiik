@@ -531,6 +531,7 @@
     <Content Include="Views\Album\AddOrEdit.cshtml" />
     <Content Include="Views\Album\Index.cshtml" />
     <Content Include="Views\Album\List.cshtml" />
+    <Content Include="Views\Home\Rooms\Room9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">
