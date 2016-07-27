@@ -30,6 +30,19 @@
                     });;
             });
 
+            $('#veteranModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var id = button.data('id'); // Extract info from data-* attributes
+
+                $.ajax({
+                    url: "/Museum/Veteran?id=" + id,
+                    cache: false
+                })
+                    .done(function (html) {
+                        $("#modalBody").html(html);
+                    });;
+            });
+
         }
     }
 });

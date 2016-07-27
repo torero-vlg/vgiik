@@ -36,10 +36,33 @@ body
     color: #000000;
     background-color: #ffffff;
     text-align: justify;
-    background: url("pic/stend.png") repeat scroll 0 0 #fff;
+    background: url("pic/stend.png") no-repeat scroll 0 0 #fff;
     width: 900px;
     height: 478px;
     padding: 20px 150px 100px 180px;
+}
+
+.presentation>div>div>.thumbnail
+{
+    margin-bottom: 5px;
+}
+
+.presentation-big
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/stend-big.png") no-repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 520px;
+    padding: 20px 150px 100px 180px;
+}
+
+.presentation-big>div>div>.thumbnail
+{
+    margin-bottom: 5px;
 }
 
 
