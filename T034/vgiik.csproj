@@ -146,9 +146,11 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\VeteranController.cs" />
     <Compile Include="Models\ActionRole.cs" />
     <Compile Include="Tools\Attribute\PermissionFilterAtribute.cs" />
     <Compile Include="ViewModel\AutoMapper\AlbumProfile.cs" />
+    <Compile Include="ViewModel\AutoMapper\VeteranProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\PersonProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\MenuItemProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -532,6 +534,10 @@
     <Content Include="Views\Album\Index.cshtml" />
     <Content Include="Views\Album\List.cshtml" />
     <Content Include="Views\Home\Rooms\Room9.cshtml" />
+    <Content Include="Views\Museum\Veteran.cshtml" />
+    <Content Include="Views\Veteran\AddOrEdit.cshtml" />
+    <Content Include="Views\Veteran\Index.cshtml" />
+    <Content Include="Views\Veteran\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

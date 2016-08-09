@@ -1,0 +1,35 @@
+﻿@model IEnumerable<T034.ViewModel.PersonViewModel>
+
+@{
+    ViewBag.Title = "Ветераны";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Добавить", "AddOrEdit", "Veteran")
+
+<h2>Люди</h2>
+
+<table id="personTable" class="display">
+    <thead>
+        <tr>
+            <th>Код</th>
+            <th>ФИО</th>
+            <th>Операции</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.OrderBy(n => n.FullName))
+    {
+    <tr>
+        <td>@item.PersonId</td>
+        <td>@item.FullName</td>
+        <td>
+            @Html.ActionLink("Подробнее", "Index", new { id = item.PersonId })
+            @Html.ActionLink("Редактировать", "AddOrEdit", new { id = item.PersonId })
+            @Html.ActionLink("Удалить", "Delete", new { id = item.PersonId })
+        </td>
+      </tr>
+    }
+    </tbody>
+</table>
+

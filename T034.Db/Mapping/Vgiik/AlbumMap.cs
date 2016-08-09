@@ -15,6 +15,8 @@ namespace Db.Mapping.Vgiik
                 .Not.LazyLoad();
             References(p => p.Department).Column("DepartmentId")
                 .Not.LazyLoad();
+            References(p => p.Veteran).Column("VeteranId")
+                .Not.LazyLoad();
 
             HasManyToMany(p => p.Nodes)
                 .Table("AlbumNode")

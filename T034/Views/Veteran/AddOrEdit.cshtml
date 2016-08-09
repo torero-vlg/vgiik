@@ -1,0 +1,43 @@
+﻿@model T034.ViewModel.PersonViewModel
+@{
+    ViewBag.Title = "Редактирование ветерана";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddOrEdit", "Veteran"))
+{
+    <legend>Редактирование</legend>
+    <div class="control-group warning">
+        <label class="control-label">ФИО</label>
+        <div>
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+            @Html.HiddenFor(m => m.PersonId)
+        </div>
+
+        <label class="control-label">Титул</label>
+        <div>
+            @Html.TextBoxFor(m => m.Title, new {@class = "form-control"})
+        </div>
+
+        <label class="control-label">Альбомы</label>
+        @Html.ActionLink("Добавить", "AddOrEdit", "Album", new { veteranId = Model.PersonId}, null)
+        <ul class="list-group">
+            @foreach (var album in Model.Albums)
+            {
+
+                <li class="list-group-item">
+                    @album.Name
+                    @Html.ActionLink("Редактировать", "AddOrEdit", "Album", new { id = album.Id }, null)
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        <button type="button" class="btn">Отмена</button>
+        @if (Model.PersonId > 0)
+        {
+            <div>@Html.ActionLink("Удалить", "Delete", new { id = Model.PersonId })</div>
+        }
+    </div>
+}

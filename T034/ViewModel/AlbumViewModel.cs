@@ -13,8 +13,11 @@ namespace T034.ViewModel
         public string Person { get; set; }
         public int? DepartmentId { get; set; }
         public string Department { get; set; }
+        public int? VeteranId { get; set; }
+        public string Veteran { get; set; }
         public ICollection<SelectListItem> Persons { get; set; }
         public ICollection<SelectListItem> Departments { get; set; }
+        public ICollection<SelectListItem> Veterans { get; set; }
         public IEnumerable<string> Files { get; set; }
     }
 }
