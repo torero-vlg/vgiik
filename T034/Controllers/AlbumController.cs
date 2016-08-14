@@ -13,11 +13,11 @@ namespace T034.Controllers
     public class AlbumController : BaseController
     {
         [Role("Administrator")]
-        public ActionResult List(int? personId, int? departmentId)
+        public ActionResult List(int? personId, int? departmentId, int? veteranId)
         {
             try
             {
-                var items = GetAlbums(personId, departmentId);
+                var items = GetAlbums(personId, departmentId, veteranId);
 
                 var model = new List<AlbumViewModel>();
                 model = Mapper.Map(items, model);
@@ -30,19 +30,21 @@ namespace T034.Controllers
             }
         }
 
-        private List<Album> GetAlbums(int? personId, int? departmentId)
+        private List<Album> GetAlbums(int? personId, int? departmentId, int? veteranId)
         {
             if (personId.HasValue)
                 return Db.Where<Album>(a => a.Person.Id == personId.Value);
             if (departmentId.HasValue)
                 return Db.Where<Album>(a => a.Department.Id == departmentId.Value);
+            if (veteranId.HasValue)
+                return Db.Where<Album>(a => a.Veteran.Id == veteranId.Value);
 
             return Db.Select<Album>();
         }
 
         [HttpGet]
         [Role("Administrator")]
-        public ActionResult AddOrEdit(int? id, int? personId, int? departmentId)
+        public ActionResult AddOrEdit(int? id, int? personId, int? departmentId, int? veteranId)
         {
             var model = new AlbumViewModel();
             if (id.HasValue)
@@ -57,6 +59,7 @@ namespace T034.Controllers
             {
                 model.PersonId = personId;
                 model.DepartmentId = departmentId;
+                model.VeteranId = veteranId;
             }
 
             var persons = Db.Select<Person>();
@@ -78,6 +81,17 @@ namespace T034.Controllers
             if (model.Departments.All(m => m.Selected == false))
             {
                 var selected = model.Departments.FirstOrDefault(m => m.Value == model.DepartmentId.Value.ToString());
+                selected.Selected = true;
+            }
+
+            var veterans = Db.Select<Veteran>();
+            model.Veterans = Mapper.Map<ICollection<SelectListItem>>(veterans);
+
+            model.Veterans.Add(new SelectListItem { Value = null, Text = "-", Selected = model.VeteranId.HasValue == false });
+
+            if (model.Veterans.All(m => m.Selected == false))
+            {
+                var selected = model.Veterans.FirstOrDefault(m => m.Value == model.VeteranId.Value.ToString());
                 selected.Selected = true;
             }
 

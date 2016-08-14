@@ -23,7 +23,10 @@
             @Html.DropDownListFor(m => m.PersonId, Model.Persons, new {@class = "form-control"})
         </div>
         <div>
-            @Html.DropDownListFor(m => m.DepartmentId, Model.Departments, new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.DepartmentId, Model.Departments, new {@class = "form-control"})
+        </div>
+        <div>
+            @Html.DropDownListFor(m => m.VeteranId, Model.Veterans, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-actions">

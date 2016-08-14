@@ -1,0 +1,16 @@
+﻿@model T034.ViewModel.PersonViewModel
+
+@{
+    ViewBag.Title = @Model.FullName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.FullName</h2>
+<h2>@Model.Title</h2>
+@Html.Raw(HttpUtility.HtmlDecode(Model.Text))
+
+
+
+
+
+    

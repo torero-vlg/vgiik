@@ -24,6 +24,11 @@ namespace Db.Entity.Vgiik
         /// </summary>
         public virtual Department Department { get; set; }
 
+        /// <summary>
+        /// Ветеран, которому принадлежит альбом
+        /// </summary>
+        public virtual Veteran Veteran { get; set; }
+
         public virtual IList<Node> Nodes { get; set; }
     }
 }

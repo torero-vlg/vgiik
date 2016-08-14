@@ -13,6 +13,7 @@ namespace T034.ViewModel.AutoMapper
                 cfg.AddProfile(new DepartmentProfile(server));
                 cfg.AddProfile(new PersonProfile());
                 cfg.AddProfile(new MenuItemProfile());
+                cfg.AddProfile(new VeteranProfile());
             });
         }
     }

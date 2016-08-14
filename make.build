@@ -75,7 +75,7 @@
 	</target>
 	
 	<target name="help">
-		<echo message="updateDb обновить структуру БД" />
+		<echo message="updateDb обновить структуру БД (Deploy\t034.sqlite)" />
 		<echo message="build собрать пакет" />
 	</target>
 </project>
