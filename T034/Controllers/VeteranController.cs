@@ -48,6 +48,7 @@ namespace T034.Controllers
             return View(model);
         }
 
+        [ValidateInput(false)]
         [Role("Administrator")]
         public ActionResult AddOrEdit(PersonViewModel model)
         {

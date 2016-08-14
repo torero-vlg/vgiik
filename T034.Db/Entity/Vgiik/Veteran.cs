@@ -15,6 +15,11 @@ namespace Db.Entity.Vgiik
         public virtual string Title { get; set; }
 
         /// <summary>
+        /// Текст
+        /// </summary>
+        public virtual string Text { get; set; }
+
+        /// <summary>
         /// Список альбомов
         /// </summary>
         public virtual IList<Album> Albums { get; set; }

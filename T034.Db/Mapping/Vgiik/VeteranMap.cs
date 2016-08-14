@@ -11,6 +11,7 @@ namespace Db.Mapping.Vgiik
 
             Map(p => p.FullName);
             Map(p => p.Title);
+            Map(p => p.Text);
             HasMany(x => x.Albums).KeyColumn("VeteranId").Not.LazyLoad();
         }
     }

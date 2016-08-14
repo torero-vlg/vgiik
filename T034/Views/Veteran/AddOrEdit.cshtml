@@ -19,6 +19,11 @@
             @Html.TextBoxFor(m => m.Title, new {@class = "form-control"})
         </div>
 
+        <label class="control-label">@Html.LabelFor(m => m.Text)</label>
+        <div>
+            @Html.TextAreaFor(m => m.Text, new Dictionary<string, object> { { "class", "input-xxlarge" }, { "id", "text" } })
+        </div>
+
         <label class="control-label">Альбомы</label>
         @Html.ActionLink("Добавить", "AddOrEdit", "Album", new { veteranId = Model.PersonId}, null)
         <ul class="list-group">
