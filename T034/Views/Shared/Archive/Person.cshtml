@@ -5,11 +5,14 @@
 
 @Html.Raw(HttpUtility.HtmlDecode(Model.Text))
 
-
-@for (var i = 0; i < Model.Files.Count(); i++)
+@if (Model.Files != null)
 {
-    <p><a href="@Url.Content("~" + Model.FilesFolder + Model.Files.ToList()[i])" alt="...">@Model.Files.ToList()[i]</a></p>
+    for (var i = 0; i < Model.Files.Count(); i++)
+    {
+        <p><a href="@Url.Content("~" + Model.FilesFolder + Model.Files.ToList()[i])" alt="...">@Model.Files.ToList()[i]</a></p>
+    }
 }
+
 
 
 @{
