@@ -116,3 +116,29 @@
         }
     }
 </div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2015/"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2015/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2015"));
+        }
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2016/"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2016/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2016"));
+        }
+    }
+</div>
