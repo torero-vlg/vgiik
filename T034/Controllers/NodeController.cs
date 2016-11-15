@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
-using Db.Entity;
-using Db.Entity.Directory;
+using T034.Api.Entity;
+using T034.Api.Entity.Directory;
 using T034.ViewModel.Common;
 
 namespace T034.Controllers

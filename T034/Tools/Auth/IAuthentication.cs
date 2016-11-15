@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 using System.Web;
-using Db.Entity.Administration;
+using T034.Api.Entity.Administration;
 
 namespace T034.Tools.Auth
 {

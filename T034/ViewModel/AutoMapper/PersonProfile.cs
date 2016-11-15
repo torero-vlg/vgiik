@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
-using Db.Entity.Vgiik;
+using T034.Api.Entity.Vgiik;
 
 namespace T034.ViewModel.AutoMapper
 {

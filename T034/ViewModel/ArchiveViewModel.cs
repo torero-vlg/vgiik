@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Db.Entity.Vgiik;
+using T034.Api.Entity.Vgiik;
 
 namespace T034.ViewModel
 {

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using Db.Entity.Administration;
+using T034.Api.Entity.Administration;
 using T034.Tools.Auth;
 
 namespace T034.Controllers

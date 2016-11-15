@@ -1,7 +1,6 @@
 using System.Configuration;
-using Db;
-using Db.DataAccess;
-using NHibernate;
+using T034.Api;
+using T034.Api.DataAccess;
 using T034.Repository;
 using T034.Tools.Auth;
 
