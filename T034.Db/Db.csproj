@@ -74,8 +74,8 @@
     <Compile Include="Entity\Vgiik\Veteran.cs" />
     <Compile Include="Entity\Vgiik\Person.cs" />
     <Compile Include="Entity\Vgiik\Publication.cs" />
-    <Compile Include="Mapping\Administration\RoleMap.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
+    <Compile Include="Mapping\Administration\RoleMap.cs" />
     <Compile Include="Mapping\MenuItemMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
     <Compile Include="Mapping\NodeMap.cs" />
@@ -86,6 +86,9 @@
     <Compile Include="Mapping\Vgiik\PublicationMap.cs" />
     <Compile Include="NhDbFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Administration\RoleService.cs" />
+    <Compile Include="Services\Administration\UserService.cs" />
+    <Compile Include="Services\Common\IService.cs" />
     <Compile Include="Tools\MonitorLog.cs" />
   </ItemGroup>
   <ItemGroup>
