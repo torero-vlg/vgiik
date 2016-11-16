@@ -6,12 +6,12 @@
 	<property name="publish.dir" value="${main.dir}\publish"/>
 	<property name="out.dir" value="${publish.dir}\outdir"/>
 	<property name="SolutionFile" value="${main.dir}\vgiik.sln"/>    
-	<property name="MSBuildPath" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"/>    
+	<property name="MSBuildPath" value="C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe"/>    
 	<property name="build.configuration" value="Release"/>
 	<property name="tools" value="${main.dir}\Tools"/>
 	<property name="svnLocation" value="C:\Program Files\TortoiseSVN\bin\svn.exe"/>
-	<property name="Db.ProjectFile" value="${main.dir}\T034.Db\Db.csproj"/>
-	<property name="Db.DllFile" value="${main.dir}\T034.Db\bin\Release\Db.dll"/>
+	<property name="T034.Api.ProjectFile" value="${main.dir}\T034.Api\T034.Api.csproj"/>
+	<property name="T034.Api.DllFile" value="${main.dir}\T034.Api\bin\Release\T034.Api.dll"/>
 	<property name="Deploy" value="${main.dir}\Deploy"/>
 	<property name="MigratorPath" value="${main.dir}\Deploy\migrator.exe"/>
 	
@@ -50,7 +50,7 @@
 	<target name="updateDb" depends="">
 		<echo message="MSBuild Clean" />
 		<exec program="${MSBuildPath}">
-        	<arg line="${Db.ProjectFile}"/>
+        	<arg line="${T034.Api.ProjectFile}"/>
 			<arg line="/t:Clean"/>
 			<arg line="/verbosity:quiet"/>
 			<arg line="/nologo"/>
@@ -58,20 +58,20 @@
 		
 		<echo message="MSBuild Build" />
 		<exec program="${MSBuildPath}">
-        	<arg line="${Db.ProjectFile}"/>
+        	<arg line="${T034.Api.ProjectFile}"/>
 			<arg line="/t:Build"/>
 			<arg line="/p:Configuration=${build.configuration}"/>
 			<arg line="/verbosity:quiet"/>
 			<arg line="/nologo"/>
 		</exec>
 		
-		<echo message="Копируем Db.dll для migrator.exe" />
+		<echo message="Копируем T034.Api.dll для migrator.exe" />
 		<copy 
-			file="${Db.DllFile}" 
+			file="${T034.Api.DllFile}" 
 			todir="${Deploy}"	/>
 		
 		<echo message="Запуск  migrator.exe" />
-		<exec program="${MigratorPath}" commandline="-task update -dll ${Deploy}\Db.dll -db ${Deploy}\t034.sqlite" />
+		<exec program="${MigratorPath}" commandline="-task update -dll ${Deploy}\T034.Api.dll -db ${Deploy}\t034.sqlite" />
 	</target>
 	
 	<target name="help">

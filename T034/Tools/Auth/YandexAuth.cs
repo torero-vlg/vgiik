@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
-using Db.DataAccess;
-using Db.Entity.Administration;
+using T034.Api.DataAccess;
+using T034.Api.Entity.Administration;
 using T034.Models;
 
 namespace T034.Tools.Auth

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
-using Db.Entity.Vgiik;
+using T034.Api.Entity.Vgiik;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 

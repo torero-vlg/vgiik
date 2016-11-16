@@ -1,6 +1,6 @@
-﻿using Db.DataAccess;
-using Db.Entity.Administration;
-using Ninject;
+﻿using Ninject;
+using T034.Api.DataAccess;
+using T034.Api.Entity.Administration;
 
 namespace T034.Repository
 {

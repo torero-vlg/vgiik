@@ -4,9 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
-using Db.DataAccess;
-using Db.Entity;
-using Db.Entity.Vgiik;
+using T034.Api.Entity.Vgiik;
 using T034.ViewModel;
 
 namespace T034.Controllers
