@@ -1,24 +1,25 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using T034.Api.Entity.Administration;
-using T034.Tools.Auth;
+﻿using System.Web.Mvc;
+using Ninject;
+using T034.Api.Services.Administration;
 
 namespace T034.Controllers
 {
     public class NavigationController : BaseController
     {
+        [Inject]
+        public IUserService UserService { get; set; }
+
         public ActionResult ManagementMenu()
         {
             //если есть пользователь в БД, то показываем меню
-            var user = YandexAuth.GetUser(Request);
-
-            //найдём пользователя в БД
-            var userFromDb = Db.Where<User>(u => u.Email == user.default_email).FirstOrDefault();
-            if (userFromDb != null)
+            if (UserInfo != null)
             {
-                return PartialView();
+                var user = UserService.GetUser(UserInfo.Email);
+                if (user != null)
+                {
+                    return PartialView(user);
+                }
             }
-
             return null;
         }
     }

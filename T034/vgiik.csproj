@@ -198,10 +198,13 @@
     <Compile Include="ViewModel\Common\NodeViewModel.cs" />
     <Compile Include="ViewModel\FileViewModel.cs" />
     <Compile Include="ViewModel\ImageViewModel.cs" />
+    <Compile Include="ViewModel\LoginInfoModel.cs" />
+    <Compile Include="ViewModel\LogonViewModel.cs" />
     <Compile Include="ViewModel\MenuItemViewModel.cs" />
     <Compile Include="ViewModel\AlbumViewModel.cs" />
     <Compile Include="ViewModel\PersonViewModel.cs" />
     <Compile Include="ViewModel\PublicationViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />

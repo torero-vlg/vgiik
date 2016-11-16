@@ -1,9 +1,12 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Specialized;
+using System.Web.Mvc;
 using Ninject;
 using NLog;
 using T034.Api.DataAccess;
 using T034.Api.Entity.Administration;
 using T034.Tools.Auth;
+using T034.ViewModel;
 
 namespace T034.Controllers
 {
@@ -14,8 +17,7 @@ namespace T034.Controllers
         [Inject]
         public IBaseDb Db { get; set; }
 
-        [Inject]
-        public IAuthentication Auth { get; set; }
+        protected UserViewModel UserInfo;
 
         protected override void OnActionExecuting(ActionExecutingContext context)
         {
@@ -25,6 +27,9 @@ namespace T034.Controllers
 
             var user = "";
             logger.Debug("Controller: {0}, Action: {1}, UserHost: {2}, User:{3}, Request: {4}", controllerName, actionName, Request.UserHostAddress, user, Request?.Url?.Query);
+
+            if (controllerName.ToLower() != "account" && actionName.ToLower() != "auth")
+                SetUserInfo();
         }
 
         protected override void OnActionExecuted(ActionExecutedContext context)
@@ -34,6 +39,24 @@ namespace T034.Controllers
 
             var user = "";
             logger.Debug("Controller: {0}, Action: {1}, UserHost: {2}, User:{3}, Request: {4}", controllerName, actionName, Request.UserHostAddress, user, Request?.Url?.Query);
+        }
+
+        private void SetUserInfo()
+        {
+            try
+            {
+                if (Request.Cookies["auth"] != null)
+                {
+                    UserInfo = new UserViewModel
+                    {
+                        Email = Request.Cookies["auth"].Value
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Fatal(ex);
+            }
         }
     }
 }
