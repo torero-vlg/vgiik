@@ -32,12 +32,12 @@
             <!--End MainMenu-->
             <div class="main">
                 <div class="pmb">
-                    @{if (Request.Cookies["auth"] != null && string.IsNullOrEmpty(Request.Cookies["auth"].Value))
+                    @{
+                        if (Request.Cookies["auth"] == null || string.IsNullOrEmpty(Request.Cookies["auth"].Value))
                         {
                             <span class="pull-right"><a href="@Url.Action("Logon", "Account")" title="Войти"><i class="fa fa-sign-in" aria-hidden="true"></i></a></span>
                         }
                     }
-                    @*<img src="@Url.Content("~/Content/pic/pmb.png")" alt="" height="26px" width="900px">*@
                 </div>
                 <!--Begin Body-->
                 @RenderBody()
