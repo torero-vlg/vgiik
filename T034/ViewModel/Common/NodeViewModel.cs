@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using Db.Entity.Directory;
 
 namespace T034.ViewModel.Common
 {

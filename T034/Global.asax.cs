@@ -4,8 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Db;
-using Db.DataAccess;
 using T034.Models;
 using T034.Tools.Attribute;
 using T034.ViewModel.AutoMapper;

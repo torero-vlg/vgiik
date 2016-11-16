@@ -1,4 +1,4 @@
-﻿using Db.Entity.Administration;
+﻿using T034.Api.Entity.Administration;
 
 namespace T034.Tools.Auth
 {

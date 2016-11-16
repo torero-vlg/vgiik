@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Db.Entity;
-using Db.Tools;
+using T034.Api.Tools;
 using T034.ViewModel.Common;
 
 namespace T034.ViewModel

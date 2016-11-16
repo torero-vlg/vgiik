@@ -1,7 +1,7 @@
 using System.Configuration;
-using Db;
-using Db.DataAccess;
-using NHibernate;
+using T034.Api;
+using T034.Api.DataAccess;
+using T034.Api.Services.Administration;
 using T034.Repository;
 using T034.Tools.Auth;
 
@@ -72,6 +72,9 @@ namespace T034.App_Start
 
             kernel.Bind<IBaseDb>().ToMethod(c => new NhDbFactory(ConnectionString).CreateBaseDb());
             kernel.Bind<IRepository>().To<Repository.Repository>().InRequestScope();
+
+
+            kernel.Bind<IUserService>().To<UserService>().InRequestScope();
         }
 
         private static string ConnectionString { get { return ConfigurationManager.ConnectionStrings["DatabaseFile"].ConnectionString; } }

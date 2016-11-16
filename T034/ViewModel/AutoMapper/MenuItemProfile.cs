@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using AutoMapper;
-using Db.Entity;
+using T034.Api.Entity;
 
 namespace T034.ViewModel.AutoMapper
 {

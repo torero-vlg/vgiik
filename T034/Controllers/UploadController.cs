@@ -3,8 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Db.Entity;
-using Db.Entity.Administration;
+using T034.Api.Entity;
+using T034.Api.Entity.Administration;
 using T034.ViewModel;
 
 namespace T034.Controllers
