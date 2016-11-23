@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
+using T034.Api.AutoMapper;
 using T034.Models;
 using T034.Tools.Attribute;
 using T034.ViewModel.AutoMapper;
@@ -44,6 +45,7 @@ namespace T034
             RegisterRoutes(RouteTable.Routes);
 
             AutoMapperWebConfiguration.Configure(Server);
+            AutoMapperConfiguration.Configure(Server);
 
             ActionRoles = GetActionRoles();
         }

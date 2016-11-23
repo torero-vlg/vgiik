@@ -19,6 +19,10 @@ namespace T034.ViewModel.AutoMapper
             _server = server;
         }
 
+        public DepartmentProfile()
+        {
+        }
+
         protected override void Configure()
         {
             Mapper.CreateMap<Department, DepartmentViewModel>()
