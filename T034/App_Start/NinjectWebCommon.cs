@@ -75,6 +75,7 @@ namespace T034.App_Start
 
 
             kernel.Bind<IUserService>().To<UserService>().InRequestScope();
+            kernel.Bind<IRoleService>().To<RoleService>().InRequestScope();
         }
 
         private static string ConnectionString { get { return ConfigurationManager.ConnectionStrings["DatabaseFile"].ConnectionString; } }
