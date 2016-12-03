@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using NHibernate;
-using T034.Api.Tools;
 
 namespace T034.Api.DataAccess
 {
@@ -26,8 +25,7 @@ namespace T034.Api.DataAccess
                 }
                 catch (Exception ex)
                 {
-                    MonitorLog.WriteLog("Ошибка выполнения процедуры GetMessage : " + ex.Message,
-                        MonitorLog.typelog.Error, true);
+                    Logger.Fatal("Ошибка выполнения процедуры GetMessage : " + ex.Message, ex, new[] { msgId });
                     throw ;
                 }
             }
@@ -53,12 +51,10 @@ namespace T034.Api.DataAccess
                         .OrderBy(p => p.Id).Asc
                         .Take(1)
                         .List<int>();
-
                 }
                 catch (Exception ex)
                 {
-                    MonitorLog.WriteLog("Ошибка выполнения процедуры GetNextMessageId : " + ex.Message,
-                        MonitorLog.typelog.Error, true);
+                    Logger.Fatal("Ошибка выполнения процедуры GetNextMessageId : " + ex.Message, ex, new[] { messageId });
                     throw;
                 }
             }
@@ -88,8 +84,7 @@ namespace T034.Api.DataAccess
                 }
                 catch (Exception ex)
                 {
-                    MonitorLog.WriteLog("Ошибка выполнения процедуры GetPrevMessageId : " + ex.Message,
-                        MonitorLog.typelog.Error, true);
+                    Logger.Fatal("Ошибка выполнения процедуры GetPrevMessageId : " + ex.Message, ex, new[] { messageId });
                     throw;
                 }
             }

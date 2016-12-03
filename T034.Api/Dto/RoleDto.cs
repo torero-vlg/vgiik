@@ -1,9 +1,9 @@
-﻿namespace T034.Api.Dto
-{
-    public class RoleDto
-    {
-        public int Id { get; set; }
+﻿using T034.Api.Dto.Common;
 
+namespace T034.Api.Dto
+{
+    public class RoleDto : AbstractDto<int>
+    {
         public string Name { get; set; }
 
         public string Code { get; set; }

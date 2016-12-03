@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
+using T034.Api.Dto.Common;
 
 namespace T034.Api.Dto
 {
-    public class UserDto
+    public class UserDto : AbstractDto<int>
     {
         public UserDto()
         {
             UserRoles = new List<RoleDto>();
         }
-
-        public int Id { get; set; }
 
         public string Name { get; set; }
 

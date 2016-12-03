@@ -150,6 +150,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VeteranController.cs" />
@@ -371,6 +372,8 @@
     <Content Include="Scripts\app\home\museum.js" />
     <Content Include="Scripts\app\home\presentation.js" />
     <Content Include="Scripts\app\home\index.js" />
+    <Content Include="Scripts\app\role\addoredit.js" />
+    <Content Include="Scripts\app\role\list.js" />
     <Content Include="Scripts\app\upload\export.js" />
     <Content Include="Scripts\app\upload\uploadpartial.js" />
     <Content Include="Scripts\app\user\addoredit.js" />
@@ -836,6 +839,8 @@
     </Content>
     <Content Include="Views\User\AddOrEdit.cshtml" />
     <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\Role\AddOrEdit.cshtml" />
+    <Content Include="Views\Role\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\images\people\" />
