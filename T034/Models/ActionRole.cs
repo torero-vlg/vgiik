@@ -1,5 +1,8 @@
-﻿namespace T034.Models
+﻿using System;
+
+namespace T034.Models
 {
+    [Obsolete("использовать WebPermission")]
     public class ActionRole
     {
         public string Action { get; set; }

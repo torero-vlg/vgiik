@@ -156,6 +156,8 @@
     <Compile Include="Controllers\VeteranController.cs" />
     <Compile Include="Models\ActionRole.cs" />
     <Compile Include="Tools\Attribute\PermissionFilterAtribute.cs" />
+    <Compile Include="Tools\Attribute\WebPermissionAttribute.cs" />
+    <Compile Include="Tools\PermissionActionLinkHelper.cs" />
     <Compile Include="ViewModel\AutoMapper\AlbumProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\RoleProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\UserProfile.cs" />
