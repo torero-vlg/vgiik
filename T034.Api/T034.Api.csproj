@@ -87,6 +87,7 @@
     <Compile Include="Dto\UserModel.cs" />
     <Compile Include="Entity\Administration\Role.cs" />
     <Compile Include="Entity\Administration\User.cs" />
+    <Compile Include="Entity\Administration\WebPermissionRole.cs" />
     <Compile Include="Entity\Directory\DirectoryEntity.cs" />
     <Compile Include="Entity\Directory\NodeType.cs" />
     <Compile Include="Entity\Entity.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Entity\Vgiik\Publication.cs" />
     <Compile Include="Entity\Vgiik\Veteran.cs" />
     <Compile Include="Mapping\Administration\RoleMap.cs" />
+    <Compile Include="Mapping\Administration\WebPermissionRoleMap.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
     <Compile Include="Mapping\MenuItemMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
