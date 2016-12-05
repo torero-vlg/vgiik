@@ -32,6 +32,7 @@ namespace T034.Controllers
 
         [HttpGet]
         [Role("Administrator")]
+        [WebPermission("Люди.Редактирование")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new PersonViewModel();
@@ -49,6 +50,7 @@ namespace T034.Controllers
         }
 
         [Role("Administrator")]
+        [WebPermission("Люди.Редактирование")]
         public ActionResult AddOrEdit(PersonViewModel model)
         {
             var item = new Person();
