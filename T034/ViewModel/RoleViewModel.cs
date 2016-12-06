@@ -1,9 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace T034.ViewModel
 {
     public class RoleViewModel
     {
+        public RoleViewModel()
+        {
+            WebPermissions = new List<WebPermissionViewModel>();
+        }
+
         [Display(Name = "Идентификатор")]
         public int Id { get; set; }
         
@@ -14,5 +20,7 @@ namespace T034.ViewModel
         public string Code { get; set; }
         
         public bool Selected { get; set; }
+
+        public List<WebPermissionViewModel> WebPermissions { get; set; }
     }
 }

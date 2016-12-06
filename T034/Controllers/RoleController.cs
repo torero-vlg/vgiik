@@ -48,6 +48,8 @@ namespace T034.Controllers
                 model = Mapper.Map(dto, model);
             }
 
+            model.WebPermissions = Mapper.Map<List<WebPermissionViewModel>>(MvcApplication.WebPermissions);
+
             return View(model);
         }
 
