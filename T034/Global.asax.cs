@@ -7,9 +7,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using T034.Api.AutoMapper;
 using T034.Api.Dto;
+using T034.AutoMapper;
 using T034.Models;
 using T034.Tools.Attribute;
-using T034.ViewModel.AutoMapper;
 
 namespace T034
 {
@@ -69,7 +69,9 @@ namespace T034
                 Action = m.Name.ToLower(),
                 Role = ((RoleAttribute)m.GetCustomAttributes(typeof(RoleAttribute), true).FirstOrDefault()).Role,
                 Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "").ToLower()
-            }).ToList();
+            })
+            .Distinct()
+            .ToList();
 
             return result;
         }
@@ -87,7 +89,9 @@ namespace T034
                 Action = m.Name.ToLower(),
                 Name = ((WebPermissionAttribute)m.GetCustomAttributes(typeof(WebPermissionAttribute), true).FirstOrDefault()).Name,
                 Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "").ToLower()
-            }).ToList();
+            })
+            .Distinct()
+            .ToList();
 
             return result;
         }

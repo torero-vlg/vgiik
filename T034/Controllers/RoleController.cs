@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using Ninject;
@@ -48,7 +49,7 @@ namespace T034.Controllers
                 model = Mapper.Map(dto, model);
             }
 
-            model.WebPermissions = Mapper.Map<List<WebPermissionViewModel>>(MvcApplication.WebPermissions);
+            model.WebPermissions.AddRange(Mapper.Map<List<WebPermissionViewModel>>(MvcApplication.WebPermissions));
 
             return View(model);
         }

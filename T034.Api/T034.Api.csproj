@@ -73,6 +73,7 @@
     <Compile Include="AbstractDbFactory.cs" />
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="AutoMapper\MenuItemProfile.cs" />
+    <Compile Include="AutoMapper\WebPermissionProfile.cs" />
     <Compile Include="AutoMapper\RoleProfile.cs" />
     <Compile Include="AutoMapper\UserProfile.cs" />
     <Compile Include="DataAccess\IBaseDb.cs" />

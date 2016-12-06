@@ -9,7 +9,7 @@ namespace T034.Api.Dto
         public string Controller { get; set; }
         public string Action { get; set; }
 
-        public string RoleId { get; set; }
+        public int RoleId { get; set; }
 
         public string Role { get; set; }
     }
