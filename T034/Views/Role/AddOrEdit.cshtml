@@ -25,6 +25,7 @@
                 {
                     @Html.CheckBoxFor(m => m.WebPermissions[i].Selected)
                     @Html.HiddenFor(m => m.WebPermissions[i].Id)
+                    @Html.HiddenFor(m => m.WebPermissions[i].Name)
                     @Html.LabelFor(m => m.WebPermissions[i].Selected, Model.WebPermissions[i].Name)
                     <br />
                 }

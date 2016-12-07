@@ -89,9 +89,11 @@ namespace T034
                 Action = m.Name.ToLower(),
                 Name = ((WebPermissionAttribute)m.GetCustomAttributes(typeof(WebPermissionAttribute), true).FirstOrDefault()).Name,
                 Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "").ToLower()
-            })
-            .Distinct()
-            .ToList();
+            });
+
+            result = result
+                .GroupBy(r => new { r.Action, r.Controller, r.Name }).
+                Select(g => new WebPermissionDto { Action = g.Key.Action, Controller = g.Key.Controller, Name = g.Key.Name}); 
 
             return result;
         }

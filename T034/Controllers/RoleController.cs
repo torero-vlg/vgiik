@@ -49,7 +49,11 @@ namespace T034.Controllers
                 model = Mapper.Map(dto, model);
             }
 
-            model.WebPermissions.AddRange(Mapper.Map<List<WebPermissionViewModel>>(MvcApplication.WebPermissions));
+            model.WebPermissions = MvcApplication.WebPermissions
+                .Select(wp => wp.Name)
+                .Distinct()
+                .Select(x => new WebPermissionViewModel {  Name = x, Selected = model.WebPermissions.Any(wp => wp.Name == x)})
+                .ToList();
 
             return View(model);
         }
@@ -57,6 +61,12 @@ namespace T034.Controllers
         [Tools.Attribute.Role("Administrator")]
         public ActionResult AddOrEdit(RoleViewModel model)
         {
+            model.WebPermissions = model.WebPermissions.Where(wp => wp.Selected).ToList();
+            foreach (var webPermission in model.WebPermissions)
+            {
+                webPermission.RoleId = model.Id;
+            }
+
             if (model.Id > 0)
             {
                 RoleService.Update(Mapper.Map<RoleDto>(model));
