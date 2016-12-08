@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Ninject;
 using T034.Api.Services.Administration;
+using T034.Tools;
 using T034.Tools.Auth;
 using T034.ViewModel;
 
@@ -51,10 +52,8 @@ namespace T034.Controllers
 
             if (result.IsAuthenticated)
             {
-                var rolesCookie = new HttpCookie("roles") { Value = string.Join(",", result.User.UserRoles.Select(r => r.Code)), Expires = DateTime.Now.AddDays(30) };
-                var authCookie = new HttpCookie("auth") { Value = result.User.Email, Expires = DateTime.Now.AddDays(30) };
-                Response.Cookies.Set(rolesCookie);
-                Response.Cookies.Set(authCookie);
+                Response.SetUserPermissions(result.User.UserRoles.SelectMany(r => r.WebPermissions).Select(wp => wp.Name));
+                Response.SetAuth(result.User.Email); 
 
                 return RedirectToAction("Index", "Home");
             }

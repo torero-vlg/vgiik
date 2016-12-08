@@ -157,6 +157,8 @@
     <Compile Include="Models\ActionRole.cs" />
     <Compile Include="Tools\Attribute\PermissionFilterAtribute.cs" />
     <Compile Include="Tools\Attribute\WebPermissionAttribute.cs" />
+    <Compile Include="Tools\HttpResponseBaseExtension.cs" />
+    <Compile Include="Tools\HttpRequestBaseExtension.cs" />
     <Compile Include="Tools\PermissionActionLinkHelper.cs" />
     <Compile Include="AutoMapper\AlbumProfile.cs" />
     <Compile Include="AutoMapper\RoleProfile.cs" />

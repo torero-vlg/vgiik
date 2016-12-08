@@ -28,7 +28,7 @@ namespace T034
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new PermissionFilterAttribute());
+            filters.Add(new WebPermissionFilterAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)

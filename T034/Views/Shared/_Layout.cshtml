@@ -1,4 +1,5 @@
 ﻿@using T034.Models
+@using T034.Tools
 @using T034.Tools.Auth
 <!DOCTYPE html>
 <html>
@@ -33,7 +34,7 @@
             <div class="main">
                 <div class="pmb">
                     @{
-                        if (Request.Cookies["auth"] == null || string.IsNullOrEmpty(Request.Cookies["auth"].Value))
+                        if (Request.IsAuthorized())
                         {
                             <span class="pull-right"><a href="@Url.Action("Logon", "Account")" title="Войти"><i class="fa fa-sign-in" aria-hidden="true"></i></a></span>
                         }
