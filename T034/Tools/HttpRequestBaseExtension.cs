@@ -1,13 +1,22 @@
-﻿using System.Web;
+﻿using System;
+using System.Security.Cryptography;
+using System.Web;
 using T034.ViewModel;
 
 namespace T034.Tools
 {
     public static class HttpRequestBaseExtension
     {
-        public static string UserPermissions(this HttpRequestBase request)
+        public static bool HasUserPermissions(this HttpRequestBase request, string permission)
         {
-            return request.Cookies["permissions"]?.Value;
+            var salt = new byte[16];
+
+            var r = new Rfc2898DeriveBytes(permission, salt, 10000);
+            var hash = r.GetBytes(32);
+            var str = Convert.ToBase64String(hash);
+
+            var permissionCookie = request.Cookies["permissions"]?.Value;
+            return permissionCookie != null && permissionCookie.Contains(str);
         }
 
         public static bool IsAuthorized(this HttpRequestBase request)

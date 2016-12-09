@@ -44,6 +44,7 @@ namespace T034.Controllers
 
         [HttpGet]
         [Role("Administrator")]
+        [WebPermission("Альбомы.Редактирование")]
         public ActionResult AddOrEdit(int? id, int? personId, int? departmentId, int? veteranId)
         {
             var model = new AlbumViewModel();
@@ -100,6 +101,7 @@ namespace T034.Controllers
         }
 
         [Role("Administrator")]
+        [WebPermission("Альбомы.Редактирование")]
         public ActionResult AddOrEdit(AlbumViewModel model)
         {
             var item = new Album();
@@ -133,6 +135,7 @@ namespace T034.Controllers
             return View(model);
         }
 
+        [WebPermission("Альбомы.Редактирование")]
         public ActionResult Delete(int id)
         {
             var item = Db.Get<Album>(id);

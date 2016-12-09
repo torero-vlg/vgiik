@@ -13,8 +13,7 @@ namespace T034.Tools.Attribute
             var webPermissionDto = MvcApplication.WebPermissions.FirstOrDefault(p => p.Action == action.ToLower() && p.Controller == controller.ToLower());
             if (webPermissionDto == null) return;
 
-            var userPermissions = filterContext.RequestContext.HttpContext.Request.UserPermissions();
-            if (userPermissions != null && userPermissions.Contains(webPermissionDto.Name))
+            if (filterContext.RequestContext.HttpContext.Request.HasUserPermissions(webPermissionDto.Name))
                 return;
             
             filterContext.Result = new RedirectResult("~/Errors/Unauthorized");

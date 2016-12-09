@@ -20,17 +20,12 @@ namespace T034.Tools
 
         private static MvcHtmlString InternalPermissionActionLink(this HtmlHelper htmlHelper, string text, string actionName, string controllerName, object routeValues, IDictionary<string, object> htmlAttributes)
         {
-            var userPermissions = htmlHelper.ViewContext.HttpContext.Request.UserPermissions();
-
-            if (userPermissions == null)
-                return MvcHtmlString.Empty;
-
             var permission = MvcApplication
                 .WebPermissions
                 .FirstOrDefault(wp => string.Equals(wp.Action, actionName, StringComparison.CurrentCultureIgnoreCase)
                     && string.Equals(wp.Controller, controllerName, StringComparison.CurrentCultureIgnoreCase));
 
-            if (permission == null || userPermissions.Contains(permission.Name))
+            if (permission == null || htmlHelper.ViewContext.HttpContext.Request.HasUserPermissions(permission.Name))
                 return htmlHelper.ActionLink(text, actionName, controllerName, routeValues, htmlAttributes);
 
             return MvcHtmlString.Empty;
