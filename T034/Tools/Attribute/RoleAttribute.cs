@@ -1,5 +1,8 @@
-﻿namespace T034.Tools.Attribute
+﻿using System;
+
+namespace T034.Tools.Attribute
 {
+    [Obsolete("использовать WebPermissionAttribute")]
     public class RoleAttribute : System.Attribute
     {
         private readonly string _role;

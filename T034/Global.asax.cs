@@ -20,9 +20,6 @@ namespace T034
     {
         public static string SiteName => ConfigurationManager.AppSettings["SiteName"];
 
-        [Obsolete("использовать WebPermissions")]
-        public static IEnumerable<ActionRole> ActionRoles { get; private set; }
-
         public static IEnumerable<WebPermissionDto> WebPermissions { get; private set; }
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
@@ -53,27 +50,7 @@ namespace T034
             AutoMapperWebConfiguration.Configure(Server);
             AutoMapperConfiguration.Configure(Server);
 
-            ActionRoles = GetActionRoles();
             WebPermissions = GetWebPermissions();
-        }
-        private IEnumerable<ActionRole> GetActionRoles()
-        {
-            var _assembly = Assembly.GetExecutingAssembly();
-
-            IEnumerable<MethodInfo> methods = _assembly.GetTypes().
-                            SelectMany(t => t.GetMethods())
-                            .Where(m => m.GetCustomAttributes(typeof(RoleAttribute), true).Length > 0);
-
-            var result = methods.Select(m => new ActionRole()
-            {
-                Action = m.Name.ToLower(),
-                Role = ((RoleAttribute)m.GetCustomAttributes(typeof(RoleAttribute), true).FirstOrDefault()).Role,
-                Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "").ToLower()
-            })
-            .Distinct()
-            .ToList();
-
-            return result;
         }
 
         private static IEnumerable<WebPermissionDto> GetWebPermissions()
