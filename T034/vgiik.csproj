@@ -154,7 +154,6 @@
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VeteranController.cs" />
-    <Compile Include="Models\ActionRole.cs" />
     <Compile Include="Tools\Attribute\PermissionFilterAtribute.cs" />
     <Compile Include="Tools\Attribute\WebPermissionAttribute.cs" />
     <Compile Include="Tools\HttpResponseBaseExtension.cs" />
