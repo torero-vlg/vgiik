@@ -12,7 +12,7 @@ namespace T034.Controllers
 {
     public class AlbumController : BaseController
     {
-        [Role("Administrator")]
+        [WebPermission("Альбомы.Редактирование")]
         public ActionResult List(int? personId, int? departmentId, int? veteranId)
         {
             try
@@ -43,7 +43,6 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Role("Administrator")]
         [WebPermission("Альбомы.Редактирование")]
         public ActionResult AddOrEdit(int? id, int? personId, int? departmentId, int? veteranId)
         {
@@ -100,7 +99,6 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Role("Administrator")]
         [WebPermission("Альбомы.Редактирование")]
         public ActionResult AddOrEdit(AlbumViewModel model)
         {
@@ -148,7 +146,7 @@ namespace T034.Controllers
             return RedirectToAction("List");
         }
 
-        [Role("Moderator")]
+        [WebPermission("Альбомы.Редактирование")]
         public JsonResult DeleteFile(string filePath)
         {
             try

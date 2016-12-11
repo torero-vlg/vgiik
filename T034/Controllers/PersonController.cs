@@ -12,7 +12,7 @@ namespace T034.Controllers
 {
     public class PersonController : BaseController
     {
-        [Role("Administrator")]
+        [WebPermission("Люди.Редактирование")]
         public ActionResult List()
         {
             try
@@ -31,7 +31,6 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Role("Administrator")]
         [WebPermission("Люди.Редактирование")]
         public ActionResult AddOrEdit(int? id)
         {
@@ -49,7 +48,6 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Role("Administrator")]
         [WebPermission("Люди.Редактирование")]
         public ActionResult AddOrEdit(PersonViewModel model)
         {
@@ -83,7 +81,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-
+        [WebPermission("Люди.Редактирование")]
         public ActionResult Delete(int id)
         {
             var path = Path.Combine(Server.MapPath($"~/{"Content/images/people"}/{id}"));

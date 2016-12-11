@@ -186,7 +186,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Tools\Attribute\RoleAttribute.cs" />
     <Compile Include="Tools\Auth\AuthHttpModule.cs" />
     <Compile Include="Tools\Auth\CustomAuthentication.cs" />
     <Compile Include="Tools\Auth\IAuthentication.cs" />
