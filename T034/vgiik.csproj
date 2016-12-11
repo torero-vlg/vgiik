@@ -854,6 +854,7 @@
     <Folder Include="Content\images\sport\" />
     <Folder Include="Scripts\app\museum\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Archive\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -898,7 +899,6 @@
     <Content Include="Views\Home\Rooms\Room6.cshtml" />
     <Content Include="Views\Shared\Carousel.cshtml" />
     <Content Include="Views\Shared\DepartmentPartialView.cshtml" />
-    <Content Include="Views\Archive\Person.cshtml" />
     <Content Include="Views\404.cshtml" />
     <Content Include="Views\Home\Rooms\Room0.cshtml" />
     <Content Include="Views\Shared\Archive\Person.cshtml" />

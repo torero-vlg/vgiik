@@ -7,6 +7,7 @@ using AutoMapper;
 using T034.Api.Entity.Vgiik;
 using T034.Tools.Attribute;
 using T034.ViewModel;
+using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
@@ -37,7 +38,7 @@ namespace T034.Controllers
             var model = new PersonViewModel();
             if (id.HasValue)
             {
-                var item = Db.Get<Person>(id.Value);
+                var item = Db.Get<Person>((object)id.Value);
                 model = Mapper.Map(item, model);
                 model.Docs.AddRange(
                     item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
@@ -54,7 +55,7 @@ namespace T034.Controllers
             var item = new Person();
             if (model.PersonId > 0)
             {
-                item = Db.Get<Person>(model.PersonId);
+                item = Db.Get<Person>((object)model.PersonId);
             }
             item = Mapper.Map(model, item);
 
@@ -69,15 +70,16 @@ namespace T034.Controllers
 
         public ActionResult Index(int id)
         {
-            var model = new PersonViewModel();
-
-            var item = Db.Get<Person>(id);
-            if (item == null)
+            var model = GetPerson(id);
+            if (model == null)
             {
-                return View("ServerError", (object)"Страница не найдена");
+                return View("../404.cshtml");
             }
-            model = Mapper.Map(item, model);
 
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                return PartialView("Archive/Person", model);
+            }
             return View(model);
         }
 
@@ -91,6 +93,52 @@ namespace T034.Controllers
             var result = Db.Delete(new Person { Id = id});
 
             return RedirectToAction("List");
+        }
+
+        private PersonViewModel GetPerson(int personId)
+        {
+            var person = Db.Get<Person>((object)personId);
+
+            PersonViewModel model = new PersonViewModel();
+            if (person != null)
+            {
+                model = Mapper.Map(person, model);
+
+                model.Docs.AddRange(
+                    person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
+
+                IEnumerable<string> files = new List<string>();
+
+                try
+                {
+                    var directory = new DirectoryInfo(Server.MapPath(model.FilesFolder));
+                    files = directory.GetFiles().Select(f => f.Name);
+                }
+                catch (Exception ex)
+                {
+                }
+
+                model.Files = files;
+            }
+
+            if (personId == 24)
+                model.Videos = new List<VideoViewModel>
+                    {
+                        new VideoViewModel
+                        {
+                            Width = "420",
+                            Height = "315",
+                            Source = "https://www.youtube.com/embed/c_obyoeuPGo"
+                        },
+                        new VideoViewModel
+                        {
+                            Width = "420",
+                            Height = "315",
+                            Source = "https://www.youtube.com/embed/CqI7FuD_ytc"
+                        }
+                    };
+
+            return model;
         }
     }
 }
