@@ -1,4 +1,5 @@
-﻿@model T034.ViewModel.PersonViewModel
+﻿@using T034.Tools
+@model T034.ViewModel.PersonViewModel
 @{
     ViewBag.Title = "Редактирование человека";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,18 +17,18 @@
 
         <label class="control-label">Титул</label>
         <div>
-            @Html.TextBoxFor(m => m.Title, new {@class = "form-control"})
+            @Html.TextAreaFor(m => m.Title, new {@class = "form-control"})
         </div>
 
         <label class="control-label">Альбомы</label>
-        @Html.ActionLink("Добавить", "AddOrEdit", "Album", new { personId = Model.PersonId}, null)
+        @Html.PermissionActionLink("Добавить", "AddOrEdit", "Album", new { personId = Model.PersonId}, null)
         <ul class="list-group">
             @foreach (var album in Model.Albums)
             {
 
                 <li class="list-group-item">
                     @album.Name
-                    @Html.ActionLink("Редактировать", "AddOrEdit", "Album", new { id = album.Id }, null)
+                    @Html.PermissionActionLink("Редактировать", "AddOrEdit", "Album", new { id = album.Id }, null)
                 </li>
             }
         </ul>
