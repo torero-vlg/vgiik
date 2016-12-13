@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
 using T034.Api.AutoMapper;
+using T034.Api.Dto;
+using T034.AutoMapper;
 using T034.Models;
 using T034.Tools.Attribute;
-using T034.ViewModel.AutoMapper;
 
 namespace T034
 {
@@ -18,11 +20,12 @@ namespace T034
     {
         public static string SiteName => ConfigurationManager.AppSettings["SiteName"];
 
-        public static IEnumerable<ActionRole> ActionRoles { get; private set; }
+        public static IEnumerable<WebPermissionDto> WebPermissions { get; private set; }
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new PermissionFilterAttribute());
+            filters.Add(new WebPermissionFilterAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -47,22 +50,27 @@ namespace T034
             AutoMapperWebConfiguration.Configure(Server);
             AutoMapperConfiguration.Configure(Server);
 
-            ActionRoles = GetActionRoles();
+            WebPermissions = GetWebPermissions();
         }
-        private IEnumerable<ActionRole> GetActionRoles()
+
+        private static IEnumerable<WebPermissionDto> GetWebPermissions()
         {
-            var _assembly = Assembly.GetExecutingAssembly();
+            var assembly = Assembly.GetExecutingAssembly();
 
-            IEnumerable<MethodInfo> methods = _assembly.GetTypes().
+            var methods = assembly.GetTypes().
                             SelectMany(t => t.GetMethods())
-                            .Where(m => m.GetCustomAttributes(typeof(RoleAttribute), true).Length > 0);
+                            .Where(m => m.GetCustomAttributes(typeof(WebPermissionAttribute), true).Length > 0);
 
-            var result = methods.Select(m => new ActionRole()
+            var result = methods.Select(m => new WebPermissionDto
             {
                 Action = m.Name.ToLower(),
-                Role = ((RoleAttribute)m.GetCustomAttributes(typeof(RoleAttribute), true).FirstOrDefault()).Role,
+                Name = ((WebPermissionAttribute)m.GetCustomAttributes(typeof(WebPermissionAttribute), true).FirstOrDefault()).Name,
                 Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "").ToLower()
-            }).ToList();
+            });
+
+            result = result
+                .GroupBy(r => new { r.Action, r.Controller, r.Name }).
+                Select(g => new WebPermissionDto { Action = g.Key.Action, Controller = g.Key.Controller, Name = g.Key.Name}); 
 
             return result;
         }

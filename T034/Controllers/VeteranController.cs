@@ -12,7 +12,7 @@ namespace T034.Controllers
 {
     public class VeteranController : BaseController
     {
-        [Role("Administrator")]
+        [WebPermission("Ветераны.Редактирование")]
         public ActionResult List()
         {
             try
@@ -31,7 +31,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Role("Administrator")]
+        [WebPermission("Ветераны.Редактирование")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new PersonViewModel();
@@ -49,7 +49,7 @@ namespace T034.Controllers
         }
 
         [ValidateInput(false)]
-        [Role("Administrator")]
+        [WebPermission("Ветераны.Редактирование")]
         public ActionResult AddOrEdit(PersonViewModel model)
         {
             var item = new Veteran();
@@ -83,6 +83,7 @@ namespace T034.Controllers
         }
 
 
+        [WebPermission("Ветераны.Редактирование")]
         public ActionResult Delete(int id)
         {
             var path = Path.Combine(Server.MapPath($"~/{"Content/images/people"}/{id}"));

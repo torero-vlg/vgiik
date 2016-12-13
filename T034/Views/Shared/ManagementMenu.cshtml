@@ -1,4 +1,5 @@
-﻿@model T034.Api.Entity.Administration.User
+﻿@using T034.Tools
+@model T034.Api.Entity.Administration.User
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -17,37 +18,26 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Люди<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Содержимое<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                  <li>@Html.ActionLink("Просмотр", "List", "Person")</li>
-                  <li>@Html.ActionLink("Добавить", "AddOrEdit", "Person")</li>
-              </ul>
+                  <li>@Html.PermissionActionLink("Люди", "List", "Person")</li>
+                  <li>@Html.PermissionActionLink("Ветераны", "List", "Veteran")</li>
+                  <li>@Html.PermissionActionLink("Альбомы", "List", "Album")</li>
+                  <li>@Html.PermissionActionLink("Подразделения", "List", "Department")</li>
+               </ul>
           </li>
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ветераны<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  <li>@Html.ActionLink("Просмотр", "List", "Veteran")</li>
-                  <li>@Html.ActionLink("Добавить", "AddOrEdit", "Veteran")</li>
-              </ul>
-          </li>
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Альбомы<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                  <li>@Html.ActionLink("Просмотр", "List", "Album")</li>
-                  <li>@Html.ActionLink("Добавить", "AddOrEdit", "Album")</li>
-              </ul>
-          </li>
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Администрирование<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>@Html.ActionLink("Пользователи", "List", "User")</li>
-                <li>@Html.ActionLink("Роли", "List", "Role")</li>
-                <li role="separator" class="divider"></li>
-                <li>@Html.ActionLink("Настройки", "List", "Setting")</li>
-                <li role="separator" class="divider"></li>
-                <li>@Html.ActionLink("Экспорт", "Export", "Upload")</li>
-              </ul>
-            </li>
+          @if (Request.HasUserPermissions("Администрирование"))
+          {
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Администрирование<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li>@Html.PermissionActionLink("Пользователи", "List", "User")</li>
+                      <li>@Html.PermissionActionLink("Роли", "List", "Role")</li>
+                      <li role="separator" class="divider"></li>
+                      <li>@Html.PermissionActionLink("Настройки", "List", "Setting")</li>
+                  </ul>
+              </li>
+          }
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">

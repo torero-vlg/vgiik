@@ -24,9 +24,9 @@
         <td>@item.PersonId</td>
         <td>@item.FullName</td>
         <td>
-            @Html.ActionLink("Подробнее", "Index", new { id = item.PersonId })
-            @Html.ActionLink("Редактировать", "AddOrEdit", new { id = item.PersonId })
-            @Html.ActionLink("Удалить", "Delete", new { id = item.PersonId })
+            <a href="@Url.Action("Index", new { id = item.PersonId})" title="Подробнее"><i class="fa fa-square-o" aria-hidden="true"></i></a>
+            <a href="@Url.Action("AddOrEdit", new { id = item.PersonId})" title="Редактировать"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="@Url.Action("Delete", new { id = item.PersonId})" title="Удалить"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </td>
       </tr>
     }

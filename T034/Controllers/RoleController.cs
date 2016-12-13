@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using Ninject;
@@ -19,7 +20,7 @@ namespace T034.Controllers
         [Inject]
         public IRoleService RoleService { get; set; }
 
-        [Tools.Attribute.Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult List()
         {
             try
@@ -38,7 +39,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new RoleViewModel();
@@ -48,12 +49,24 @@ namespace T034.Controllers
                 model = Mapper.Map(dto, model);
             }
 
+            model.WebPermissions = MvcApplication.WebPermissions
+                .Select(wp => wp.Name)
+                .Distinct()
+                .Select(x => new WebPermissionViewModel {  Name = x, Selected = model.WebPermissions.Any(wp => wp.Name == x)})
+                .ToList();
+
             return View(model);
         }
 
-        [Tools.Attribute.Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult AddOrEdit(RoleViewModel model)
         {
+            model.WebPermissions = model.WebPermissions.Where(wp => wp.Selected).ToList();
+            foreach (var webPermission in model.WebPermissions)
+            {
+                webPermission.RoleId = model.Id;
+            }
+
             if (model.Id > 0)
             {
                 RoleService.Update(Mapper.Map<RoleDto>(model));
@@ -67,7 +80,7 @@ namespace T034.Controllers
             return RedirectToAction("List");
         }
 
-        [Tools.Attribute.Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult Index(int id)
         {
             var model = new RoleViewModel();
@@ -82,7 +95,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult Delete(int id)
         {
             try

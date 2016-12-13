@@ -154,14 +154,18 @@
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VeteranController.cs" />
-    <Compile Include="Models\ActionRole.cs" />
     <Compile Include="Tools\Attribute\PermissionFilterAtribute.cs" />
-    <Compile Include="ViewModel\AutoMapper\AlbumProfile.cs" />
-    <Compile Include="ViewModel\AutoMapper\RoleProfile.cs" />
-    <Compile Include="ViewModel\AutoMapper\UserProfile.cs" />
-    <Compile Include="ViewModel\AutoMapper\VeteranProfile.cs" />
-    <Compile Include="ViewModel\AutoMapper\PersonProfile.cs" />
-    <Compile Include="ViewModel\AutoMapper\MenuItemProfile.cs" />
+    <Compile Include="Tools\Attribute\WebPermissionAttribute.cs" />
+    <Compile Include="Tools\HttpResponseBaseExtension.cs" />
+    <Compile Include="Tools\HttpRequestBaseExtension.cs" />
+    <Compile Include="Tools\PermissionActionLinkHelper.cs" />
+    <Compile Include="AutoMapper\AlbumProfile.cs" />
+    <Compile Include="AutoMapper\RoleProfile.cs" />
+    <Compile Include="AutoMapper\UserProfile.cs" />
+    <Compile Include="AutoMapper\WebPermissionProfile.cs" />
+    <Compile Include="AutoMapper\VeteranProfile.cs" />
+    <Compile Include="AutoMapper\PersonProfile.cs" />
+    <Compile Include="AutoMapper\MenuItemProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
@@ -181,7 +185,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Tools\Attribute\RoleAttribute.cs" />
     <Compile Include="Tools\Auth\AuthHttpModule.cs" />
     <Compile Include="Tools\Auth\CustomAuthentication.cs" />
     <Compile Include="Tools\Auth\IAuthentication.cs" />
@@ -194,8 +197,8 @@
     <Compile Include="Tools\HttpTools.cs" />
     <Compile Include="Tools\SerializeTools.cs" />
     <Compile Include="ViewModel\ArchiveViewModel.cs" />
-    <Compile Include="ViewModel\AutoMapper\AutoMapperWebConfiguration.cs" />
-    <Compile Include="ViewModel\AutoMapper\DepartmentProfile.cs" />
+    <Compile Include="AutoMapper\AutoMapperWebConfiguration.cs" />
+    <Compile Include="AutoMapper\DepartmentProfile.cs" />
     <Compile Include="ViewModel\Common\CarouselViewModel.cs" />
     <Compile Include="ViewModel\Common\VideoViewModel.cs" />
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
@@ -210,6 +213,7 @@
     <Compile Include="ViewModel\PublicationViewModel.cs" />
     <Compile Include="ViewModel\RoleViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
+    <Compile Include="ViewModel\WebPermissionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -849,6 +853,7 @@
     <Folder Include="Content\images\sport\" />
     <Folder Include="Scripts\app\museum\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Archive\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -893,7 +898,6 @@
     <Content Include="Views\Home\Rooms\Room6.cshtml" />
     <Content Include="Views\Shared\Carousel.cshtml" />
     <Content Include="Views\Shared\DepartmentPartialView.cshtml" />
-    <Content Include="Views\Archive\Person.cshtml" />
     <Content Include="Views\404.cshtml" />
     <Content Include="Views\Home\Rooms\Room0.cshtml" />
     <Content Include="Views\Shared\Archive\Person.cshtml" />

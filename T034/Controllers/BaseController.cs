@@ -5,6 +5,7 @@ using Ninject;
 using NLog;
 using T034.Api.DataAccess;
 using T034.Api.Entity.Administration;
+using T034.Tools;
 using T034.Tools.Auth;
 using T034.ViewModel;
 
@@ -45,13 +46,7 @@ namespace T034.Controllers
         {
             try
             {
-                if (Request.Cookies["auth"] != null)
-                {
-                    UserInfo = new UserViewModel
-                    {
-                        Email = Request.Cookies["auth"].Value
-                    };
-                }
+                UserInfo = Request.GetUser();
             }
             catch (Exception ex)
             {

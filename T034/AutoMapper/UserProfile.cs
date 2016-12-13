@@ -1,8 +1,9 @@
 ﻿using System.Linq;
 using AutoMapper;
 using T034.Api.Dto;
+using T034.ViewModel;
 
-namespace T034.ViewModel.AutoMapper
+namespace T034.AutoMapper
 {
     public class UserProfile : Profile
     {

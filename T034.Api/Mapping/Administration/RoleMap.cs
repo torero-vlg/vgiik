@@ -11,6 +11,11 @@ namespace T034.Api.Mapping.Administration
 
             Map(p => p.Name);
             Map(p => p.Code);
+
+            HasMany(x => x.WebPermissions)
+                .KeyColumn("RoleId")
+                .Not.LazyLoad()
+                .Cascade.SaveUpdate();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace T034.Controllers
         [Inject]
         public IRoleService RoleService { get; set; }
 
-        [Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult List()
         {
             try
@@ -41,7 +41,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new UserViewModel();
@@ -64,7 +64,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Role("Administrator")]
+        [WebPermission("Администрирование")]
         public ActionResult AddOrEdit(UserViewModel model)
         {
             if (model.Id > 0)

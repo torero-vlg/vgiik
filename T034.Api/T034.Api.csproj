@@ -73,6 +73,7 @@
     <Compile Include="AbstractDbFactory.cs" />
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="AutoMapper\MenuItemProfile.cs" />
+    <Compile Include="AutoMapper\WebPermissionProfile.cs" />
     <Compile Include="AutoMapper\RoleProfile.cs" />
     <Compile Include="AutoMapper\UserProfile.cs" />
     <Compile Include="DataAccess\IBaseDb.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Dto\Common\IDto.cs" />
     <Compile Include="Dto\MenuItemDto.cs" />
     <Compile Include="Dto\RoleDto.cs" />
+    <Compile Include="Dto\WebPermissionrDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Dto\UserModel.cs" />
     <Compile Include="Entity\Administration\Role.cs" />

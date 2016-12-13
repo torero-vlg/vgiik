@@ -2,8 +2,9 @@
 using System.Web.Mvc;
 using AutoMapper;
 using T034.Api.Entity.Vgiik;
+using T034.ViewModel;
 
-namespace T034.ViewModel.AutoMapper
+namespace T034.AutoMapper
 {
     public class PersonProfile : Profile
     {

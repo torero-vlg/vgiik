@@ -5,12 +5,14 @@ using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using T034.Api.Entity.Vgiik;
+using T034.Tools.Attribute;
 using T034.ViewModel;
 
 namespace T034.Controllers
 {
     public class DepartmentController : BaseController
     {
+        [WebPermission("Подразделения.Редактирование")]
         public ActionResult List()
         {
             try
@@ -29,7 +31,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [WebPermission("Подразделения.Редактирование")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new DepartmentViewModel();
@@ -42,7 +44,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [WebPermission("Подразделения.Редактирование")]
         public ActionResult AddOrEdit(DepartmentViewModel model)
         {
             var item = new Department();
