@@ -16,7 +16,7 @@ namespace T034.Api.Services.Administration
         User Update(UserDto dto);
         IEnumerable<UserDto> Select();
         UserDto Get(int id);
-        User GetUser(string email);
+        UserDto Get(string email);
     }
 
     public class UserService : IUserService
@@ -87,15 +87,17 @@ namespace T034.Api.Services.Administration
         public UserDto Get(int id)
         {
             var dto = new UserDto();
-            var item = Db.Get<User>(id);
+            var item = Db.Get<User>((object)id);
             dto = Mapper.Map(item, dto);
             return dto;
         }
 
-        public User GetUser(string email)
+        public UserDto Get(string email)
         {
+            var dto = new UserDto();
             var user = Db.SingleOrDefault<User>(u => u.Email == email);
-            return user;
+            dto = Mapper.Map(user, dto);
+            return dto;
         }
     }
 

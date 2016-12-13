@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
+using AutoMapper;
 using Ninject;
 using T034.Api.Services.Administration;
+using T034.ViewModel;
 
 namespace T034.Controllers
 {
@@ -14,10 +16,12 @@ namespace T034.Controllers
             //если есть пользователь в БД, то показываем меню
             if (UserInfo != null)
             {
-                var user = UserService.GetUser(UserInfo.Email);
-                if (user != null)
+                var dto = UserService.Get(UserInfo.Email);
+                if (dto != null)
                 {
-                    return PartialView(user);
+                    var model = new UserViewModel();
+                    model = Mapper.Map(dto, model);
+                    return PartialView(model);
                 }
             }
             return null;

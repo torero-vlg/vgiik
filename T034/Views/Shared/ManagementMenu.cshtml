@@ -1,5 +1,5 @@
 ﻿@using T034.Tools
-@model T034.Api.Entity.Administration.User
+@model T034.ViewModel.UserViewModel
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -47,7 +47,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Model.Email<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Model.Name<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li role="separator" class="divider"></li>
             <li>@Html.ActionLink("Выйти", "Logout", "Auth")</li>
