@@ -40,6 +40,9 @@ namespace T034.Controllers
             {
                 var item = Db.Get<Person>((object)id.Value);
                 model = Mapper.Map(item, model);
+
+                model.Files = GetFiles(model);
+
                 model.Docs.AddRange(
                     item.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
                 model.Albums.AddRange(
@@ -107,18 +110,7 @@ namespace T034.Controllers
                 model.Docs.AddRange(
                     person.Albums.Select(a => new CarouselViewModel(a.Path, Server.MapPath(a.Path), a.Name, "")));
 
-                IEnumerable<string> files = new List<string>();
-
-                try
-                {
-                    var directory = new DirectoryInfo(Server.MapPath(model.FilesFolder));
-                    files = directory.GetFiles().Select(f => f.Name);
-                }
-                catch (Exception ex)
-                {
-                }
-
-                model.Files = files;
+                model.Files = GetFiles(model);
             }
 
             if (personId == 24)
@@ -139,6 +131,22 @@ namespace T034.Controllers
                     };
 
             return model;
+        }
+
+        private IEnumerable<string> GetFiles(PersonViewModel model)
+        {
+            IEnumerable<string> files = new List<string>();
+
+            try
+            {
+                var directory = new DirectoryInfo(Server.MapPath(model.FilesFolder));
+                files = directory.GetFiles().Select(f => f.Name);
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return files;
         }
     }
 }
