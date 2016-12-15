@@ -93,7 +93,9 @@
     <Compile Include="Entity\Directory\DirectoryEntity.cs" />
     <Compile Include="Entity\Directory\NodeType.cs" />
     <Compile Include="Entity\Entity.cs" />
+    <Compile Include="Entity\Files.cs" />
     <Compile Include="Entity\Finder\Finder.cs" />
+    <Compile Include="Entity\Folder.cs" />
     <Compile Include="Entity\MenuItem.cs" />
     <Compile Include="Entity\News.cs" />
     <Compile Include="Entity\Node.cs" />
@@ -105,6 +107,8 @@
     <Compile Include="Mapping\Administration\RoleMap.cs" />
     <Compile Include="Mapping\Administration\WebPermissionRoleMap.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
+    <Compile Include="Mapping\FilesMap.cs" />
+    <Compile Include="Mapping\FolderMap.cs" />
     <Compile Include="Mapping\MenuItemMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
     <Compile Include="Mapping\NodeMap.cs" />
