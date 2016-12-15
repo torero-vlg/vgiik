@@ -122,9 +122,14 @@
     <Compile Include="Services\Administration\RoleService.cs" />
     <Compile Include="Services\Administration\UserService.cs" />
     <Compile Include="Services\Common\AbstractRepository.cs" />
+    <Compile Include="Services\Common\Exceptions\BusinessException.cs" />
+    <Compile Include="Services\Common\Exceptions\UserNotFoundException.cs" />
+    <Compile Include="Services\Common\FileUpload\Uploader.cs" />
+    <Compile Include="Services\Common\FileUpload\ViewDataUploadFilesResult.cs" />
     <Compile Include="Services\Common\IService.cs" />
     <Compile Include="Services\Common\OperationResult.cs" />
     <Compile Include="Services\Common\StatusOperation.cs" />
+    <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\MenuItemService.cs" />
     <Compile Include="Tools\MonitorLog.cs" />
   </ItemGroup>
