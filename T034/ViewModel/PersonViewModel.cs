@@ -24,9 +24,6 @@ namespace T034.ViewModel
         public IEnumerable<VideoViewModel> Videos { get; set; }
     
 
-        public string FilesFolder
-        {
-            get { return string.Format("/Content/images/people/{0}/files/", PersonId); }
-        }
+        public string FilesFolder => $"/Content/images/people/{PersonId}/files/";
     }
 }
