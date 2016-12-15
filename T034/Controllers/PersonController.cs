@@ -133,7 +133,7 @@ namespace T034.Controllers
             return model;
         }
 
-        private IEnumerable<string> GetFiles(PersonViewModel model)
+        private IEnumerable<FileViewModel> GetFiles(PersonViewModel model)
         {
             IEnumerable<string> files = new List<string>();
 
@@ -146,7 +146,7 @@ namespace T034.Controllers
             {
             }
 
-            return files;
+            return new List<FileViewModel>();
         }
     }
 }

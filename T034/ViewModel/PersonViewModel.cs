@@ -20,7 +20,7 @@ namespace T034.ViewModel
         public List<CarouselViewModel> Docs { get; set; }
         public List<AlbumViewModel> Albums { get; set; }
 
-        public IEnumerable<string> Files { get; set; }
+        public IEnumerable<FileViewModel> Files { get; set; }
         public IEnumerable<VideoViewModel> Videos { get; set; }
     
 

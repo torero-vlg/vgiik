@@ -1,4 +1,5 @@
-﻿@using T034.Tools
+﻿@using T034.Models
+@using T034.Tools
 @model T034.ViewModel.PersonViewModel
 @{
     ViewBag.Title = "Редактирование человека";
@@ -19,19 +20,6 @@
         <div>
             @Html.TextAreaFor(m => m.Title, new {@class = "form-control"})
         </div>
-
-        <label class="control-label">Альбомы</label>
-        @Html.PermissionActionLink("Добавить", "AddOrEdit", "Album", new { personId = Model.PersonId}, null)
-        <ul class="list-group">
-            @foreach (var album in Model.Albums)
-            {
-
-                <li class="list-group-item">
-                    @album.Name
-                    @Html.PermissionActionLink("Редактировать", "AddOrEdit", "Album", new { id = album.Id }, null)
-                </li>
-            }
-        </ul>
     </div>
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Сохранить изменения</button>
@@ -42,3 +30,35 @@
         }
     </div>
 }
+
+<label class="control-label">Альбомы</label>
+@Html.PermissionActionLink("Добавить", "AddOrEdit", "Album", new { personId = Model.PersonId }, null)
+<ul class="list-group">
+    @foreach (var album in Model.Albums)
+            {
+
+        <li class="list-group-item">
+            @album.Name
+            @Html.PermissionActionLink("Редактировать", "AddOrEdit", "Album", new { id = album.Id }, null)
+        </li>
+    }
+</ul>
+
+<label class="control-label">Файлы</label>
+<div class="list-group">
+    @if (Model.Files != null)
+            {
+                foreach (var item in Model.Files)
+                {
+            <a class="list-group-item" href="@item.Url" target="_blank">
+                <i class="fa @item.FileIcon"></i> @item.Name
+                <span class="pull-right">@item.LogDate @item.Size</span>
+            </a>
+        }
+    }
+</div>
+@Html.Partial("FileUploadPartialView", new FileUploadModel
+   {
+       Url = "/Folder/UploadFile",
+       // Folder = Model.Id.ToString()
+   })
