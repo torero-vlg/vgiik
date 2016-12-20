@@ -9,7 +9,8 @@
             $('#fileupload').fileupload({
                 url: url,
                 dataType: 'json',
-                paramName: folderId,
+                //data: { filePath: 'rr' },
+                paramName: '3',
                 done: function (e, data) {
                     $.each(data.result, function (index, file) {
                         $('<div class="alert alert-success" role="alert"/>').text(file.name).appendTo('#files');

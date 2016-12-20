@@ -9,11 +9,8 @@ using T034.Tools.Attribute;
 
 namespace T034.Controllers
 {
-    public class FolderController : BaseController
+    public class FileController : BaseController
     {
-        [Inject]
-        public IMenuItemService MenuItemService { get; set; }
-
         [Inject]
         public IFileService FileService { get; set; }
 
@@ -21,13 +18,23 @@ namespace T034.Controllers
         
         [HttpPost]
         [WebPermission("Файлы.Редактирование")]
-        public ActionResult UploadFile(string folder)
+        public ActionResult UploadFile()
         {
-            //var path = Path.Combine(Server.MapPath($"~/{MvcApplication.FilesFolder}"));
-            var path = Path.Combine(Server.MapPath($"~/{folder}"));
-            var r = FileService.Upload(path, Request, UserInfo.Email);
-            //TODO надо что-то возвращать
-            return Json(r);
+            try
+            {
+
+                var folder = "Upload/Files";
+                //var path = Path.Combine(Server.MapPath($"~/{MvcApplication.FilesFolder}"));
+                var path = Path.Combine(Server.MapPath($"~/{folder}"));
+                var r = FileService.Upload(path, Request, UserInfo.Email);
+                //TODO надо что-то возвращать
+                return Json(r);
+
+            }
+            catch (Exception ex)
+            {
+                return Json(string.Empty);
+            }
         }
 
         [WebPermission("Файлы.Редактирование")]
