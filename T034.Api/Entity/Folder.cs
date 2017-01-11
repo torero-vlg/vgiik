@@ -10,6 +10,7 @@ namespace T034.Api.Entity
         
         public virtual DateTime LogDate { get; set; }
         public virtual User User { get; set; }
+        public virtual string Path { get; set; }
 
         public override string ToString()
         {

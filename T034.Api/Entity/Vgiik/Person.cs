@@ -18,5 +18,10 @@ namespace T034.Api.Entity.Vgiik
         /// Список альбомов
         /// </summary>
         public virtual IList<Album> Albums { get; set; }
+
+        /// <summary>
+        /// Папка файлов
+        /// </summary>
+        public virtual Folder FilesFolder { get; set; }
     }
 }

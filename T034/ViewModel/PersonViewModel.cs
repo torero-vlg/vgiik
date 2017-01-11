@@ -22,8 +22,16 @@ namespace T034.ViewModel
 
         public IEnumerable<FileViewModel> Files { get; set; }
         public IEnumerable<VideoViewModel> Videos { get; set; }
-    
 
-        public string FilesFolder => $"/Content/images/people/{PersonId}/files/";
+        /// <summary>
+        /// Путь к папке на сервере, например /Content/images/people/24/files/
+        /// </summary>
+        public string FilesFolder { get; set; }
+        public int FilesFolderId { get; set; }
+
+        /// <summary>
+        /// Подсказка для имени папки, если её нет
+        /// </summary>
+        public string FilesFolderHint => $"/Content/images/people/{PersonId}/files/";
     }
 }

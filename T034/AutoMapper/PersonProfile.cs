@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
+using T034.Api.Entity;
 using T034.Api.Entity.Vgiik;
 using T034.ViewModel;
 
@@ -13,10 +14,12 @@ namespace T034.AutoMapper
             Mapper.CreateMap<Person, PersonViewModel>()
                 .ForMember(dest => dest.PersonId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Albums, opt => opt.Ignore())
+                .ForMember(dest => dest.FilesFolder, opt => opt.MapFrom(src => src.FilesFolder == null ?  "" : src.FilesFolder.Path))
                 .ForMember(dest => dest.Docs, opt => opt.MapFrom(src => new List<CarouselViewModel>()));
 
             Mapper.CreateMap<PersonViewModel, Person>()
                 .ForMember(dest => dest.Albums, opt => opt.Ignore())
+                .ForMember(dest => dest.FilesFolder, opt => opt.MapFrom(src => new Folder { Id = src.FilesFolderId}))
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PersonId));
 
             Mapper.CreateMap<Person, SelectListItem>()

@@ -3,14 +3,26 @@
     return {
         Initialize: function () {
          
+
+            $("#createFolderBtn").click(function (event) {
+
+                $.ajax({
+                    url: "/Folder/CreateFolder",
+                    data: { path: $('#FilesFolderHint').val() }
+                })
+                .success(function (data) {
+                    alert(data.Message);
+                });
+
+            });
+
             var url = '/File/UploadFile';
-            var folderId = $('#ParentFolderId').val();
+            var folderId = $('#FilesFolderId').val();
 
             $('#fileupload').fileupload({
                 url: url,
                 dataType: 'json',
-                //data: { filePath: 'rr' },
-                paramName: '3',
+                paramName: folderId,
                 done: function (e, data) {
                     $.each(data.result, function (index, file) {
                         $('<div class="alert alert-success" role="alert"/>').text(file.name).appendTo('#files');

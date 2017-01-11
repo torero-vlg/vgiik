@@ -11,6 +11,7 @@ namespace T034.Api.Mapping
 
             Map(p => p.Name);
             Map(p => p.LogDate);
+            Map(p => p.Path);
 
             References(p => p.User).Column("UserId")
                 .Not.LazyLoad();

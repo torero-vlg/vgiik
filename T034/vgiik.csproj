@@ -151,6 +151,7 @@
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\FolderController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="ViewModel\DepartmentViewModel.cs" />
     <Compile Include="ViewModel\Common\NodeViewModel.cs" />
     <Compile Include="ViewModel\FileViewModel.cs" />
+    <Compile Include="ViewModel\FolderViewModel.cs" />
     <Compile Include="ViewModel\ImageViewModel.cs" />
     <Compile Include="ViewModel\LoginInfoModel.cs" />
     <Compile Include="ViewModel\LogonViewModel.cs" />
@@ -846,6 +848,8 @@
     <Content Include="Views\User\List.cshtml" />
     <Content Include="Views\Role\AddOrEdit.cshtml" />
     <Content Include="Views\Role\List.cshtml" />
+    <Content Include="Views\Folder\Edit.cshtml" />
+    <Content Include="Views\Folder\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\images\people\" />

@@ -17,7 +17,7 @@ namespace T034.Api.Entity.Vgiik
         /// <summary>
         /// Список альбомов
         /// </summary>
-        public virtual IList<Album> Albums { get; set; }
+        public virtual ICollection<Album> Albums { get; set; }
 
         /// <summary>
         /// Список публикаций

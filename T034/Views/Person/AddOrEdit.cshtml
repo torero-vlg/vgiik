@@ -44,12 +44,22 @@
     }
 </ul>
 
+@if (Model.FilesFolder == "")
+{
+    @Html.DisplayFor(m => m.FilesFolderHint)
+    <button type="submit" class="btn btn-primary" id="createFolderBtn">Создать папку</button>
+}
+else
+{
+    @Html.DisplayFor(m => m.FilesFolder)
+}
+
 <label class="control-label">Файлы</label>
 <div class="list-group">
     @if (Model.Files != null)
-            {
-                foreach (var item in Model.Files)
-                {
+    {
+        foreach (var item in Model.Files)
+        {
             <a class="list-group-item" href="@item.Url" target="_blank">
                 <i class="fa @item.FileIcon"></i> @item.Name
                 <span class="pull-right">@item.LogDate @item.Size</span>
@@ -57,6 +67,7 @@
         }
     }
 </div>
+@Html.HiddenFor(m => m.FilesFolderId)
 @Html.Partial("FileUploadPartialView", new FileUploadModel
    {
        Url = "/Folder/UploadFile",

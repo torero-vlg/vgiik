@@ -12,6 +12,9 @@ namespace T034.Api.Mapping.Vgiik
             Map(p => p.FullName);
             Map(p => p.Title);
             HasMany(x => x.Albums).KeyColumn("PersonId").Not.LazyLoad();
+            References(p => p.FilesFolder).Column("FolderId")
+                .Nullable()
+                .Not.LazyLoad();
         }
     }
 }
