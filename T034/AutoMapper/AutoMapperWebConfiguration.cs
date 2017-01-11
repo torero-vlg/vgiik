@@ -23,9 +23,15 @@ namespace T034.AutoMapper
 
         public static void Configure(HttpServerUtility server)
         {
-            foreach (var profile in Assembly.GetAssembly(typeof(AutoMapperWebConfiguration)).GetTypes().Where(t => typeof(Profile).IsAssignableFrom(t)))
+            var profiles = Assembly.GetAssembly(typeof(AutoMapperWebConfiguration)).GetTypes().Where(t => typeof(Profile).IsAssignableFrom(t));
+            foreach (var profile in profiles)
             {
-                Mapper.AddProfile(Activator.CreateInstance(profile) as Profile);
+                //TODO убрать этот костыль
+                if (profile.GetConstructors().Count() > 1)
+                    Mapper.AddProfile(Activator.CreateInstance(profile, server) as Profile);
+                else
+                    Mapper.AddProfile(Activator.CreateInstance(profile) as Profile);
+
             }
         }
 

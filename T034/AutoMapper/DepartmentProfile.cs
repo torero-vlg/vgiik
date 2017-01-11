@@ -27,7 +27,7 @@ namespace T034.AutoMapper
         protected override void Configure()
         {
             Mapper.CreateMap<Department, DepartmentViewModel>()
-                .ForMember(dest => dest.Albums, opt => opt.MapFrom(src => src.Albums.Select(a => new CarouselViewModel(a.Path, _server.MapPath(a.Path), a.Name, ""))))
+                .ForMember(dest => dest.Albums, opt => opt.MapFrom(src => AlbumsToCarousel(src.Albums)))
                 .ForMember(dest => dest.Nodes, opt => opt.MapFrom(src => IdsToString(src.Nodes)))
                 .ForMember(dest => dest.AlbumsIds, opt => opt.MapFrom(src => IdsToString(src.Albums)))
                 .ForMember(dest => dest.Videos, opt => opt.MapFrom(src => src.Nodes.Where(n => n.NodeType == NodeType.Video).Select(n => n.Path)));
@@ -50,5 +50,12 @@ namespace T034.AutoMapper
         {
             return collection == null || !collection.Any() ? "" : collection.Select(n => n.Id.ToString()).Aggregate((i, j) => i.ToString() + "," + j.ToString());
         }
+
+        private IEnumerable<CarouselViewModel> AlbumsToCarousel(ICollection<Album> collection)
+        {
+            var list = collection.Select(a => new CarouselViewModel(a.Path, _server.MapPath(a.Path), a.Name, ""));
+            return list;
+        }
+
     }
 }
