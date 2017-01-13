@@ -1,6 +1,7 @@
 using System.Configuration;
 using T034.Api;
 using T034.Api.DataAccess;
+using T034.Api.Services;
 using T034.Api.Services.Administration;
 using T034.Repository;
 using T034.Tools.Auth;
@@ -76,6 +77,7 @@ namespace T034.App_Start
 
             kernel.Bind<IUserService>().To<UserService>().InRequestScope();
             kernel.Bind<IRoleService>().To<RoleService>().InRequestScope();
+            kernel.Bind<IPersonService>().To<PersonService>().InRequestScope();
         }
 
         private static string ConnectionString { get { return ConfigurationManager.ConnectionStrings["DatabaseFile"].ConnectionString; } }

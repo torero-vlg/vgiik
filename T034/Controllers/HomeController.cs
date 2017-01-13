@@ -2,7 +2,10 @@
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using Ninject;
 using T034.Api.Entity.Vgiik;
+using T034.Api.Services;
+using T034.Tools.Attribute;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 
@@ -10,6 +13,9 @@ namespace T034.Controllers
 {
     public class HomeController : BaseController
     {
+        [Inject]
+        public IPersonService PersonService { get; set; }
+
         public ActionResult Index()
         {
             return View();
@@ -99,6 +105,23 @@ namespace T034.Controllers
         public ActionResult Presentation()
         {
             return View();
+        }
+
+        [WebPermission("Администрирование")]
+        public ActionResult FileFolderToAllPerson()
+        {
+            var personList = PersonService.Select();
+
+            foreach (var person in personList)
+            {
+                var filesFolder = Path.Combine(Server.MapPath("~/Content/images/people"), person.Id.ToString(), "files");
+                if(Directory.Exists(filesFolder))
+                    continue;
+                var directoryInfo = new DirectoryInfo(filesFolder);
+                directoryInfo.Create();
+            }
+            
+            return View("Index");
         }
     }
 }

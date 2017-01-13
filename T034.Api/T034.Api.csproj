@@ -73,6 +73,7 @@
     <Compile Include="AbstractDbFactory.cs" />
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="AutoMapper\MenuItemProfile.cs" />
+    <Compile Include="AutoMapper\PersonProfile.cs" />
     <Compile Include="AutoMapper\WebPermissionProfile.cs" />
     <Compile Include="AutoMapper\RoleProfile.cs" />
     <Compile Include="AutoMapper\UserProfile.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Dto\Common\AbstractDto.cs" />
     <Compile Include="Dto\Common\IDto.cs" />
     <Compile Include="Dto\MenuItemDto.cs" />
+    <Compile Include="Dto\PersonDto.cs" />
     <Compile Include="Dto\RoleDto.cs" />
     <Compile Include="Dto\WebPermissionrDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Services\Common\OperationResult.cs" />
     <Compile Include="Services\Common\StatusOperation.cs" />
     <Compile Include="Services\MenuItemService.cs" />
+    <Compile Include="Services\PersonService.cs" />
     <Compile Include="Tools\MonitorLog.cs" />
   </ItemGroup>
   <ItemGroup>
