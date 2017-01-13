@@ -50,10 +50,12 @@ namespace T034.AutoMapper
         {
             return collection == null || !collection.Any() ? "" : collection.Select(n => n.Id.ToString()).Aggregate((i, j) => i.ToString() + "," + j.ToString());
         }
+
         private IEnumerable<CarouselViewModel> AlbumsToCarousel(ICollection<Album> collection)
         {
-            var t = collection.Select(a => new CarouselViewModel(a.Path, _server.MapPath(a.Path), a.Name, ""));
-            return t;
+            var list = collection.Select(a => new CarouselViewModel(a.Path, _server.MapPath(a.Path), a.Name, ""));
+            return list;
         }
+
     }
 }

@@ -31,6 +31,7 @@ namespace T034.AutoMapper
                     Mapper.AddProfile(Activator.CreateInstance(profile, server) as Profile);
                 else
                     Mapper.AddProfile(Activator.CreateInstance(profile) as Profile);
+
             }
         }
 
