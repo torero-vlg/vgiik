@@ -1,12 +1,10 @@
 ﻿@model List<T034.Api.Entity.Vgiik.Person>
 
-<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-    <div class="panel-body">
-        <div class="list-group">
-            @foreach (var person in Model)
-            {
-                @Html.ActionLink(person.FullName, "Person", "Archive", new { personId = person.Id }, new { @class = "list-group-item" })    
-            }
-        </div>
+<div class="panel-body">
+    <div class="list-group">
+        @foreach (var person in Model)
+        {
+            @Html.ActionLink(person.FullName, "Person", "Archive", new { personId = person.Id }, new { @class = "list-group-item" })    
+        }
     </div>
 </div>

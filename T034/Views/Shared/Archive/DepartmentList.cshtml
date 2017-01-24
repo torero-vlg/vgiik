@@ -1,12 +1,10 @@
 ﻿@model List<T034.ViewModel.DepartmentViewModel>
 
-<div id="collapseDepartment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDepartment">
-    <div class="panel-body">
-        <div class="list-group">
-            @foreach (var item in Model)
-            {
-                @Html.ActionLink(item.Name, "Department", "Archive", new { departmentId = item.Id }, new { @class = "list-group-item" })    
-            }
-        </div>
+<div class="panel-body">
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+            @Html.ActionLink(item.Name, "Department", "Archive", new { departmentId = item.Id }, new { @class = "list-group-item" })    
+        }
     </div>
 </div>

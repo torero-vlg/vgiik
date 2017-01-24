@@ -15,22 +15,27 @@
                 </a>
             </h5>
         </div>
-        @{
-            Html.RenderPartial("Archive/PersonList", Model.Persons);
-        }
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            @{
+                Html.RenderPartial("Archive/PersonList", Model.Persons);
+            }
+        </div>
     </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-                <h5 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Исторические фотодокументы Волгоградского государственного института искусств и культуры
-                    </a>
-                </h5>
-            </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h5 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Исторические фотодокументы Волгоградского государственного института искусств и культуры
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             @{
                 Html.RenderPartial("Archive/PhotoList");
             }
         </div>
+    </div>
 
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingDepartment">
@@ -40,10 +45,10 @@
                 </a>
             </h5>
         </div>
-        @{
-            Html.RenderPartial("Archive/DepartmentList", Model.Departments);
-        }
+        <div id="collapseDepartment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDepartment">
+            @{
+                Html.RenderPartial("Archive/DepartmentList", Model.Departments);
+            }
+        </div>
     </div>
-
-
-    </div>
+</div>
