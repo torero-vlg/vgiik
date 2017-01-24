@@ -13,5 +13,10 @@ namespace T034.Controllers
         {
             return RedirectToAction("Index", "Department", new {departmentid});
         }
+
+        public ActionResult PhotoList()
+        {
+            return PartialView("Archive/PhotoList");
+        }
     }
 }

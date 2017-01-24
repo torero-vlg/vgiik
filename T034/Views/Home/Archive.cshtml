@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="photoLink">
         <div class="panel-heading" role="tab" id="headingTwo">
             <h5 class="panel-title">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -30,11 +30,7 @@
                 </a>
             </h5>
         </div>
-        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-            @{
-                Html.RenderPartial("Archive/PhotoList");
-            }
-        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"></div>
     </div>
 
     <div class="panel panel-default">
