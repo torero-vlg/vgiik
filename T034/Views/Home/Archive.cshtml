@@ -6,9 +6,44 @@
 }
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    @{
-        Html.RenderPartial("Archive/PersonList", Model.Persons);
-        Html.RenderPartial("Archive/PhotoList");
-        Html.RenderPartial("Archive/DepartmentList", Model.Departments);
-    }
-</div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Архивные документы Волгоградского государственного института искусств и культуры
+                </a>
+            </h5>
+        </div>
+        @{
+            Html.RenderPartial("Archive/PersonList", Model.Persons);
+        }
+    </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h5 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Исторические фотодокументы Волгоградского государственного института искусств и культуры
+                    </a>
+                </h5>
+            </div>
+            @{
+                Html.RenderPartial("Archive/PhotoList");
+            }
+        </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingDepartment">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDepartment" aria-expanded="false" aria-controls="collapseDepartment">
+                    Факультеты, кафедры, отделы
+                </a>
+            </h5>
+        </div>
+        @{
+            Html.RenderPartial("Archive/DepartmentList", Model.Departments);
+        }
+    </div>
+
+
+    </div>
