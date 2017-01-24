@@ -5,7 +5,10 @@
 
             if ($(e.target).html() === '') {
                 $.ajax({
-                    url: url
+                    url: url,
+                    beforeSend: function (xhr) {
+                        $(e.target).html('<h3><i class="center fa fa-spinner fa-pulse fa-3x fa-fw"></i></h3>');
+                    }
                 })
                 .success(function (data) {
                     $(e.target).html(data);
