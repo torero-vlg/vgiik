@@ -1,14 +1,40 @@
-﻿@model T034.ViewModel.ArchiveViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Архив ВГИИК";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    @{
-        Html.RenderPartial("Archive/PersonList", Model.Persons);
-        Html.RenderPartial("Archive/PhotoList");
-        Html.RenderPartial("Archive/DepartmentList", Model.Departments);
-    }
+
+    <div class="panel panel-default" id="personLink">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Архивные документы Волгоградского государственного института искусств и культуры
+                </a>
+            </h5>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"></div>
+    </div>
+
+    <div class="panel panel-default" id="photoLink">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h5 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Исторические фотодокументы Волгоградского государственного института искусств и культуры
+                </a>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"></div>
+    </div>
+
+    <div class="panel panel-default" id="departmentLink">
+        <div class="panel-heading" role="tab" id="headingDepartment">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseDepartment" aria-expanded="false" aria-controls="collapseDepartment">
+                    Факультеты, кафедры, отделы
+                </a>
+            </h5>
+        </div>
+        <div id="collapseDepartment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDepartment"></div>
+    </div>
 </div>

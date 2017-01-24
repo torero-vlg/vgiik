@@ -17,16 +17,7 @@ namespace T034.Controllers
 
         public ActionResult Archive()
         {
-            var model = new ArchiveViewModel
-                {
-                    Persons = Db.Select<Person>().OrderBy(p => p.FullName).ToList(),
-                    Departments = Db.Select<Department>()
-                        .Select(d => new DepartmentViewModel{Id = d.Id, Name = d.Name})
-                        .ToList()
-                };
-
-            
-            return View(model);
+            return View();
         }
 
         public ActionResult Video()
