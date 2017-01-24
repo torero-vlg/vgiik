@@ -1,13 +1,11 @@
-﻿@model T034.ViewModel.ArchiveViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Архив ВГИИК";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="personLink">
         <div class="panel-heading" role="tab" id="headingOne">
             <h5 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -15,11 +13,7 @@
                 </a>
             </h5>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-            @{
-                Html.RenderPartial("Archive/PersonList", Model.Persons);
-            }
-        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"></div>
     </div>
 
     <div class="panel panel-default" id="photoLink">
@@ -33,7 +27,7 @@
         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"></div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="departmentLink">
         <div class="panel-heading" role="tab" id="headingDepartment">
             <h5 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseDepartment" aria-expanded="false" aria-controls="collapseDepartment">
@@ -41,10 +35,6 @@
                 </a>
             </h5>
         </div>
-        <div id="collapseDepartment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDepartment">
-            @{
-                Html.RenderPartial("Archive/DepartmentList", Model.Departments);
-            }
-        </div>
+        <div id="collapseDepartment" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDepartment"></div>
     </div>
 </div>
