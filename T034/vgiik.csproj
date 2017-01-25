@@ -898,7 +898,7 @@
     <Content Include="Views\Home\Rooms\Room6.cshtml" />
     <Content Include="Views\Shared\Carousel.cshtml" />
     <Content Include="Views\Shared\DepartmentPartialView.cshtml" />
-    <Content Include="Views\404.cshtml" />
+    <Content Include="Views\Errors\Error404.cshtml" />
     <Content Include="Views\Home\Rooms\Room0.cshtml" />
     <Content Include="Views\Shared\Archive\Person.cshtml" />
     <Content Include="Views\Shared\Archive\PersonList.cshtml" />
