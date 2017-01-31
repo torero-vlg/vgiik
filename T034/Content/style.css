@@ -1,4 +1,4 @@
-body
+﻿body
 {
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #232323;
@@ -300,4 +300,20 @@ textarea
 {
     font-size: 17px;
     color: #882002 !important;
+}
+
+.dropdown-menu {
+  width: 280px;
+}
+/*переопределяем bootstrap*/
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  font-weight: bolder;
+  background-color: #882002;
+  background-image: -webkit-linear-gradient(top, #882002 0%, #882002 100%);
+  background-image:      -o-linear-gradient(top, #882002 0%, #882002 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#882002), to(#882002));
+  background-image:         linear-gradient(to bottom, #882002 0%, #882002 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#882002', endColorstr='#882002', GradientType=0);
+  background-repeat: repeat-x;
 }
