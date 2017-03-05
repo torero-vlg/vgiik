@@ -130,6 +130,17 @@ namespace T034.Controllers
                         }
                     };
 
+            if (personId == 8)
+                model.Videos = new List<VideoViewModel>
+                    {
+                        new VideoViewModel
+                        {
+                            Width = "560",
+                            Height = "315",
+                            Source = "https://www.youtube.com/embed/0Qk_yy8jOH4"
+                        }
+                    };
+
             return model;
         }
 
