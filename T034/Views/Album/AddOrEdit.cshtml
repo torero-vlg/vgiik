@@ -1,4 +1,5 @@
-﻿@model T034.ViewModel.AlbumViewModel
+﻿@using T034.Models
+@model T034.ViewModel.AlbumViewModel
 @{
     ViewBag.Title = "Редактирование альбома";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,9 +9,10 @@
 {
     <legend>Редактирование</legend>
     <div class="control-group warning">
+        
         <label class="control-label">Название</label>
         <div>
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
         </div>
 
         <label class="control-label">Путь</label>
@@ -26,17 +28,23 @@
             @Html.DropDownListFor(m => m.DepartmentId, Model.Departments, new {@class = "form-control"})
         </div>
         <div>
-            @Html.DropDownListFor(m => m.VeteranId, Model.Veterans, new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.VeteranId, Model.Veterans, new {@class = "form-control"})
         </div>
     </div>
     <div class="form-actions">
         <button type="submit" class="btn btn-primary">Сохранить изменения</button>
         <button type="button" class="btn">Отмена</button>
-        @if (Model.PersonId > 0)
+        @if (Model.Id > 0)
         {
-            <div>@Html.ActionLink("Удалить", "Delete", new {id = Model.PersonId})</div>
+            <div>@Html.ActionLink("Удалить", "Delete", new {id = Model.Id})</div>
         }
     </div>
+
+    @Html.Partial("FileUploadPartialView", new FileUploadModel
+    {
+        Url = "/Upload/UploadFile",
+        Folder = Model.Path
+    })
 
     <div class="list-group">
         @if (Model.Files != null)
