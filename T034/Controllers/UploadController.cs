@@ -3,14 +3,19 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ninject;
 using T034.Api.Entity;
 using T034.Api.Entity.Administration;
+using T034.Api.Services;
 using T034.ViewModel;
 
 namespace T034.Controllers
 {
     public class UploadController : BaseController
     {
+        [Inject]
+        public IFileService FileService { get; set; }
+
         public void UploadNow(HttpPostedFileWrapper upload)
         {
             if (upload != null)
@@ -77,6 +82,14 @@ namespace T034.Controllers
                 var result = Db.SaveOrUpdate(news);
             }
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadFile()
+        {
+            var r = FileService.Upload(Request["UploadFolder"], Request, UserInfo.Email);
+            //TODO надо что-то возвращать
+            return Json(r);
         }
 
         private DateTime UnixTimeStampToDateTime(double unixTimeStamp)

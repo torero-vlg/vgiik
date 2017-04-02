@@ -104,6 +104,8 @@
     <Compile Include="Entity\Vgiik\Person.cs" />
     <Compile Include="Entity\Vgiik\Publication.cs" />
     <Compile Include="Entity\Vgiik\Veteran.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="Exceptions\UserNotFoundException.cs" />
     <Compile Include="Mapping\Administration\RoleMap.cs" />
     <Compile Include="Mapping\Administration\WebPermissionRoleMap.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
@@ -125,6 +127,9 @@
     <Compile Include="Services\Common\IService.cs" />
     <Compile Include="Services\Common\OperationResult.cs" />
     <Compile Include="Services\Common\StatusOperation.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\FileUpload\Uploader.cs" />
+    <Compile Include="Services\FileUpload\ViewDataUploadFilesResult.cs" />
     <Compile Include="Services\MenuItemService.cs" />
     <Compile Include="Tools\MonitorLog.cs" />
   </ItemGroup>

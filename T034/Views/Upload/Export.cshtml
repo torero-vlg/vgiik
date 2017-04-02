@@ -6,14 +6,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@{
-    @Html.Partial("FileUploadPartialView", new FileUploadModel
-     {
-         Url = "/Folder/UploadFile",
-         Folder = Model.Id.ToString()
-     })
-}*@
-
     @using (Html.BeginForm("Export", "Upload", FormMethod.Post))
     {
         <div class="input-group">

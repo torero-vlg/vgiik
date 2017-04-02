@@ -13,7 +13,7 @@ namespace T034.Controllers
 {
     public class BaseController : Controller
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         [Inject]
         public IBaseDb Db { get; set; }
@@ -27,7 +27,7 @@ namespace T034.Controllers
             var actionName = context.ActionDescriptor.ActionName;
 
             var user = "";
-            logger.Debug("Controller: {0}, Action: {1}, UserHost: {2}, User:{3}, Request: {4}", controllerName, actionName, Request.UserHostAddress, user, Request?.Url?.Query);
+            Logger.Debug("Controller: {0}, Action: {1}, UserHost: {2}, User:{3}, Request: {4}", controllerName, actionName, Request.UserHostAddress, user, Request?.Url?.Query);
 
             if (controllerName.ToLower() != "account" && actionName.ToLower() != "auth")
                 SetUserInfo();
@@ -39,7 +39,7 @@ namespace T034.Controllers
             var controllerName = context.ActionDescriptor.ControllerDescriptor.ControllerName;
 
             var user = "";
-            logger.Debug("Controller: {0}, Action: {1}, UserHost: {2}, User:{3}, Request: {4}", controllerName, actionName, Request.UserHostAddress, user, Request?.Url?.Query);
+            Logger.Debug("Controller: {0}, Action: {1}, UserHost: {2}, User:{3}, Request: {4}", controllerName, actionName, Request.UserHostAddress, user, Request?.Url?.Query);
         }
 
         private void SetUserInfo()
@@ -50,7 +50,7 @@ namespace T034.Controllers
             }
             catch (Exception ex)
             {
-                logger.Fatal(ex);
+                Logger.Fatal(ex);
             }
         }
     }

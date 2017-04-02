@@ -19,6 +19,7 @@ namespace T034
     public class MvcApplication : System.Web.HttpApplication
     {
         public static string SiteName => ConfigurationManager.AppSettings["SiteName"];
+        public static string ContentFolder = ConfigurationManager.AppSettings["ContentFolder"];
 
         public static IEnumerable<WebPermissionDto> WebPermissions { get; private set; }
 

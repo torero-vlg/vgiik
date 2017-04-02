@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
+using NLog;
 using T034.Api.Entity.Vgiik;
 using T034.Tools.Attribute;
 using T034.ViewModel;
@@ -12,6 +13,8 @@ namespace T034.Controllers
 {
     public class AlbumController : BaseController
     {
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         [WebPermission("Альбомы.Редактирование")]
         public ActionResult List(int? personId, int? departmentId, int? veteranId)
         {
@@ -46,57 +49,64 @@ namespace T034.Controllers
         [WebPermission("Альбомы.Редактирование")]
         public ActionResult AddOrEdit(int? id, int? personId, int? departmentId, int? veteranId)
         {
-            var model = new AlbumViewModel();
-            if (id.HasValue)
+            try
             {
-                var item = Db.Get<Album>(id.Value);
-                model = Mapper.Map(item, model);
+                var model = new AlbumViewModel();
+                if (id.HasValue)
+                {
+                    var item = Db.Get<Album>(id.Value);
+                    model = Mapper.Map(item, model);
 
-                var directory = new DirectoryInfo(Server.MapPath(item.Path));
-                model.Files = directory.GetFiles().Select(f => f.Name);
+                    var directory = new DirectoryInfo(Server.MapPath(item.Path));
+                    model.Files = directory.GetFiles().Select(f => f.Name);
+                }
+                else
+                {
+                    model.PersonId = personId;
+                    model.DepartmentId = departmentId;
+                    model.VeteranId = veteranId;
+                }
+
+                var persons = Db.Select<Person>();
+                model.Persons = Mapper.Map<ICollection<SelectListItem>>(persons);
+
+                model.Persons.Add(new SelectListItem { Value = null, Text = "-", Selected = model.PersonId.HasValue == false });
+
+                if (model.Persons.All(m => m.Selected == false))
+                {
+                    var selected = model.Persons.FirstOrDefault(m => m.Value == model.PersonId.Value.ToString());
+                    selected.Selected = true;
+                }
+
+                var departments = Db.Select<Department>();
+                model.Departments = Mapper.Map<ICollection<SelectListItem>>(departments);
+
+                model.Departments.Add(new SelectListItem { Value = null, Text = "-", Selected = model.DepartmentId.HasValue == false });
+
+                if (model.Departments.All(m => m.Selected == false))
+                {
+                    var selected = model.Departments.FirstOrDefault(m => m.Value == model.DepartmentId.Value.ToString());
+                    selected.Selected = true;
+                }
+
+                var veterans = Db.Select<Veteran>();
+                model.Veterans = Mapper.Map<ICollection<SelectListItem>>(veterans);
+
+                model.Veterans.Add(new SelectListItem { Value = null, Text = "-", Selected = model.VeteranId.HasValue == false });
+
+                if (model.Veterans.All(m => m.Selected == false))
+                {
+                    var selected = model.Veterans.FirstOrDefault(m => m.Value == model.VeteranId.Value.ToString());
+                    selected.Selected = true;
+                }
+
+                return View(model);
             }
-            else
+            catch (Exception ex)
             {
-                model.PersonId = personId;
-                model.DepartmentId = departmentId;
-                model.VeteranId = veteranId;
+                Logger.Error(ex);
+                return View("ServerError", ex.Message);
             }
-
-            var persons = Db.Select<Person>();
-            model.Persons = Mapper.Map<ICollection<SelectListItem>>(persons);
-
-            model.Persons.Add(new SelectListItem { Value = null, Text = "-", Selected = model.PersonId.HasValue == false });
-
-            if (model.Persons.All(m => m.Selected == false))
-            {
-                var selected = model.Persons.FirstOrDefault(m => m.Value == model.PersonId.Value.ToString());
-                selected.Selected = true;
-            }
-
-            var departments = Db.Select<Department>();
-            model.Departments = Mapper.Map<ICollection<SelectListItem>>(departments);
-
-            model.Departments.Add(new SelectListItem { Value = null, Text = "-", Selected = model.DepartmentId.HasValue == false });
-
-            if (model.Departments.All(m => m.Selected == false))
-            {
-                var selected = model.Departments.FirstOrDefault(m => m.Value == model.DepartmentId.Value.ToString());
-                selected.Selected = true;
-            }
-
-            var veterans = Db.Select<Veteran>();
-            model.Veterans = Mapper.Map<ICollection<SelectListItem>>(veterans);
-
-            model.Veterans.Add(new SelectListItem { Value = null, Text = "-", Selected = model.VeteranId.HasValue == false });
-
-            if (model.Veterans.All(m => m.Selected == false))
-            {
-                var selected = model.Veterans.FirstOrDefault(m => m.Value == model.VeteranId.Value.ToString());
-                selected.Selected = true;
-            }
-
-
-            return View(model);
         }
 
         [WebPermission("Альбомы.Редактирование")]
@@ -161,5 +171,7 @@ namespace T034.Controllers
                 return Json(new { Message = $"Ошибка при удалении файла: {ex.Message}", FilePath = filePath }, JsonRequestBehavior.AllowGet);
             }
         }
+
+
     }
 }
