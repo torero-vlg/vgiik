@@ -87,7 +87,8 @@ namespace T034.Controllers
         [HttpPost]
         public ActionResult UploadFile()
         {
-            var r = FileService.Upload(Request["UploadFolder"], Request, UserInfo.Email);
+            var path = Path.Combine(Server.MapPath($"~/{Request["UploadFolder"]}"));
+            var r = FileService.Upload(path, Request, UserInfo.Email);
             //TODO надо что-то возвращать
             return Json(r);
         }

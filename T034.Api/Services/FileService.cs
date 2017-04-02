@@ -19,7 +19,7 @@ namespace T034.Api.Services
         /// Загрузить файлы
         /// </summary>
         /// <returns></returns>
-        List<ViewDataUploadFilesResult> Upload(string path, HttpRequestBase request, string email);
+        List<ViewDataUploadFilesResult> Upload(string path, HttpRequestBase request, string email, int? folderId = null);
 
         /// <summary>
         /// Удалить файл
@@ -55,7 +55,7 @@ namespace T034.Api.Services
         [Inject]
         public IBaseDb Db { get; set; }
 
-        public List<ViewDataUploadFilesResult> Upload(string path, HttpRequestBase request, string email)
+        public List<ViewDataUploadFilesResult> Upload(string path, HttpRequestBase request, string email, int? folderId = null)
         {
             var r = new List<ViewDataUploadFilesResult>();
             var uploader = new Uploader(path);
@@ -93,7 +93,7 @@ namespace T034.Api.Services
                                 Name = filesResult.name,
                                 Size = filesResult.size,
                                 User = new User { Id = userFromDb.Id },
-                                Folder = new Folder { Id = int.Parse(request.Files.Keys[0]) }
+                                Folder = folderId.HasValue ? new Folder { Id = folderId.Value } : null
                             };
 
                             Db.SaveOrUpdate(item);
