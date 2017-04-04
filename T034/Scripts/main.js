@@ -23,7 +23,9 @@
         'load-image-meta': '/Scripts/lib/jQuery.FileUpload/load-image/load-image-meta',
         'load-image-exif': ['/Scripts/lib/jQuery.FileUpload/load-image/load-image-meta', '/Scripts/lib/jQuery.FileUpload/load-image/load-image-exif'],
         'canvas-to-blob': '/Scripts/lib/jQuery.FileUpload/canvas-to-blob/canvas-to-blob',
-        'tmpl': '/Scripts/lib/jQuery.FileUpload/tmpl'
+        'tmpl': '/Scripts/lib/jQuery.FileUpload/tmpl',
+        'lightbox': '/Scripts/lib/lightbox/jquery.lightbox-0.5',
+        'lang': '/Scripts/lang/ru'
     },
     shim: {
         jqueryui: {
@@ -49,6 +51,9 @@
         },
         'jquery.fileupload-ui': {
             deps: ['load-image']
+        },
+        'lightbox': {
+            deps: ['jquery', 'lang']
         }
     }
 });

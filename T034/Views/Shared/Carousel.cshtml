@@ -25,14 +25,18 @@
             if (i == 0)
             {
                 <div class="item active">
-                    <img src="@Url.Content("~" + Model.Files.ToList()[i].Path)" alt="...">
+                    <a rel="lightbox_s" href="@Url.Content("~" + Model.Files.ToList()[i].Path)" class="thumbnail">
+                        <img src="@Url.Content("~" + Model.Files.ToList()[i].Path)" alt="...">
+                    </a>
                     <div class="carousel-caption">@Model.Files.ToList()[i].Description</div>
                 </div>
             }
             else
             {
                 <div class="item">
-                    <img src="@Url.Content("~" + Model.Files.ToList()[i].Path)" alt="...">
+                    <a rel="lightbox_s" href="@Url.Content("~" + Model.Files.ToList()[i].Path)" class="thumbnail">
+                        <img src="@Url.Content("~" + Model.Files.ToList()[i].Path)" alt="...">
+                    </a>
                     <div class="carousel-caption">@Model.Files.ToList()[i].Description</div>
                 </div>
             }
