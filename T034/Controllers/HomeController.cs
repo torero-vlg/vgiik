@@ -63,7 +63,11 @@ namespace T034.Controllers
 			directory = new DirectoryInfo(Server.MapPath("/Content/images/photo/traditional/"));
             files = directory.Exists ? directory.GetFiles().Select(f => f.Name) : new List<string>();
             var traditional = files.Select(file => new NodeViewModel { Path = "/Content/images/photo/traditional/" + file, Description = "" });
-			
+
+            directory = new DirectoryInfo(Server.MapPath("/Content/images/photo/conference2017/"));
+            files = directory.Exists ? directory.GetFiles().Select(f => f.Name) : new List<string>();
+            var conference2017 = files.Select(file => new NodeViewModel { Path = "/Content/images/photo/conference2017/" + file, Description = "" });
+
             var model = new List<CarouselViewModel>
                 {
                     new CarouselViewModel(dpi, "Кафедра ДПИ", ""),
@@ -73,7 +77,8 @@ namespace T034.Controllers
                     new CarouselViewModel(autumn2012, "Осень - 2012", ""),
                     new CarouselViewModel(motorship2013, "Теплоход - 2013", ""),
                     new CarouselViewModel(photo13082015, "", ""),
-					new CarouselViewModel(traditional, "Кафедра традиционной культуры", "")
+					new CarouselViewModel(traditional, "Кафедра традиционной культуры", ""),
+					new CarouselViewModel(conference2017, "Городская-студенческая научно-практическая конференция: «Царицын – Сталинград - Волгоград». Волгоградский государственный институт искусств и культуры, Волгоград, 30.05.2017, ул. Циолковского, 4, кабинет информатики и технических средств.", "")
                 };
 
             return View(model);
