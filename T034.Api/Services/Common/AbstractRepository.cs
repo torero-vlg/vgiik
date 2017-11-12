@@ -17,11 +17,11 @@ namespace T034.Api.Services.Common
         [Inject]
         public IBaseDb Db { get; set; }
 
-        public TEntity Create(TDto dto)
+        public TDto Create(TDto dto)
         {
             var entity = Mapper.Map<TEntity>(dto);
             var result = Db.SaveOrUpdate(entity);
-            return entity;
+            return Mapper.Map<TDto>(entity);
         }
 
         public TEntity Update(TDto dto)

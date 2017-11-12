@@ -8,7 +8,7 @@ namespace T034.Api.Services.Administration
 {
     public interface IRoleService : IService
     {
-        Role Create(RoleDto dto);
+        RoleDto Create(RoleDto dto);
         Role Update(RoleDto dto);
         IEnumerable<RoleDto> Select();
         RoleDto Get(object id);
