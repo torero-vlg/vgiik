@@ -9,6 +9,7 @@ namespace T034.Api.Services.Vgiik
     {
         PublicationDto Get(object id);
         PublicationDto Create(PublicationDto dto);
+        PublicationDto Update(PublicationDto dto);
     }
 
     public class PublicationService : AbstractRepository<Publication, PublicationDto, int>, IPublicationService

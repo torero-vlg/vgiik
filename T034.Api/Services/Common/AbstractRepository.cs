@@ -24,14 +24,14 @@ namespace T034.Api.Services.Common
             return Mapper.Map<TDto>(entity);
         }
 
-        public TEntity Update(TDto dto)
+        public TDto Update(TDto dto)
         {
             var entity = Db.Get<TEntity>(dto.Id);
             entity = Mapper.Map<TEntity>(dto);
 
             var result = Db.SaveOrUpdate(entity);
 
-            return entity;
+            return Mapper.Map<TDto>(entity);
         }
 
         public IEnumerable<TDto> Select()
