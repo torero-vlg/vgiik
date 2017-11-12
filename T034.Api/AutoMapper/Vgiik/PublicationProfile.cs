@@ -8,7 +8,9 @@ namespace T034.Api.AutoMapper.Vgiik
     {
         protected override void Configure()
         {
-            CreateMap<Publication, PublicationDto>();
+            CreateMap<Publication, PublicationDto>()
+                .ForMember(dest => dest.Path,
+                       opt => opt.MapFrom(src => $"/Content/images/publication/{src.Id}/"));
             CreateMap<PublicationDto, Publication>();
         }
     }

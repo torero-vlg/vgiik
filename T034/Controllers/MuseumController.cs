@@ -38,10 +38,9 @@ namespace T034.Controllers
             PublicationViewModel model = null;
             if (publication != null)
             {
-                var path = string.Format("/Content/images/publication/{0}/", id);
                 model = new PublicationViewModel
                 {
-                    Pages = new CarouselViewModel(path, Server.MapPath(path), ""),
+                    Pages = new CarouselViewModel(publication.Path, Server.MapPath(publication.Path), ""),
                     PublicationId = publication.Id
                 };
             }
