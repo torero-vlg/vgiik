@@ -8,6 +8,7 @@ using T034.Api.Entity.Vgiik;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 using T034.Api.Services.Vgiik;
+using Ninject;
 
 namespace T034.Controllers
 {
