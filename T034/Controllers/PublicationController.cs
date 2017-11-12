@@ -20,6 +20,22 @@ namespace T034.Controllers
         [Inject]
         public IPublicationService PublicationService { get; set; }
 
+        [WebPermission("Альбомы.Редактирование")]
+        public ActionResult List()
+        {
+            try
+            {
+                var list = PublicationService.Select();
+                return View(list);
+            }
+            catch (Exception ex)
+            {
+                Logger.Fatal(ex);
+                return View("ServerError", (object)"Получение списка");
+            }
+        }
+
+
         [HttpGet]
         [WebPermission("Альбомы.Редактирование")]
         public ActionResult AddOrEdit(int? id)
@@ -52,6 +68,60 @@ namespace T034.Controllers
                 return Json(new OperationResult { Status = StatusOperation.Error, Message = ex.Message });
             }
             return Json(new OperationResult { Status = StatusOperation.Success, Message = "Операция выполнена успешно" });
+        }
+
+        [WebPermission("Альбомы.Редактирование")]
+        public ActionResult Index(int id)
+        {
+            var model = GetPublication(id);
+            if (model == null)
+            {
+                return View("../404.cshtml");
+            }
+
+            if (HttpContext.Request.IsAjaxRequest())
+            {
+                return PartialView("Museum/Publication", model);
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        [WebPermission("Альбомы.Редактирование")]
+        public ActionResult Delete(int? id)
+        {
+            try
+            {
+                var result = PublicationService.Delete(id);
+                if (result.Status != StatusOperation.Success)
+                {
+                    Logger.Error(result.Message);
+                    return View("ServerError", (object)result.Message);
+                }
+                return RedirectToAction("List");
+            }
+            catch (Exception ex)
+            {
+                Logger.Fatal(ex);
+                return View("ServerError", (object)"Ошибка");
+            }
+        }
+
+        private PublicationViewModel GetPublication(int id)
+        {
+            var publication = PublicationService.Get(id);
+
+            PublicationViewModel model = null;
+            if (publication != null)
+            {
+                model = new PublicationViewModel
+                {
+                    Pages = new CarouselViewModel(publication.Path, Server.MapPath(publication.Path), ""),
+                    PublicationId = publication.Id
+                };
+            }
+
+            return model;
         }
     }
 }

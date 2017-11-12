@@ -1,11 +1,10 @@
-﻿@using T034
-@using T034.ViewModel
-@model PersonViewModel
+﻿@using T034.ViewModel
+@model PublicationViewModel
 
 @{
-    ViewBag.Title = MvcApplication.SiteName + " - " + Model.FullName;
+    ViewBag.Title = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-@Html.Partial("Archive/Person", Model)
+@Html.Partial("Museum/Publication", Model)

@@ -1,32 +1,29 @@
-﻿@model IEnumerable<T034.ViewModel.PersonViewModel>
+﻿@model IEnumerable<T034.Api.Dto.Vgiik.PublicationDto>
 
 @{
-    ViewBag.Title = "Люди";
+    ViewBag.Title = "Публикации";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.ActionLink("Добавить", "AddOrEdit", "Person")
+@Html.ActionLink("Добавить", "AddOrEdit", "Publication")
 
-<h2>Люди</h2>
+<h2>Публикации</h2>
 
 <table id="personTable" class="display">
     <thead>
         <tr>
             <th>Код</th>
-            <th>ФИО</th>
-            <th>Операции</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.OrderBy(n => n.FullName))
+    @foreach (var item in Model.OrderBy(n => n.Id))
     {
     <tr>
-        <td>@item.PersonId</td>
-        <td>@item.FullName</td>
+        <td>@item.Id</td>
         <td>
-            <a href="@Url.Action("Index", new { id = item.PersonId})" title="Подробнее"><i class="fa fa-square-o" aria-hidden="true"></i></a>
-            <a href="@Url.Action("AddOrEdit", new { id = item.PersonId})" title="Редактировать"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-            <a href="@Url.Action("Delete", new { id = item.PersonId})" title="Удалить"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+            <a href="@Url.Action("Index", new { id = item.Id})" title="Подробнее"><i class="fa fa-square-o" aria-hidden="true"></i></a>
+            <a href="@Url.Action("AddOrEdit", new { id = item.Id})" title="Редактировать"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="@Url.Action("Delete", new { id = item.Id})" title="Удалить"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </td>
       </tr>
     }

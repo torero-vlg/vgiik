@@ -17,6 +17,7 @@ namespace T034.Controllers
         [Inject]
         public IPublicationService PublicationService { get; set; }
 
+        //TODO использовать PublicationController
         public ActionResult Publication(int id)
         {
             var model = GetPublication(id);
