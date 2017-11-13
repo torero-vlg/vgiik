@@ -25,7 +25,9 @@
         'canvas-to-blob': '/Scripts/lib/jQuery.FileUpload/canvas-to-blob/canvas-to-blob',
         'tmpl': '/Scripts/lib/jQuery.FileUpload/tmpl',
         'lightbox': '/Scripts/lib/lightbox/jquery.lightbox-0.5',
-        'lang': '/Scripts/lang/ru'
+        'lang': '/Scripts/lang/ru',
+        
+        'layout': 'app/layout'
     },
     shim: {
         jqueryui: {

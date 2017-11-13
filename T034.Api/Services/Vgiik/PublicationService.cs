@@ -21,12 +21,6 @@ namespace T034.Api.Services.Vgiik
         {
             var result = base.Create(dto);
 
-            var path = $"/Content/images/publication/{result.Id}/";
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
             return result;
         }
     }

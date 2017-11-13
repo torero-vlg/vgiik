@@ -4,14 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("AddOrEdit", "Publication"))
-{
-    <legend>Редактирование</legend>
-    <div class="control-group warning">
-        
-    </div>
-    <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
-        <button type="button" class="btn">Отмена</button>
-    </div>
-}
+@Html.HiddenFor(m => m.Id)
+
+<legend>Редактирование</legend>
+<div class="control-group warning">
+</div>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary" id="btnAddOrEdit">Сохранить изменения</button>
+    <button type="button" class="btn">Отмена</button>
+</div>
+

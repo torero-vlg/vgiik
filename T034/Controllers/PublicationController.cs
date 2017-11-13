@@ -60,7 +60,13 @@ namespace T034.Controllers
                 }
                 else
                 {
-                    PublicationService.Create(model);
+                    var result = PublicationService.Create(model);
+
+                    var path = $"/Content/images/publication/{result.Id}/";
+                    if (!Directory.Exists(Server.MapPath(path)))
+                    {
+                        Directory.CreateDirectory(Server.MapPath(path));
+                    }
                 }
             }
             catch (Exception ex)

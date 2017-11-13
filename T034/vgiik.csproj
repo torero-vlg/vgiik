@@ -383,6 +383,7 @@
     <Content Include="Scripts\app\home\museum.js" />
     <Content Include="Scripts\app\home\presentation.js" />
     <Content Include="Scripts\app\home\index.js" />
+    <Content Include="Scripts\app\layout.js" />
     <Content Include="Scripts\app\publication\addOrEdit.js" />
     <Content Include="Scripts\app\publication\index.js" />
     <Content Include="Scripts\app\publication\list.js" />
