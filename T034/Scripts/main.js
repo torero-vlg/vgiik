@@ -2,7 +2,7 @@
     baseUrl: '/Scripts',
     paths: {
         main: 'main',
-        jquery: 'lib/jquery-1.9.1',
+        jquery: 'lib/jquery-1.9.0',
         jqueryui: 'lib/jquery-ui-1.9.0',
         jqueryValidateUnobtrusive: 'lib/jquery.validate.unobtrusive',//заглавные буквы не работают
         bootstrap: 'lib/bootstrap',
