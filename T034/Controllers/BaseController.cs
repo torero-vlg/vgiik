@@ -13,7 +13,7 @@ namespace T034.Controllers
 {
     public class BaseController : Controller
     {
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         [Inject]
         public IBaseDb Db { get; set; }

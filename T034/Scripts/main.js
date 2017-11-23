@@ -2,7 +2,7 @@
     baseUrl: '/Scripts',
     paths: {
         main: 'main',
-        jquery: 'lib/jquery-1.9.1',
+        jquery: 'lib/jquery-1.9.0',
         jqueryui: 'lib/jquery-ui-1.9.0',
         jqueryValidateUnobtrusive: 'lib/jquery.validate.unobtrusive',//заглавные буквы не работают
         bootstrap: 'lib/bootstrap',
@@ -25,7 +25,9 @@
         'canvas-to-blob': '/Scripts/lib/jQuery.FileUpload/canvas-to-blob/canvas-to-blob',
         'tmpl': '/Scripts/lib/jQuery.FileUpload/tmpl',
         'lightbox': '/Scripts/lib/lightbox/jquery.lightbox-0.5',
-        'lang': '/Scripts/lang/ru'
+        'lang': '/Scripts/lang/ru',
+        
+        'layout': 'app/layout'
     },
     shim: {
         jqueryui: {

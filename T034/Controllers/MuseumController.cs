@@ -7,11 +7,17 @@ using AutoMapper;
 using T034.Api.Entity.Vgiik;
 using T034.ViewModel;
 using T034.ViewModel.Common;
+using T034.Api.Services.Vgiik;
+using Ninject;
 
 namespace T034.Controllers
 {
     public class MuseumController : BaseController
     {
+        [Inject]
+        public IPublicationService PublicationService { get; set; }
+
+        //TODO использовать PublicationController
         public ActionResult Publication(int id)
         {
             var model = GetPublication(id);
@@ -29,15 +35,14 @@ namespace T034.Controllers
 
         private PublicationViewModel GetPublication(int id)
         {
-            var publication = Db.Get<Publication>(id);
+            var publication = PublicationService.Get(id);
 
             PublicationViewModel model = null;
             if (publication != null)
             {
-                var path = string.Format("/Content/images/publication/{0}/", id);
                 model = new PublicationViewModel
                 {
-                    Pages = new CarouselViewModel(path, Server.MapPath(path), ""),
+                    Pages = new CarouselViewModel(publication.Path, Server.MapPath(publication.Path), ""),
                     PublicationId = publication.Id
                 };
             }

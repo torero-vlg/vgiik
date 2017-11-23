@@ -1,0 +1,16 @@
+﻿@model T034.Api.Dto.Vgiik.PublicationDto
+@{
+    ViewBag.Title = "Редактирование публикации";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.HiddenFor(m => m.Id)
+
+<legend>Редактирование</legend>
+<div class="control-group warning">
+</div>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary" id="btnAddOrEdit">Сохранить изменения</button>
+    <button type="button" class="btn">Отмена</button>
+</div>
+

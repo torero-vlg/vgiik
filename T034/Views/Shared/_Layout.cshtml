@@ -27,7 +27,7 @@
         }
 
         <div class="container">
-            <div><a href="http://архиввгиик.рф"><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></a>
+            <div><a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></a>
             </div>
             <!--Begin MainMenu-->
             @Html.Partial("MainMenu")
@@ -41,10 +41,12 @@
                         }
                     }
                 </div>
+                <div role="alert" class="alert alert-danger" id="errorContainer" style="display:none"></div>
+                <div role="alert" class="alert alert-success" id="successContainer" style="display:none"></div>
                 <!--Begin Body-->
                 @RenderBody()
                 <!--End Body-->
-                <div class="bbanner" id="right"><a href="http://архиввгиик.рф" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014-2017</a>
+                <div class="bbanner" id="right"><a href="@Url.Action("Index", "Home")" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014-2017</a>
                 </div>
             </div>
         </div>

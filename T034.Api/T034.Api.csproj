@@ -73,6 +73,7 @@
     <Compile Include="AbstractDbFactory.cs" />
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="AutoMapper\MenuItemProfile.cs" />
+    <Compile Include="AutoMapper\Vgiik\PublicationProfile.cs" />
     <Compile Include="AutoMapper\WebPermissionProfile.cs" />
     <Compile Include="AutoMapper\RoleProfile.cs" />
     <Compile Include="AutoMapper\UserProfile.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Dto\Common\IDto.cs" />
     <Compile Include="Dto\MenuItemDto.cs" />
     <Compile Include="Dto\RoleDto.cs" />
+    <Compile Include="Dto\Vgiik\PublicationDto.cs" />
     <Compile Include="Dto\WebPermissionrDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Dto\UserModel.cs" />
@@ -131,6 +133,7 @@
     <Compile Include="Services\FileUpload\Uploader.cs" />
     <Compile Include="Services\FileUpload\ViewDataUploadFilesResult.cs" />
     <Compile Include="Services\MenuItemService.cs" />
+    <Compile Include="Services\Vgiik\PublicationService.cs" />
     <Compile Include="Tools\MonitorLog.cs" />
   </ItemGroup>
   <ItemGroup>
