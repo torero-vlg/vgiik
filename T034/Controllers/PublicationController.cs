@@ -104,6 +104,13 @@ namespace T034.Controllers
                     Logger.Error(result.Message);
                     return View("ServerError", (object)result.Message);
                 }
+
+                var path = $"/Content/images/publication/{id}/";
+                if (Directory.Exists(Server.MapPath(path)))
+                {
+                    Directory.Delete(Server.MapPath(path), true);
+                }
+
                 return RedirectToAction("List");
             }
             catch (Exception ex)
