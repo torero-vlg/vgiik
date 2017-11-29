@@ -69,8 +69,16 @@
 </div>
 
 <div class="text text-center">
-	@{
-		var path = string.Format("/Content/images/museum/room5/graduate/");
-		Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), ""));
-	}
+    @{
+        var path = string.Format("/Content/images/museum/room5/graduate/");
+        Html.RenderPartial("Carousel", new CarouselViewModel(path, Server.MapPath(path), ""));
+    }
+</div>
+
+
+<div class="text text-center">
+    @{
+        var p = string.Format("/Content/images/museum/room8/elizarova/");
+        Html.RenderPartial("Carousel", new CarouselViewModel(p, Server.MapPath(p), "Елизарова Нина Васильевна – Заслуженный работник культуры России (27.01.1949 - 03.08.2016) – выпускница училища культуры 1970 года, ныне колледж Волгоградского государственного института искусств и культуры."));
+    }
 </div>
