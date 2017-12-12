@@ -149,9 +149,22 @@
         if (directory.Exists)
         {
             files = directory.GetFiles().Select(f => f.Name);
-            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2016/" + file, Description = "" });
+            dpi = files.Select(file => new NodeViewModel {Path = "/Content/images/museum/room5/2016/" + file, Description = ""});
 
             Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2016"));
+        }
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2017/"));
+        if (directory.Exists)
+        {
+            files = directory.GetFiles().Select(f => f.Name);
+            dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2017/" + file, Description = "" });
+
+            Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2017"));
         }
     }
 </div>
