@@ -2,6 +2,8 @@
 
 <h3>@Model.Header</h3>
 
+<a href="@Url.Action("DownloadPublication", "File", new { path = Model.Folder })" class="bottommenu">Скачать</a>
+
 <div id="@Model.CarouselId" class="carousel slide" data-ride="carousel" data-interval="@Model.Interval">
     <!-- Indicators -->
     <ol class="carousel-indicators">

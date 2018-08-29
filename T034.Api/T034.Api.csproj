@@ -126,7 +126,9 @@
     <Compile Include="Services\Administration\RoleService.cs" />
     <Compile Include="Services\Administration\UserService.cs" />
     <Compile Include="Services\Common\AbstractRepository.cs" />
+    <Compile Include="Services\Common\AbstractResult.cs" />
     <Compile Include="Services\Common\IService.cs" />
+    <Compile Include="Services\Common\FileResult.cs" />
     <Compile Include="Services\Common\OperationResult.cs" />
     <Compile Include="Services\Common\StatusOperation.cs" />
     <Compile Include="Services\FileService.cs" />
