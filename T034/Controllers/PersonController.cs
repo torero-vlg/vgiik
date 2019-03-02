@@ -138,7 +138,13 @@ namespace T034.Controllers
                             Width = "560",
                             Height = "315",
                             Source = "https://www.youtube.com/embed/0Qk_yy8jOH4"
-                        }
+                        },
+                        new VideoViewModel
+                        {
+                            Width = "560",
+                            Height = "315",
+                            Source = "https://www.youtube.com/embed/8cri-sIzH84"
+                        },
                     };
 
             return model;

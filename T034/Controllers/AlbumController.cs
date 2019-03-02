@@ -58,7 +58,8 @@ namespace T034.Controllers
                     model = Mapper.Map(item, model);
 
                     var directory = new DirectoryInfo(Server.MapPath(item.Path));
-                    model.Files = directory.GetFiles().Select(f => f.Name);
+                    if(directory.Exists)
+                        model.Files = directory.GetFiles().Select(f => f.Name);
                 }
                 else
                 {
