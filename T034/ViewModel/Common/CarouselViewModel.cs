@@ -33,17 +33,8 @@ namespace T034.ViewModel
         /// <param name="interval">Интервал листания</param>
         public CarouselViewModel(string folder, string path, string header, string interval = "5000")
         {
-            var directory = new DirectoryInfo(path);
-            IEnumerable<string> files;
-            try
-            {
-                files = directory.GetFiles().Select(f => f.Name);
-            }
-            catch (Exception ex)
-            {
-                MonitorLog.WriteLog("Ошибка выполнения CarouselViewModel : " + ex.Message, MonitorLog.typelog.Error, true);
-                files = new string[1];
-            }
+            var files = GetFilesFrom(path);
+
             Header = header;
             Files = files.Select(f => new NodeViewModel{Path = folder + f, Description = ""});
             Folder = folder;
@@ -62,5 +53,25 @@ namespace T034.ViewModel
         public string Interval { get; set; }
 
         public IEnumerable<NodeViewModel> Files { get; set; }
+
+        private IEnumerable<string> GetFilesFrom(string searchFolder)
+        {
+            var directory = new DirectoryInfo(searchFolder);
+            var files = new List<string>();
+            try
+            {
+                var filters = new[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp", "svg" };
+                foreach (var filter in filters)
+                {
+                    files.AddRange(directory.GetFiles($"*.{filter}", SearchOption.TopDirectoryOnly).Select(f => f.Name));
+                }
+                return files;
+            }
+            catch (Exception ex)
+            {
+                MonitorLog.WriteLog("Ошибка выполнения CarouselViewModel : " + ex.Message, MonitorLog.typelog.Error, true);
+                return new string[1];
+            }
+        }
     }
 }
