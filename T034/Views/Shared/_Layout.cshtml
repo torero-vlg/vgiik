@@ -47,23 +47,30 @@
             <!--Begin MainMenu-->
             @Html.Partial("MainMenu")
             <!--End MainMenu-->
-            <div class="main">
-                <div class="pmb">
-                    @{
-                        if (Request.IsAuthorized())
-                        {
-                            <span class="pull-right"><a href="@Url.Action("Logon", "Account")" title="Войти"><i class="fa fa-sign-in" aria-hidden="true"></i></a></span>
-                        }
+        <div class="main">
+            <div class="pmb">
+                @{
+                    if (Request.IsAuthorized())
+                    {
+                        <span class="pull-right"><a href="@Url.Action("Logon", "Account")" title="Войти"><i class="fa fa-sign-in" aria-hidden="true"></i></a></span>
                     }
-                </div>
-                <div role="alert" class="alert alert-danger" id="errorContainer" style="display:none"></div>
-                <div role="alert" class="alert alert-success" id="successContainer" style="display:none"></div>
-                <!--Begin Body-->
-                @RenderBody()
-                <!--End Body-->
-                <div class="bbanner" id="right"><a href="@Url.Action("Index", "Home")" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014-2019</a>
-                </div>
+                }
             </div>
+            <div role="alert" class="alert alert-danger" id="errorContainer" style="display:none"></div>
+            <div role="alert" class="alert alert-success" id="successContainer" style="display:none"></div>
+            <!--Begin Body-->
+            @RenderBody()
+            <!--End Body-->
+            @{
+                var siteBirthday = 2014;
+                var siteAge = DateTime.Now.Year > siteBirthday ? string.Format("{0}-{1}", siteBirthday, DateTime.Now.Year) : siteBirthday.ToString();
+                // version for upgrade
+                //var siteAge = DateTime.Now.Year > siteBirthday ? $"{siteBirthday}-{DateTime.Now.Year}" : $"{siteBirthday}";
+            }
+            <div class="bbanner" id="right">
+                <a href="@Url.Action("Index", "Home")" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры @siteAge</a>
+            </div>
+        </div>
         </div>
 
         <script type="text/javascript">
