@@ -86,11 +86,7 @@ namespace T034.Controllers
         [WebPermission("Ветераны.Редактирование")]
         public ActionResult Delete(int id)
         {
-            var path = Path.Combine(Server.MapPath($"~/{"Content/images/people"}/{id}"));
-            var directoryInfo = new DirectoryInfo(path);
-            directoryInfo.Delete(true);
-
-            var result = Db.Delete(new Person { Id = id});
+            var result = Db.Delete(new Veteran { Id = id});
 
             return RedirectToAction("List");
         }
