@@ -302,9 +302,6 @@ textarea
     color: #882002 !important;
 }
 
-.dropdown-menu {
-  width: 280px;
-}
 /*переопределяем bootstrap*/
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
