@@ -302,6 +302,11 @@ textarea
     color: #882002 !important;
 }
 
+.modal-body img {
+    height: 100%;
+    width: 100%;
+}
+
 /*переопределяем bootstrap*/
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
