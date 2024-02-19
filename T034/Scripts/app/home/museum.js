@@ -36,6 +36,9 @@
 
                 $.ajax({
                     url: "/Museum/Veteran?id=" + id,
+                    beforeSend: function (xhr) {
+                        $("#modalBody").html('<h3><i class="center fa fa-spinner fa-pulse fa-3x fa-fw"></i></h3>');
+                    },
                     cache: false
                 })
                     .done(function (html) {

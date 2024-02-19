@@ -28,6 +28,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -292,6 +293,10 @@
     <Content Include="Content\pic\bbanner.png" />
     <Content Include="Content\pic\books.png" />
     <Content Include="Content\pic\books2.png" />
+    <Content Include="Content\pic\books3.png" />
+    <Content Include="Content\pic\books4.png" />
+    <Content Include="Content\pic\books5.png" />
+    <Content Include="Content\pic\books_template.png" />
     <Content Include="Content\pic\bstand.png" />
     <Content Include="Content\pic\btn.png" />
     <Content Include="Content\pic\lightbox\close_grey.png" />
